@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,12 +18,29 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.show {
+  @apply outline-1 outline-dashed outline-red-500;
+}
+
+*,
+*::after,
+*::before {
+  font-family: "DM Sans", sans-serif;
+}
+
+.section-title {
+  @apply text-4xl font-semibold mb-7;
+}
+
+.center-absolutely {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.step > p {
+  background-color: #1e9bff;
+}
+
+.step:hover > p {
+  background-color: #fa8a8c;
+  transition: 300ms ease;
 }
