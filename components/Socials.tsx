@@ -1,16 +1,16 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLinkedin,
   faXTwitter,
   faFacebook,
   faInstagram,
+  faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 export const Socials = () => {
   return (
-    <section className="bg-gtahidiCream flex justify-center gap-x-6 py-7">
+    <>
       <a href="https://twitter.com/UjaoTech">
         <FontAwesomeIcon icon={faXTwitter} className="w-5 h-5" />
       </a>
@@ -38,6 +38,6 @@ export const Socials = () => {
           className="w-5 h-5 hover:text-red-600 transition-colors"
         />
       </a>
-    </section>
+    </>
   );
 };
