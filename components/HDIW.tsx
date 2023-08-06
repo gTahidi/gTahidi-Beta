@@ -4,7 +4,7 @@ import { HDIWStep } from "./HDIWStep";
 
 export const HDIW = () => {
   return (
-    <section className="p-[5%] flex flex-col">
+    <section className="p-[5%] flex flex-col" id="how-it-works">
       <h2 className="section-title mx-auto">How Does it Work?</h2>
       <div className="flex gap-x-10">
         <Image

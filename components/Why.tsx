@@ -9,7 +9,7 @@ import ReasonTab from "./ReasonTab";
 
 const Why = () => {
   return (
-    <section className="flex flex-col p-[5%]">
+    <section className="flex flex-col p-[5%]" id="benefits">
       <h2 className="mx-auto section-title">Why gTahidi?</h2>
       <div className="w-full flex justify-between">
         <ReasonTab

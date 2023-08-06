@@ -3,7 +3,7 @@ import React from "react";
 
 export const Welcome = () => {
   return (
-    <section className="p-[5%] flex bg-gtahidiPurpleTwo justify-between">
+    <header className="p-[5%] flex bg-gtahidiPurpleTwo justify-between">
       <h1 className="text-3xl w-1/4">
         Karibu <br /> gTahidi
       </h1>
@@ -26,6 +26,6 @@ export const Welcome = () => {
         width={600}
         className="w-1/3"
       />
-    </section>
+    </header>
   );
 };
