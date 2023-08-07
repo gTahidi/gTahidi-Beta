@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <Layout>
-      <div className="show flex-grow flex">
+      <div className="flex-grow flex">
         <p>result</p>
         <div className="ml-auto flex flex-col text-white pr-5">
           <button className="bg-gtahidiPurple p-3 rounded mt-5">
