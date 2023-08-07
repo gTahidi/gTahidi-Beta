@@ -7,23 +7,13 @@ import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
 import { Footer } from "@/components/Footer";
 import { SocialsSection } from "@/components/SocialsSection";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
-import { User } from "@/types";
-
-export const handleStart = (user: User, router: AppRouterInstance) => {
-  if (!user) {
-    router.push("/auth");
-  } else {
-    router.push("/app");
-  }
-};
 
 const page = () => {
   return (
     <>
       <Nav />
       <main>
-        <Welcome />
+        {/* <Welcome />
         <SocialsSection />
         <Why />
         <div className="bg-gtahidiCream p-[3%]" />
@@ -38,7 +28,7 @@ const page = () => {
             Start Creating
           </button>
         </section>
-        <Footer />
+        <Footer /> */}
       </main>
     </>
   );
