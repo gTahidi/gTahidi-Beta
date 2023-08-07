@@ -8,7 +8,7 @@ export const Testimony = ({
   person: string;
 }) => {
   return (
-    <div className="w-6/12">
+    <div className="w-full">
       <p>{text}</p>
       <p className="text-sm font-semibold">{person}</p>
     </div>

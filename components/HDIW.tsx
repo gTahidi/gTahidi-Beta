@@ -6,13 +6,13 @@ export const HDIW = () => {
   return (
     <section className="p-[5%] flex flex-col" id="how-it-works">
       <h2 className="section-title mx-auto">How Does it Work?</h2>
-      <div className="flex gap-x-10">
+      <div className="flex gap-x-10 flex-col sm:flex-row">
         <Image
           alt="lesson plan"
           src="/lessonplan.jpeg"
           width={600}
           height={600}
-          className="w-1/2 h-[400px] object-cover"
+          className="sm:w-1/2 h-[400px] object-cover w-full mb-5 sm:mb-0"
         />
         <div className="flex-grow">
           <HDIWStep

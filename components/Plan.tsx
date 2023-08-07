@@ -13,14 +13,14 @@ export const Plan = ({
 }) => {
   const split = price.split(" ");
   return (
-    <div className="bg-gtahidiLightBlue rounded-lg p-5 w-1/4">
+    <div className="bg-gtahidiLightBlue rounded-lg p-5 w-full mb-5 sm:mb-0 sm:w-1/4">
       <p className="font-semibold">{plan}</p>
       <p className="font-semibold text-sm text-gtahidiPurple my-3">
         {" "}
         <span className="text-2xl">{split[0]}</span>{" "}
         {split.filter((t, i) => i !== 0).join(" ")}
       </p>
-      <button className="bg-gtahidiPurple rounded py-2 w-3/4 text-white hover:w-4/5 transition-all">
+      <button className="bg-gtahidiPurple rounded py-2 w-full sm:w-3/4 text-white hover:w-4/5 transition-all">
         get {plan} plan
       </button>
       <div className="mt-5">
