@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const Attribution = () => {
   return (
-    <div className="flex items-end text-sm italic">
+    <div className="flex items-center sm:items-end text-sm italic mt-10 sm:mt-0">
       <a href="https://www.webtechafrica.com/">
         Website built by WebTech Africa
       </a>

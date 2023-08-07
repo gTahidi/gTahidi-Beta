@@ -3,11 +3,11 @@ import React from "react";
 
 export const Welcome = () => {
   return (
-    <header className="p-[5%] flex bg-gtahidiPurpleTwo justify-between">
-      <h1 className="text-3xl w-1/4">
+    <header className="p-[5%] flex bg-gtahidiPurpleTwo justify-between flex-col sm:flex-row">
+      <h1 className="text-3xl w-full sm:w-1/4">
         Karibu <br /> gTahidi
       </h1>
-      <div className="">
+      <div className="my-12 sm:my-0">
         <h2>
           Revolutionize your <br /> teaching with gTahidi AI.
         </h2>
@@ -24,7 +24,7 @@ export const Welcome = () => {
         alt="blob"
         height={600}
         width={600}
-        className="w-1/3"
+        className="mx-auto sm:mx-0 w-1/2 sm:w-1/3"
       />
     </header>
   );

@@ -11,7 +11,7 @@ const Why = () => {
   return (
     <section className="flex flex-col p-[5%]" id="benefits">
       <h2 className="mx-auto section-title">Why gTahidi?</h2>
-      <div className="w-full flex justify-between">
+      <div className="w-full flex justify-between flex-wrap">
         <ReasonTab
           icon={faHandHoldingDollar}
           text="It`s Free, STOP buying Lesson Plans and Schemes of Work"
