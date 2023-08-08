@@ -6,7 +6,7 @@ export const WorkSpace = () => {
       <div className="text-center py-2 mt-2">
         follow these simple steps to create a lesson plan today
       </div>
-      <form className="w-1/2 mx-auto my-auto text-sm">
+      <form className="w-3/4 sm:w-1/2 mx-auto my-auto text-sm">
         <div className="flex gap-x-2">
           <input
             type="text"

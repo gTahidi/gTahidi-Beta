@@ -4,12 +4,10 @@ import React from "react";
 const page = () => {
   return (
     <Layout>
-      <div className="flex-grow flex">
+      <div className="flex-grow flex p-5">
         <p>result</p>
-        <div className="ml-auto flex flex-col text-white pr-5">
-          <button className="bg-gtahidiPurple p-3 rounded mt-5">
-            Create Notes
-          </button>
+        <div className="ml-auto flex flex-col text-white">
+          <button className="bg-gtahidiPurple p-3 rounded">Create Notes</button>
           <button className="bg-gtahidiPurple p-3 rounded mt-5">
             Create Quizzes
           </button>
