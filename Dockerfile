@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the Next.js app
-RUN npm run build
+RUN next build
 
 # Specify the command to run on container start
 CMD [ "npm", "start" ]
