@@ -12,23 +12,25 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="bg-gtahidiCream h-screen w-screen flex flex-col">
       <div className="py-4 bg-black flex items-center px-5">
-        {isShowingSmallScreen ? (
-          <FontAwesomeIcon
-            icon={faXmark}
-            className="text-white h-5 w-5 sm:hidden"
-            onClick={() => setIsShowingSmallScreen((prev) => !prev)}
-          />
-        ) : (
-          <FontAwesomeIcon
-            icon={faBars}
-            className="text-white h-5 w-5 sm:hidden"
-            onClick={() => setIsShowingSmallScreen((prev) => !prev)}
-          />
-        )}
+        <div className="block sm:hidden">
+          {isShowingSmallScreen ? (
+            <FontAwesomeIcon
+              icon={faXmark}
+              className="text-white h-5 w-5 block sm:hidden"
+              onClick={() => setIsShowingSmallScreen((prev) => !prev)}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faBars}
+              className="text-white h-5 w-5 block sm:hidden"
+              onClick={() => setIsShowingSmallScreen((prev) => !prev)}
+            />
+          )}
+        </div>
         <p className="text-white text-center mx-auto">gTahidi Lesson Planner</p>
       </div>
       <div className="flex flex-grow relative">
-        <LeftNav className="hidden sm:block" />
+        <LeftNav className="hidden sm:flex" />
         <AnimatePresence>
           {isShowingSmallScreen && (
             <LeftNav className="absolute top-0 left-0 bottom-0 w-[50vw]" />
