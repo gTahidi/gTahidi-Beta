@@ -1,14 +1,39 @@
-import React from "react";
+"use client";
+
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
 import { LeftNav } from "./LeftNav";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [isShowingSmallScreen, setIsShowingSmallScreen] = useState(false);
+
   return (
     <main className="bg-gtahidiCream h-screen w-screen flex flex-col">
-      <p className="text-white text-center py-2 bg-black">
-        gTahidi Lesson Planner
-      </p>
-      <div className="flex flex-grow">
-        <LeftNav />
+      <div className="py-4 bg-black flex items-center px-5">
+        {isShowingSmallScreen ? (
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="text-white h-5 w-5 sm:hidden"
+            onClick={() => setIsShowingSmallScreen((prev) => !prev)}
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={faBars}
+            className="text-white h-5 w-5 sm:hidden"
+            onClick={() => setIsShowingSmallScreen((prev) => !prev)}
+          />
+        )}
+        <p className="text-white text-center mx-auto">gTahidi Lesson Planner</p>
+      </div>
+      <div className="flex flex-grow relative">
+        <LeftNav className="hidden sm:block" />
+        <AnimatePresence>
+          {isShowingSmallScreen && (
+            <LeftNav className="absolute top-0 left-0 bottom-0 w-[50vw]" />
+          )}
+        </AnimatePresence>
         {children}
       </div>
     </main>
