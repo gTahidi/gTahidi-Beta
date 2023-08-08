@@ -16,8 +16,6 @@ COPY . .
 # Install the 'next' package globally
 RUN npm install -g next
 
-# Build the Next.js app
-RUN next build
 
 # Specify the command to run on container start
 CMD [ "npm", "start" ]
