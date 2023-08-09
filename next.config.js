@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+const nextConfig = {
+    async rewrites() {
+      return [
+        {
+          source: '/(.*)',
+          destination: 'https://gtahidiai.com',
+        },
+      ];
+    },
+  };
+  
+  module.exports = nextConfig;
+  

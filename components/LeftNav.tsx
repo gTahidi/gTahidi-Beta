@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export const LeftNav = ({ className }: { className: string }) => {
-  const isSmallScreen: boolean = window ? window.innerWidth < 640 : false;
+  const isBrowser = typeof window !== "undefined"; // added this to Check if running in the browser environment
+
+  let isSmallScreen = false;
+  if (isBrowser) {
+    isSmallScreen = window.innerWidth < 640;
+  }
+
   return (
     <motion.div
       className={`bg-black w-1/5 text-white flex flex-col justify-between text-sm px-2 ${className}`}
