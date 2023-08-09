@@ -16,6 +16,7 @@ COPY . .
 # Install the 'next' package globally
 RUN npm install -g next
 
+EXPOSE 8080
 
 # Specify the command to run on container start
 CMD [ "npm", "start" ]
