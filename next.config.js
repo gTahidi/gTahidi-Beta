@@ -1,14 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    async rewrites() {
-      return [
-        {
-          source: '/(.*)',
-          destination: 'https://gtahidiai.com',
-        },
-      ];
-    },
-  };
+  /** @type {import('next').NextConfig} */
+  const nextConfig = {}
+  
+  module.exports = nextConfig
   
   module.exports = nextConfig;
   

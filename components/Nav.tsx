@@ -4,11 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import { SmallScreenNav } from "./SmallScreenNav";
+import { useRouter } from 'next/router';
+
 
 export const Nav = () => {
   const [showSmallScreenMenu, setShowSmallScreenMenu] = useState(false);
 
   const hideSmallScreenMenu = () => setShowSmallScreenMenu(false);
+
+
+
 
   return (
     <nav className="flex px-[5%] py-[2%] bg-gtahidiCream sticky top-0 right-0 left-0 z-50">
@@ -37,10 +42,13 @@ export const Nav = () => {
             Pricing
           </a>
         </div>
-        <button className="bg-gtahidiPurple p-3 rounded text-white font-medium">
+        <button className="bg-gtahidiPurple p-3 rounded text-white font-medium"
+         
+        >
           Start Creating
         </button>
       </ul>
     </nav>
   );
+
 };
