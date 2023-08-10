@@ -13,11 +13,12 @@ RUN npm install
 # Copy the content of the local src directory to the working directory
 COPY . .
 
-# Install the 'next' package globally
-RUN npm install -g next
+# Build the Next.js app for production
+RUN npm run build
 
 EXPOSE 80
 
 # Specify the command to run on container start
 CMD [ "npm", "start" ]
+
 
