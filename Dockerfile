@@ -16,7 +16,8 @@ COPY . .
 # Build the Next.js app for production
 RUN npm run build
 
-EXPOSE 80
+RUN ls -al .next
+
 
 # Specify the command to run on container start
 CMD [ "npm", "start" ]
