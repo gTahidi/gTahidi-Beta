@@ -4,8 +4,7 @@
 
 trigger:
 - main
-pool:
- name: Dantes PC
+
 
 resources:
 - repo: self
@@ -19,7 +18,7 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-  #vmImageName: 'ubuntu-latest'
+  vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
@@ -28,7 +27,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: Dantes PC
+      name: vmImageName
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
