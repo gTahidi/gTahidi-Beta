@@ -1,5 +1,6 @@
 import { addUserToWaitlist } from "@/firebase/firestore";
 import { modalTransition } from "@/framer/Motion";
+import { useGlobalData } from "@/hooks/useGlobalData";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import {
   faCircleNotch,
@@ -10,10 +11,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
+import { uid } from "uid";
 import { Overlay } from "./Overlay";
 
-export const WaitListModal = ({ closeFn }: { closeFn: () => void }) => {
+export const WaitListModal = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { closeFn } = useGlobalData();
   const emailRef = useRef<HTMLInputElement | null>(null);
 
   const handleJoiningWaitlist = async (e: React.FormEvent) => {
@@ -25,9 +28,6 @@ export const WaitListModal = ({ closeFn }: { closeFn: () => void }) => {
     const email = formData.get("email") as string;
     const phoneNumber = formData.get("phoneNumber") as string;
 
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Phone Number:", phoneNumber);
     const id = uid(8);
     await addUserToWaitlist(
       {
@@ -38,6 +38,7 @@ export const WaitListModal = ({ closeFn }: { closeFn: () => void }) => {
       id
     );
     setIsLoading(false);
+    closeFn();
   };
 
   return (

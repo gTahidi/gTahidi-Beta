@@ -46,10 +46,10 @@ export const Nav = () => {
           className="bg-gtahidiPurple p-3 rounded text-white font-medium"
           onClick={openWaitlistModal}
         >
-          Start Creating
+          Join the waitlist
         </button>
       </ul>
-      {isShowingWaitlistModal && <WaitListModal closeFn={closeFn} />}
+      {isShowingWaitlistModal && <WaitListModal />}
     </nav>
   );
 };
