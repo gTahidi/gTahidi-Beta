@@ -94,8 +94,6 @@ export const WaitListModal = () => {
             type="tel"
             placeholder="phone number (optional)"
             className="placeholder:text-sm p-2 border rounded-md w-full pl-9 outline-none text-sm"
-            required
-            ref={emailRef}
             name="phoneNumber"
           />
         </div>
