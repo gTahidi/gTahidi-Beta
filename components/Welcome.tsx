@@ -1,7 +1,11 @@
+"use client";
+
+import { useGlobalData } from "@/hooks/useGlobalData";
 import Image from "next/image";
 import React from "react";
 
 export const Welcome = () => {
+  const { openWaitlistModal } = useGlobalData();
   return (
     <header className="p-[5%] flex bg-gtahidiPurpleTwo justify-between flex-col sm:flex-row">
       <h1 className="text-3xl w-full sm:w-1/4">
@@ -15,8 +19,11 @@ export const Welcome = () => {
           Create Curriculum-Compliant Lesson Plans, Schemes of Work and
           Assessment Questions in Minutes.
         </p>
-        <button className="py-5 bg-gtahidiPurple rounded-lg text-white w-1/2">
-          Start Now
+        <button
+          className="py-5 bg-gtahidiPurple rounded-lg text-white w-1/2"
+          onClick={openWaitlistModal}
+        >
+          Join the waitlist
         </button>
       </div>
       <Image

@@ -1,19 +1,19 @@
 "use client";
+import { useGlobalData } from "@/hooks/useGlobalData";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import { SmallScreenNav } from "./SmallScreenNav";
-import { useRouter } from 'next/router';
-
+import { WaitListModal } from "./WaitListModal";
 
 export const Nav = () => {
   const [showSmallScreenMenu, setShowSmallScreenMenu] = useState(false);
 
+  const { closeFn, isShowingWaitlistModal, openWaitlistModal } =
+    useGlobalData();
+
   const hideSmallScreenMenu = () => setShowSmallScreenMenu(false);
-
-
-
 
   return (
     <nav className="flex px-[5%] py-[2%] bg-gtahidiCream sticky top-0 right-0 left-0 z-50">
@@ -42,13 +42,14 @@ export const Nav = () => {
             Pricing
           </a>
         </div>
-        <button className="bg-gtahidiPurple p-3 rounded text-white font-medium"
-         
+        <button
+          className="bg-gtahidiPurple p-3 rounded text-white font-medium"
+          onClick={openWaitlistModal}
         >
           Start Creating
         </button>
       </ul>
+      {isShowingWaitlistModal && <WaitListModal closeFn={closeFn} />}
     </nav>
   );
-
 };
