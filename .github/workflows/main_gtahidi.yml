@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://gtahidireg.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_840dceaa62af4bcd87a9962136e43120 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_4c4749354f0d40909ea9642d1a895688 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_388a14e1d02546b3840a9216d6e6e0a2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_3237420dffa946c0ad82f5887c63fade }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: gtahidireg.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_840dceaa62af4bcd87a9962136e43120 }}/gtahidigtahidibeta:${{ github.sha }}
+        tags: gtahidireg.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_388a14e1d02546b3840a9216d6e6e0a2 }}/gtahidigtahidibeta:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'gtahidi'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_04b71cd99c864a618e96b31e031ea333 }}
-        images: 'gtahidireg.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_840dceaa62af4bcd87a9962136e43120 }}/gtahidigtahidibeta:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9bde527ed7484bf3be88d5971fcd4f0b }}
+        images: 'gtahidireg.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_388a14e1d02546b3840a9216d6e6e0a2 }}/gtahidigtahidibeta:${{ github.sha }}'
