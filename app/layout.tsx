@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import { GlobalDataProvider } from "@/hooks/useGlobalData";
 
 export const metadata: Metadata = {
   title: "gTahidi AI",
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={DM_SANS.className}>
-      <body>{children}</body>
+      <body>
+        <GlobalDataProvider>{children}</GlobalDataProvider>
+      </body>
     </html>
   );
 }

@@ -4,7 +4,7 @@ import React from "react";
 const page = () => {
   return (
     <main className="bg-gtahidiCream h-screen w-screen flex flex-col">
-      <form className="mx-auto flex flex-col items-center mt-5  w-1/3">
+      <form className="mx-auto flex flex-col items-center mt-5 w-2/3 sm:w-1/3">
         <Image
           src="/logo.png"
           alt="logo"
