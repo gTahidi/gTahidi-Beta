@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '5773e0dc-37ea-4a74-94ac-713af7412cc6'
+  dockerRegistryServiceConnection: 'NEW_OR_CORRECT_ID'
   imageRepository: 'gtahidigtahidibeta'
   containerRegistry: 'gtahidireg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
