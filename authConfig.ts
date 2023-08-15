@@ -1,9 +1,9 @@
 // Config object to be passed to Msal on creation
 export const msalConfig = {
   auth: {
-    clientId: "b5c2e510-4a17-4feb-b219-e55aa5b74144",
+    clientId: process.env.NEXT_PUBLIC_MICROSOFT_CLIENT_ID!,
     authority: "https://login.microsoftonline.com/common",
-    redirectUri: "/",
+    redirectUri: "/auth",
     postLogoutRedirectUri: "/",
   },
   system: {
