@@ -1,3 +1,6 @@
+"use client";
+
+import { SignInButton } from "@/components/SignInButton";
 import {
   AuthenticatedTemplate,
   UnauthenticatedTemplate,
@@ -55,6 +58,7 @@ const page = () => {
       </AuthenticatedTemplate>
       <UnauthenticatedTemplate>
         <p>Please sign-in to see your profile information.</p>
+        <SignInButton />
       </UnauthenticatedTemplate>
     </>
   );
