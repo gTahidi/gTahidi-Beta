@@ -4,9 +4,9 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-import { LeftNav } from "./LeftNav";
+import { LeftNav } from "../../components/LeftNav";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isShowingSmallScreen, setIsShowingSmallScreen] = useState(false);
 
   return (
@@ -42,4 +42,4 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Layout;
+export default DashboardLayout;
