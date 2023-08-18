@@ -11,11 +11,13 @@ import Image from "next/image";
 import { faMicrosoft } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SignInWithMicrosoftButton } from "@/components/SignInWithMicrosoftButton";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+const Auth = () => {
+  const router = useRouter();
   return (
     <main className="bg-gtahidiCream h-screen w-screen flex flex-col">
-      <form className="mx-auto flex flex-col items-center mt-5 w-2/3 sm:w-1/3">
+      <div className="mx-auto flex flex-col items-center mt-5 w-2/3 sm:w-1/3">
         <Image
           src="/logo.png"
           alt="logo"
@@ -28,11 +30,11 @@ const page = () => {
           type="email"
           className="w-full text-sm p-3 focus:outline-gtahidiPurple focus:outline"
           placeholder="Email address"
-          required
         />
         <button
           type="submit"
           className="bg-gtahidiPurple p-3 rounded text-white font-medium w-full mt-2"
+          onClick={() => router.push("/dashboard")}
         >
           Continue
         </button>
@@ -45,7 +47,10 @@ const page = () => {
           <p className="mx-2 text-sm">OR</p>
           <div className="w-full bg-gray-500 h-[1px]" />
         </div>
-        <button className="p-3 rounded bg-white w-full text-sm">
+        <button
+          className="p-3 rounded bg-white w-full text-sm"
+          onClick={() => router.push("/dashboard")}
+        >
           Continue with{" "}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -55,7 +60,7 @@ const page = () => {
           />
         </button>
         <SignInWithMicrosoftButton />
-      </form>
+      </div>
     </main>
     // <>
     //   <AuthenticatedTemplate>
@@ -69,4 +74,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Auth;
