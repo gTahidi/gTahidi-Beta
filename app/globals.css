@@ -33,7 +33,7 @@ html {
 }
 
 .section-title {
-  @apply text-4xl font-semibold mb-7;
+  @apply text-4xl font-semibold mb-7 text-gtahidiDarkBlue;
 }
 
 .center-absolutely {
@@ -41,10 +41,10 @@ html {
 }
 
 .step > p {
-  background-color: #1e9bff;
+  @apply bg-gtahidiPink;
 }
 
 .step:hover > p {
-  background-color: #fa8a8c;
+  @apply bg-gtahidiDarkBlue;
   transition: 300ms ease;
 }

@@ -5,7 +5,9 @@ import { HDIWStep } from "./HDIWStep";
 export const HDIW = () => {
   return (
     <section className="p-[5%] flex flex-col" id="how-it-works">
-      <h2 className="section-title mx-auto">How Does it Work?</h2>
+      <h2 className="section-title mx-auto">
+        How it <span className="text-gtahidiPink">works</span>
+      </h2>
       <div className="flex gap-x-10 flex-col sm:flex-row">
         <Image
           alt="lesson plan"

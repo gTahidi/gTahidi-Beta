@@ -11,20 +11,20 @@ import { StartCreating } from "@/components/StartCreating";
 
 const page = () => {
   return (
-    <>
-      <Nav />
-      <main>
+    <main>
+      <section className="bg-gradient-to-b from-linearGradientPurple to-linearGradientPink">
+        <Nav />
         <Welcome />
-        <SocialsSection />
-        <Why />
-        <div className="bg-gtahidiCream p-[3%]" />
-        <HDIW />
-        <Testimonials />
-        <Pricing />
-        <StartCreating />
-        <Footer />
-      </main>
-    </>
+      </section>
+      {/* <SocialsSection /> */}
+      <Why />
+      {/* <div className="bg-gtahidiCream p-[3%]" /> */}
+      <HDIW />
+      <Testimonials />
+      <Pricing />
+      <StartCreating />
+      <Footer />
+    </main>
   );
 };
 
