@@ -1,6 +1,5 @@
 "use client";
 
-import { SignInButton } from "@/components/SignInButton";
 import {
   AuthenticatedTemplate,
   UnauthenticatedTemplate,
@@ -55,7 +54,6 @@ const page = () => {
             className="w-5 h-5 inline ml-2"
           />
         </button>
-
         <SignInWithMicrosoftButton />
       </form>
     </main>

@@ -3,16 +3,24 @@
 import { useIsAuthenticated, useMsal } from "@azure/msal-react";
 import { faMicrosoft } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 export const SignInWithMicrosoftButton = () => {
-  const { instance } = useMsal();
-  const isAuthenticated = useIsAuthenticated();
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  console.log(isAuthenticated);
+  const handleLogin = async (loginType: "popup" | "redirect") => {
+    setIsLoggingIn(true);
 
-  const handleLogin = (loginType: "popup" | "redirect") => {
-    //yes
+    //acquiring token
+    try {
+      const response = await axios.get("/api/signin");
+      console.log(response);
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+
+    setIsLoggingIn(false);
   };
 
   return (
@@ -21,7 +29,11 @@ export const SignInWithMicrosoftButton = () => {
       onClick={() => handleLogin("popup")}
     >
       <p>Continue with</p>
-      <FontAwesomeIcon icon={faMicrosoft} className="w-5 h-5 ml-2" />
+      <FontAwesomeIcon
+        icon={faMicrosoft}
+        className="w-5 h-5 ml-2"
+        spin={isLoggingIn}
+      />
     </div>
   );
 };

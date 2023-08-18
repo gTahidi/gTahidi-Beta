@@ -1,4 +1,4 @@
-import msal from "@azure/msal-node";
+import * as msal from "@azure/msal-node";
 import axios from "axios";
 import { msalConfig } from "./authConfig";
 
@@ -26,11 +26,6 @@ class AuthProvider {
 
       const authCodeUrlRequestParams = {
         state: state,
-
-        /**
-         * By default, MSAL Node will add OIDC scopes to the auth code url request. For more information, visit:
-         * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
-         */
         scopes: options.scopes || [],
         redirectUri: options.redirectUri,
       };

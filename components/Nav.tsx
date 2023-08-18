@@ -3,6 +3,7 @@ import { useGlobalData } from "@/hooks/useGlobalData";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { SmallScreenNav } from "./SmallScreenNav";
 import { WaitListModal } from "./WaitListModal";
@@ -14,6 +15,16 @@ export const Nav = () => {
     useGlobalData();
 
   const hideSmallScreenMenu = () => setShowSmallScreenMenu(false);
+
+  const router = useRouter();
+  const { user } = useGlobalData();
+  const handleStart = () => {
+    if (user) {
+      router.push("/dashboard");
+    } else {
+      router.push("/auth");
+    }
+  };
 
   return (
     <nav className="flex px-[5%] py-[2%] bg-gtahidiCream sticky top-0 right-0 left-0 z-50">
@@ -44,9 +55,9 @@ export const Nav = () => {
         </div>
         <button
           className="bg-gtahidiPurple p-3 rounded text-white font-medium"
-          onClick={openWaitlistModal}
+          onClick={handleStart}
         >
-          Join the waitlist
+          Start Creating
         </button>
       </ul>
       {isShowingWaitlistModal && <WaitListModal />}

@@ -1,34 +1,105 @@
-/*
- * Copyright (c) Microsoft Corporation. All rights reserved.
- * Licensed under the MIT License.
- */
+import * as msal from "@azure/msal-node";
 
-/**
- * Configuration object to be passed to MSAL instance on creation.
- * For a full list of MSAL Node configuration parameters, visit:
- * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/configuration.md
- */
-export const msalConfig = {
+const confidentialClientConfig = {
   auth: {
-    clientId: process.env.NEXT_PUBLIC_NEXT_PUBLIC_CLIENT_ID, // 'Application (client) ID' of app registration in Azure portal - this value is a GUID
-    authority:
-      process.env.NEXT_PUBLIC_CLOUD_INSTANCE! +
-      process.env.NEXT_PUBLIC_TENANT_ID, // Full directory URL, in the form of https://login.microsoftonline.com/<tenant>
-    clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET, // Client secret generated from the app registration in Azure portal
+    clientId: process.env.NEXT_PUBLIC_APP_CLIENT_ID,
+    authority: process.env.NEXT_PUBLIC_SIGN_UP_SIGN_IN_POLICY_AUTHORITY,
+    clientSecret: process.env.NEXT_PUBLIC_APP_CLIENT_SECRET,
+    knownAuthorities: [process.env.NEXT_PUBLIC_AUTHORITY_DOMAIN], //This must be an array
+    redirectUri: process.env.NEXT_PUBLIC_APP_REDIRECT_URI,
+    validateAuthority: false,
   },
   system: {
     loggerOptions: {
-      loggerCallback(loglevel: any, message: any, containsPii: any) {
-        console.log({ message, loglevel, containsPii });
+      //@ts-ignore
+      loggerCallback(loglevel, message, containsPii) {
+        console.log(message);
       },
       piiLoggingEnabled: false,
-      logLevel: 3,
+      logLevel: msal.LogLevel.Verbose,
     },
   },
 };
 
-export const REDIRECT_URI = process.env.NEXT_PUBLIC_REDIRECT_URI;
-export const POST_LOGOUT_REDIRECT_URI =
-  process.env.NEXT_PUBLIC_POST_LOGOUT_REDIRECT_URI;
-export const GRAPH_ME_ENDPOINT =
-  process.env.NEXT_PUBLIC_GRAPH_API_ENDPOINT + "v1.0/me";
+export const confidentialClientApplication =
+  // @ts-ignore
+  new msal.ConfidentialClientApplication(confidentialClientConfig);
+
+//<ms_docref_api_config>
+const apiConfig = {
+  webApiScopes: [
+    `https://${process.env.NEXT_PUBLIC_TENANT_NAME}.onmicrosoft.com/tasks-api/tasks.read`,
+  ],
+  anonymousUri: "http://localhost:5000/public",
+  protectedUri: "http://localhost:5000/hello",
+};
+
+const APP_STATES = {
+  LOGIN: "login",
+  CALL_API: "call_api",
+};
+
+/**
+ * Request Configuration
+ * We manipulate these two request objects below
+ * to acquire a token with the appropriate claims.
+ */
+const authCodeRequest: any = {
+  redirectUri: confidentialClientConfig.auth.redirectUri,
+};
+
+const tokenRequest: any = {
+  redirectUri: confidentialClientConfig.auth.redirectUri,
+};
+
+export const sessionConfig = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false, // set this to true on production
+  },
+};
+
+/**
+ * This method is used to generate an auth code request
+ * @param {string} authority: the authority to request the auth code from
+ * @param {array} scopes: scopes to request the auth code for
+ * @param {string} state: state of the application, tag a request
+ * @param {Object} res: express middleware response object
+ */
+
+const getAuthCode = (
+  authority: any,
+  scopes: any,
+  state: any,
+  res: {
+    redirect: (arg0: string) => void;
+    status: (arg0: number) => {
+      (): any;
+      new (): any;
+      send: { (arg0: any): void; new (): any };
+    };
+  }
+) => {
+  // prepare the request
+  console.log("Fetching Authorization code");
+  authCodeRequest.authority = authority;
+  authCodeRequest.scopes = scopes;
+  authCodeRequest.state = state;
+
+  //Each time you fetch Authorization code, update the authority in the tokenRequest configuration
+  tokenRequest.authority = authority;
+
+  // request an authorization code to exchange for a token
+  return confidentialClientApplication
+    .getAuthCodeUrl(authCodeRequest)
+    .then((response) => {
+      console.log("\nAuthCodeURL: \n" + response);
+      //redirect to the auth code URL/send code to
+      res.redirect(response);
+    })
+    .catch((error) => {
+      res.status(500).send(error);
+    });
+};
