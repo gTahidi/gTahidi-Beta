@@ -5,22 +5,29 @@ import { faMicrosoft } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export const SignInWithMicrosoftButton = () => {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
+  const router = useRouter();
+
   const handleLogin = async (loginType: "popup" | "redirect") => {
-    setIsLoggingIn(true);
+    // setIsLoggingIn(true);
 
-    //acquiring token
-    try {
-      const response = await axios.get("/api/signin");
-      console.log(response);
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
+    // //acquiring token
+    // try {
+    //   const response = await axios.get("/api/signin");
+    //   console.log(response);
+    // } catch (error) {
+    //   console.error("An error occurred:", error);
+    // }
 
-    setIsLoggingIn(false);
+    // setIsLoggingIn(false);
+
+    // temporarily
+
+    router.push("/dashboard");
   };
 
   return (
