@@ -1,5 +1,6 @@
 "use client";
 
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { createContext, useContext, useState } from "react";
@@ -14,13 +15,11 @@ export const DEFAULT_PRICE = {
 type GlobalData = {
   isShowingWaitlistModal: boolean;
   handleStart: () => void;
-  user: User | null;
 };
 
 export const globalDataContext = createContext<GlobalData>({
   isShowingWaitlistModal: false,
   handleStart: () => {},
-  user: null,
 });
 
 export const GlobalDataProvider = ({
@@ -29,16 +28,11 @@ export const GlobalDataProvider = ({
   children: React.ReactNode;
 }) => {
   const [isShowingWaitlistModal, setIsShowWaitlistModal] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
 
   const router = useRouter();
 
   const handleStart = () => {
-    if (user) {
-      router.push("/dashboard");
-    } else {
-      router.push("/auth");
-    }
+    router.push("/dashboard");
   };
 
   return (
@@ -46,7 +40,6 @@ export const GlobalDataProvider = ({
       value={{
         isShowingWaitlistModal,
         handleStart,
-        user,
       }}
     >
       {children}

@@ -6,9 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ElementType } from "react";
 import { InteractionType } from "@azure/msal-browser";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const Dashboard = () => {
   const router = useRouter();
+
   return (
     <div className="flex-grow flex flex-col">
       <div className="text-center py-2 mt-2">
