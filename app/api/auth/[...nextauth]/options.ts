@@ -19,4 +19,10 @@ export const options: NextAuthOptions = {
       tenantId: process.env.AZURE_AD_TENANT_ID as string,
     }),
   ],
+  pages: {
+    signIn: "/auth/signin",
+    // error: "/auth/error", // Error code passed in query string as ?error=
+    // verifyRequest: "/auth/verify-request", // (used for check email message)
+    // newUser: "/auth/signup", // New users will be directed here on first sign in (leave the property out if not of interest)
+  },
 };
