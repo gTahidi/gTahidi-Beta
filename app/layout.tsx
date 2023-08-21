@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { GlobalDataProvider } from "@/hooks/useGlobalData";
+import { SessionProvider } from "next-auth/react";
+import { NextAuthSessionProviderWrapper } from "@/components/NextAuthSessionProviderWrapper";
 
 export const metadata: Metadata = {
   title: "gTahidi AI",
@@ -21,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={DM_SANS.className}>
       <body>
-        <GlobalDataProvider>{children}</GlobalDataProvider>
+        <NextAuthSessionProviderWrapper>
+          <GlobalDataProvider>{children}</GlobalDataProvider>
+        </NextAuthSessionProviderWrapper>
       </body>
     </html>
   );
