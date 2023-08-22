@@ -39,12 +39,12 @@ export const options: NextAuthOptions = {
         // Docs: https://next-auth.js.org/configuration/providers/credentials
         const user = {
           id: "42",
-          email: "amohprincethedoctor@gmail.com",
+          email: "Amohprincethedoctor@gmail.com",
           password: "nextauth",
         };
 
         if (
-          credentials?.email === user.email &&
+          credentials?.email.toLowerCase() === user.email.toLowerCase() &&
           credentials?.password === user.password
         ) {
           return user;
@@ -58,6 +58,6 @@ export const options: NextAuthOptions = {
     signIn: "/auth/signin",
     // error: "/auth/error", // Error code passed in query string as ?error=
     // verifyRequest: "/auth/verify-request", // (used for check email message)
-    // newUser: "/auth/signup", // New users will be directed here on first sign in (leave the property out if not of interest)
+    newUser: "/auth/signup", // New users will be directed here on first sign in (leave the property out if not of interest)
   },
 };
