@@ -15,6 +15,7 @@ export const DEFAULT_PRICE = {
 type GlobalData = {
   isShowingWaitlistModal: boolean;
   handleStart: () => void;
+  closeFn: () => void;
 };
 
 export const globalDataContext = createContext<GlobalData>({
@@ -35,16 +36,21 @@ export const GlobalDataProvider = ({
     router.push("/dashboard");
   };
 
+  const closeFn = () => {
+    setIsShowWaitlistModal(false);
+  };
+
   return (
-    <globalDataContext.Provider
-      value={{
-        isShowingWaitlistModal,
-        handleStart,
-      }}
-    >
-      {children}
-    </globalDataContext.Provider>
-  );
+      <globalDataContext.Provider
+        value={{
+          isShowingWaitlistModal,
+          handleStart,
+          closeFn,
+        }}
+      >
+        {children}
+      </globalDataContext.Provider>
+    );
 };
 
 export const useGlobalData = () => useContext(globalDataContext);
