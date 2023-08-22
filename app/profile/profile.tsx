@@ -7,7 +7,8 @@ import {
   InteractionRequiredAuthError,
 } from "@azure/msal-browser";
 import React, { useEffect, useState } from "react";
-import { ProfileData } from "@/components/ProfileData";
+import ProfileData from "@/components/ProfileData";
+
 
 const ErrorComponent = ({ error }: any) => {
   return <p>An Error Occurred: {error.errorCode}</p>;
