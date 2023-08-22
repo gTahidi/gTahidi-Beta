@@ -10,12 +10,14 @@ export const UserTab = () => {
           <p>{session?.user?.name}</p>
           <p>{session?.user?.email}</p>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={session?.user?.image as string}
-          alt={session?.user?.name + `s photo`}
-          className="w-10 h-10 outline outline-white outline-2 rounded-full"
-        />
+        {session.user.image && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={session?.user?.image as string}
+            alt={session?.user?.name + `s photo`}
+            className="w-10 h-10 outline outline-white outline-2 rounded-full"
+          />
+        )}
       </div>
     );
   }
