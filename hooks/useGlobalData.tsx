@@ -61,10 +61,7 @@ export const GlobalDataProvider: React.FC<GlobalDataProviderProps> = ({ children
 };
 
 export const useGlobalData = () => useContext(globalDataContext);
-      >
-        {children}
-      </globalDataContext.Provider>
-    );
+
 };
 
 export const useGlobalData = () => useContext(globalDataContext);
