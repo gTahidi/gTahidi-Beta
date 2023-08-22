@@ -1,7 +1,11 @@
 "use client";
 
-import { useRouter } from "next/router";
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { createContext, useContext, useState } from "react";
+import { User } from "../types";
+import { toast } from "react-toastify";
 
 export const DEFAULT_PRICE = {
     currency: "USD",
@@ -10,58 +14,43 @@ export const DEFAULT_PRICE = {
 };
 
 type GlobalData = {
-    isShowingWaitlistModal: boolean;
-    handleStart: () => void;
-    closeFn: () => void;
+  isShowingWaitlistModal: boolean;
+  handleStart: () => void;
+  notify: (message: string) => void;
 };
 
-const initialGlobalData: GlobalData = {
-    isShowingWaitlistModal: false,
-    handleStart: () => { },
-    closeFn: () => { },
-};
+export const globalDataContext = createContext<GlobalData>({
+  isShowingWaitlistModal: false,
+  handleStart: () => {},
+  notify: () => {},
+});
 
-export const globalDataContext = createContext<GlobalData>(initialGlobalData);
+export const GlobalDataProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const [isShowingWaitlistModal, setIsShowWaitlistModal] = useState(false);
 
-interface GlobalDataProviderProps {
-    children: React.ReactNode;
-}
+  const router = useRouter();
 
-export const GlobalDataProvider: React.FC<GlobalDataProviderProps> = ({ children }) => {
-    const [isShowingWaitlistModal, setIsShowWaitlistModal] = useState(false);
+  const handleStart = () => {
+    router.push("/dashboard");
+  };
 
-    // Conditionally use useRouter
-    const router = typeof window !== 'undefined' ? useRouter() : undefined;
+  const notify = (message: string) => toast(message);
 
-    useEffect(() => {
-        // Check if router is defined before using it
-        const handleStart = () => {
-            if (router) {
-                router.push("/dashboard");
-            }
-        };
-        handleStart();
-    }, [router]);
-
-    const closeFn = () => {
-        setIsShowWaitlistModal(false);
-    };
-
-    return (
-        <globalDataContext.Provider
-            value={{
-                isShowingWaitlistModal,
-                handleStart,
-                closeFn,
-            }}
-        >
-            {children}
-        </globalDataContext.Provider>
-    );
-};
-
-export const useGlobalData = () => useContext(globalDataContext);
-
+  return (
+    <globalDataContext.Provider
+      value={{
+        isShowingWaitlistModal,
+        handleStart,
+        notify,
+      }}
+    >
+      {children}
+    </globalDataContext.Provider>
+  );
 };
 
 export const useGlobalData = () => useContext(globalDataContext);
