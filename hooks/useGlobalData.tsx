@@ -15,12 +15,14 @@ export const DEFAULT_PRICE = {
 type GlobalData = {
   isShowingWaitlistModal: boolean;
   handleStart: () => void;
-  closeFn: () => void;
+  closeFn?: () => void;  // Make it optional using '?'
 };
+
 
 export const globalDataContext = createContext<GlobalData>({
   isShowingWaitlistModal: false,
   handleStart: () => {},
+  closeFn: () => {},  // Add this line
 });
 
 export const GlobalDataProvider = ({
