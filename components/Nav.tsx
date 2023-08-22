@@ -12,7 +12,7 @@ import { WaitListModal } from "./WaitListModal";
 export const Nav = () => {
   const [showSmallScreenMenu, setShowSmallScreenMenu] = useState(false);
 
-  const { handleStart, isShowingWaitlistModal } = useGlobalData();
+  const { handleStart, isShowingWaitlistModal, closeFn } = useGlobalData();
 
   const hideSmallScreenMenu = () => setShowSmallScreenMenu(false);
 
@@ -45,7 +45,7 @@ export const Nav = () => {
         </div>
         <PillButton onClick={handleStart}>Start Creating</PillButton>
       </ul>
-      {isShowingWaitlistModal && <WaitListModal />}
+      {isShowingWaitlistModal && <WaitListModal closeFn={closeFn} />}
     </nav>
   );
 };
