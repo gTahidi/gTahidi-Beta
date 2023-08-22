@@ -8,9 +8,9 @@ import { User } from "../types";
 import { toast } from "react-toastify";
 
 export const DEFAULT_PRICE = {
-  currency: "USD",
-  basic: 49,
-  advanced: 69,
+    currency: "USD",
+    basic: 49,
+    advanced: 69,
 };
 
 type GlobalData = {

@@ -30,15 +30,15 @@ export const WaitListModal = () => {
 
     const id = uid(8);
     await addUserToWaitlist(
-      {
-        name,
-        email,
-        phoneNumber,
-      },
-      id
-    );
-    setIsLoading(false);
-    closeFn();
+          {
+            name,
+            email,
+            phoneNumber,
+          },
+          id
+        );
+        setIsLoading(false);
+        closeFn();
   };
 
   return (
@@ -51,10 +51,10 @@ export const WaitListModal = () => {
         <div className="flex justify-between items-center mb-5">
           <h2 className="font-semibold text-lg">Joining the waitlist!</h2>
           <FontAwesomeIcon
-            icon={faCircleXmark}
-            className="cursor-pointer text-purple-900 h-4 w-4"
-            onClick={closeFn}
-          />
+                      icon={faCircleXmark}
+                      className="cursor-pointer text-purple-900 h-4 w-4"
+                      onClick={closeFn}
+                    />
         </div>
         <p className="text-xs text-gray-500">Please enter your details</p>
         <div className="relative">
@@ -101,10 +101,10 @@ export const WaitListModal = () => {
           {isLoading ? <FontAwesomeIcon icon={faCircleNotch} spin /> : "Join"}
         </button>
         <div className="flex justify-center" onClick={closeFn}>
-          <p className="mx-auto py-2 cursor-pointer text-sm font-medium">
-            Cancel
-          </p>
-        </div>
+                  <p className="mx-auto py-2 cursor-pointer text-sm font-medium">
+                    Cancel
+                  </p>
+                </div>
       </motion.form>
     </Overlay>
   );
