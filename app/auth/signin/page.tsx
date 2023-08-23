@@ -146,12 +146,27 @@ const SignIn = ({ context }: { context: "sign-in" | "sign-up" }) => {
         </button>
       </form>
       <div className="mx-auto flex flex-col items-center mt-5 w-2/3 sm:w-1/3">
-        <p className="text-sm mt-5">
-          Don`t have an account?{" "}
-          <Link className="text-green-500 cursor-pointer" href={"/auth/signup"}>
-            Sign up
-          </Link>
-        </p>
+        {context === "sign-up" ? (
+          <p className="text-sm mt-5">
+            Already have an account?{" "}
+            <Link
+              className="text-green-500 cursor-pointer"
+              href={"/auth/signin"}
+            >
+              Sign in
+            </Link>
+          </p>
+        ) : (
+          <p className="text-sm mt-5">
+            Don`t have an account?{" "}
+            <Link
+              className="text-green-500 cursor-pointer"
+              href={"/auth/signup"}
+            >
+              Sign up
+            </Link>
+          </p>
+        )}
         <p className="text-sm text-green-500">Forgot password ?</p>
         <div className="text-center flex items-center w-full mt-5">
           <div className="w-full bg-gray-500 h-[1px]" />
