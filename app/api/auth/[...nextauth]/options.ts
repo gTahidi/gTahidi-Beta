@@ -39,7 +39,7 @@ export const options: NextAuthOptions = {
         // Docs: https://next-auth.js.org/configuration/providers/credentials
         const user = {
           id: "42",
-          email: "Amohprincethedoctor@gmail.com",
+          email: "testuser@gmail.com",
           password: "nextauth",
         };
 
