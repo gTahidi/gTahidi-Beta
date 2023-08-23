@@ -7,12 +7,11 @@ import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import { PillButton } from "./PillButton";
 import { SmallScreenNav } from "./SmallScreenNav";
-import { WaitListModal } from "./WaitListModal";
 
 export const Nav = () => {
   const [showSmallScreenMenu, setShowSmallScreenMenu] = useState(false);
 
-  const { handleStart, isShowingWaitlistModal } = useGlobalData();
+  const { handleStart } = useGlobalData();
 
   const hideSmallScreenMenu = () => setShowSmallScreenMenu(false);
 
@@ -45,7 +44,6 @@ export const Nav = () => {
         </div>
         <PillButton onClick={handleStart}>Start Creating</PillButton>
       </ul>
-      {isShowingWaitlistModal && <WaitListModal />}
     </nav>
   );
 };
