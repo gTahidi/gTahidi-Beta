@@ -203,21 +203,6 @@ const SignIn = ({ context }: { context: "sign-in" | "sign-up" }) => {
 
 export default SignIn;
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  const session = await getSession(context);
-
-  if (session) {
-    return { redirect: { destination: "/dashboard" } };
-  }
-
-  const providers = await getProviders();
-  const csrfToken = await getCsrfToken(context);
-
-  return {
-    props: { providers: providers ?? [], csrfToken },
-  };
-}
-
 function isValidEmail(email: string | null) {
   if (!email) {
     return false;
