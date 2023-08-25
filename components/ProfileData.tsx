@@ -6,4 +6,4 @@ const ProfileData = () => {
     );
 };
 
-export
+export default ProfileData;
