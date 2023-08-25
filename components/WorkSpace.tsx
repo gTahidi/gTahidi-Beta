@@ -1,10 +1,12 @@
-import React from 'react';
+import { createNewLesson, updateLessonData, BASE_URL } from '../redux/topics/lessonSlice';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createNewLesson, updateLessonData } from '../redux/topics/lessonSlice'; // Update the path
+import axios from 'axios';
 
 export const WorkSpace = () => {
   const dispatch = useDispatch();
   const lessonData = useSelector(state => state.lesson.lessonData);
+  const [responseText, setResponseText] = useState('');
 
   const handleChange = (e) => {
     dispatch(updateLessonData({ [e.target.name]: e.target.value }));
@@ -14,6 +16,17 @@ export const WorkSpace = () => {
     e.preventDefault();
     try {
       await dispatch(createNewLesson(lessonData));
+
+      const response = await axios.post(BASE_URL, {
+        messages: [
+          {
+            role: 'user',
+            content: `create a lesson plan on\n'subject':'${lessonData.subject}',\n'substrand': '${lessonData.subStrand}',\n'topic': '${lessonData.topic}',\n'duration': '${lessonData.duration}',\n'grade': ${lessonData.grade}`
+          }
+        ]
+      });
+
+      setResponseText(response.data.choices[0]?.message?.content || '');
     } catch (error) {
       console.error("Failed to create lesson plan:", error);
     }
@@ -75,6 +88,11 @@ export const WorkSpace = () => {
         >
           Create Lesson Plan
         </button>
+
+        <div>
+          <h2>AI Response:</h2>
+          <p>{responseText}</p>
+        </div>
       </form>
     </div>
   );
