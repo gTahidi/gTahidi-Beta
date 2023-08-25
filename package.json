@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "gtahidi",
   "version": "0.1.0",
   "private": true,
@@ -38,5 +39,50 @@
     "typewriter": "^9.1.0",
     "typewriter-effect": "^2.20.1",
     "uid": "^2.0.2"
+=======
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.7.0",
+    "owl.carousel": "^2.3.4",
+    "popper.js": "^1.16.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-owl-carousel": "^2.3.3",
+    "react-scripts": "^2.1.3",
+    "react-scroll": "^1.8.9",
+    "scrollit": "^1.0.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+>>>>>>> master
   }
 }
