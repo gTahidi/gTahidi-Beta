@@ -3,7 +3,6 @@
 import { useGlobalData } from "@/hooks/useGlobalData";
 import Image from "next/image";
 import React from "react";
-import { PilledButton } from "./PilledButton";
 import Typewriter from "typewriter-effect";
 
 export const Welcome = () => {

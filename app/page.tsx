@@ -5,9 +5,8 @@ import Why from "@/components/Why";
 import React from "react";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
-import { SocialsSection } from "@/components/SocialsSection";
-import { Footer } from "@/components/Footer";
 import { StartCreating } from "@/components/StartCreating";
+import { Footer } from "@/components/Footer";
 
 const page = () => {
   return (
