@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'ffba1889-352d-4bff-baba-f94609f123dd'
+  dockerRegistryServiceConnection: '9355f153-2cf9-412e-88f7-f2b30e0150d8'
   imageRepository: 'gtahidigtahidibeta'
   containerRegistry: 'gtahidireg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
@@ -37,3 +37,4 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          latest

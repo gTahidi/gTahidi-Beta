@@ -35,7 +35,12 @@ export const Welcome = () => {
           Create Curriculum-Compliant Lesson Plans, Schemes of Work and
           Assessment Questions in Minutes.
         </p>
-        <PilledButton onClick={handleStart}>Start now</PilledButton>
+        <button
+          className="py-5 bg-gtahidiPurple rounded-lg text-white w-1/2"
+          onClick={handleStart}
+        >
+          Start Creating
+        </button>
       </div>
       <Image
         src="/teacher-with-board.png"
