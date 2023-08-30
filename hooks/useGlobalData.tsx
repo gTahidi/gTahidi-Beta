@@ -8,19 +8,17 @@ import { User } from "../types";
 import { toast } from "react-toastify";
 
 export const DEFAULT_PRICE = {
-    currency: "USD",
-    basic: 49,
-    advanced: 69,
+  currency: "USD",
+  basic: 49,
+  advanced: 69,
 };
 
 type GlobalData = {
-  isShowingWaitlistModal: boolean;
   handleStart: () => void;
   notify: (message: string) => void;
 };
 
 export const globalDataContext = createContext<GlobalData>({
-  isShowingWaitlistModal: false,
   handleStart: () => {},
   notify: () => {},
 });
@@ -30,8 +28,6 @@ export const GlobalDataProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [isShowingWaitlistModal, setIsShowWaitlistModal] = useState(false);
-
   const router = useRouter();
 
   const handleStart = () => {
@@ -43,7 +39,6 @@ export const GlobalDataProvider = ({
   return (
     <globalDataContext.Provider
       value={{
-        isShowingWaitlistModal,
         handleStart,
         notify,
       }}

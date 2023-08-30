@@ -8,15 +8,19 @@
 # testing
 /coverage
 
+<<<<<<< HEAD
 # next.js
 /.next/
 /out/
 
+=======
+>>>>>>> master
 # production
 /build
 
 # misc
 .DS_Store
+<<<<<<< HEAD
 *.pem
 
 # debug
@@ -34,7 +38,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/.vscode
+# /.vscode
 
 .env
 

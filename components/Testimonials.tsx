@@ -9,44 +9,23 @@ export const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState<boolean>(true);
   return (
     <section
-      className="px-[5%] py-[15%] sm:p-[5%] bg-gtahidiCream flex gap-x-10 items-center justify-between flex-col sm:flex-row"
+      className="px-[5%] py-[15%] sm:p-[5%] bg-gtahidiCream"
       id="testimonials"
     >
-      <h2 className="section-title sm:w-1/3 w-full">
-        It`s like having a team of dedicated Teachers but in your pocket
+      <h2 className="section-title sm:w-1/3 w-full mx-auto">
+        What Our <span className="text-gtahidiPink">Users</span> Say
       </h2>
-      <div className="flex-grow flex items-center">
-        {currentTestimonial ? (
-          <Testimony
-            person="- Samuel Mwaniki, Teacher, TNB Kenya"
-            text="gTahidi has changed, how I prepare for classes, and teach. It`s seamless and easy."
-          />
-        ) : (
-          <Testimony
-            person="- Emily Mwanzia, Senior teacher."
-            text="Being a Kenyan CBC teacher involves a lot of planning and paperwork. GTahidi AI will lightened workload and considerably, free me uptime for teachers to focus more on actual teaching."
-          />
-        )}
-        <div className="w-10">
-          <div
-            className="w-8 h-8 bg-white rounded-full relative cursor-pointer hover:w-10 hover:h-10 transition-all mx-auto"
-            onClick={() => setCurrentTestimonial((prev) => !prev)}
-          >
-            <FontAwesomeIcon
-              icon={faCaretUp}
-              className="w-5 h-5 center-absolutely"
-            />
-          </div>
-          <div
-            className="w-8 h-8 bg-white rounded-full relative cursor-pointer hover:w-10 hover:h-10 transition-all mt-5 mx-auto"
-            onClick={() => setCurrentTestimonial((prev) => !prev)}
-          >
-            <FontAwesomeIcon
-              icon={faCaretDown}
-              className="w-5 h-5 center-absolutely"
-            />
-          </div>
-        </div>
+      <div className="flex w-3/4 mx-auto gap-x-3">
+        <Testimony
+          person="Samuel Mwaniki"
+          text="gTahidi has changed, how I prepare for classes, and teach. It`s seamless and easy."
+          position="Teacher, TNB Kenya"
+        />
+        <Testimony
+          person="Emily Mwanzia"
+          position="Senior teacher"
+          text="Being a Kenyan CBC teacher involves a lot of planning and paperwork. GTahidi AI will lightened workload and considerably, free me uptime for teachers to focus more on actual teaching."
+        />
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ export const HDIWStep = ({
 }) => {
   return (
     <div className="flex p-[3%] rounded-md bg-gtahidiLightBlue mb-5 transition-colors step">
-      <p className="mr-5 h-max w-max py-1 px-2 rounded text-white shadow text-sm transition-colors">
+      <p className="mr-5 h-max w-max py-1 px-3 rounded-full text-white shadow text-sm transition-colors">
         {step}
       </p>
       <div>

@@ -5,26 +5,27 @@ import Why from "@/components/Why";
 import React from "react";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
-import { SocialsSection } from "@/components/SocialsSection";
 import { Footer } from "@/components/Footer";
-import { StartCreating } from "@/components/StartCreating";
+import { Contact } from "@/components/Contact";
+import { SocialsSection } from "@/components/SocialsSection";
+import { Faqs } from "@/components/Faqs";
 
 const page = () => {
   return (
-    <>
-      <Nav />
-      <main>
+    <main>
+      <section className="bg-gradient-to-b from-linearGradientPurple to-linearGradientPink">
+        <Nav />
         <Welcome />
-        <SocialsSection />
-        <Why />
-        <div className="bg-gtahidiCream p-[3%]" />
-        <HDIW />
-        <Testimonials />
-        <Pricing />
-        <StartCreating />
-        <Footer />
-      </main>
-    </>
+      </section>
+      <SocialsSection />
+      <Why />
+      <HDIW />
+      <Testimonials />
+      <Pricing />
+      <Faqs />
+      <Contact />
+      <Footer />
+    </main>
   );
 };
 
