@@ -5,8 +5,10 @@ import Why from "@/components/Why";
 import React from "react";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
-import { StartCreating } from "@/components/StartCreating";
 import { Footer } from "@/components/Footer";
+import { Contact } from "@/components/Contact";
+import { SocialsSection } from "@/components/SocialsSection";
+import { Faqs } from "@/components/Faqs";
 
 const page = () => {
   return (
@@ -15,13 +17,13 @@ const page = () => {
         <Nav />
         <Welcome />
       </section>
-      {/* <SocialsSection /> */}
+      <SocialsSection />
       <Why />
-      {/* <div className="bg-gtahidiCream p-[3%]" /> */}
       <HDIW />
       <Testimonials />
       <Pricing />
-      <StartCreating />
+      <Faqs />
+      <Contact />
       <Footer />
     </main>
   );

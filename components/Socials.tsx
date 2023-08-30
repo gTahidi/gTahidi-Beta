@@ -1,5 +1,5 @@
 import {
-  faXTwitter,
+  faTwitter,
   faFacebook,
   faInstagram,
   faLinkedin,
@@ -12,7 +12,7 @@ export const Socials = () => {
   return (
     <>
       <a href="https://twitter.com/UjaoTech">
-        <FontAwesomeIcon icon={faXTwitter} className="w-5 h-5" />
+        <FontAwesomeIcon icon={faTwitter} className="w-5 h-5" />
       </a>
       <a href="https://www.facebook.com/Ujaotech2023">
         <FontAwesomeIcon

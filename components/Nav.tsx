@@ -16,8 +16,8 @@ export const Nav = () => {
   const hideSmallScreenMenu = () => setShowSmallScreenMenu(false);
 
   return (
-    <nav className="flex px-[5%] py-[2%] bg-gtahidiCream sticky top-0 right-0 left-0 z-50">
-      <ul className="sm:ml-auto flex gap-x-4 text-sm items-center w-full sm:w-max justify-between sm:justify-normal">
+    <nav className="flex px-[5%] py-[2%]">
+      <ul className="sm:ml-auto flex gap-x-4 text-sm items-center w-full sm:w-2/3 justify-between sm:justify-normal">
         <FontAwesomeIcon
           icon={faBars}
           className="h-5 w-5 text-gtahidiPurple hidden"
@@ -28,7 +28,7 @@ export const Nav = () => {
             <SmallScreenNav hideSmallScreenMenu={hideSmallScreenMenu} />
           )}
         </AnimatePresence>
-        <div className="sm:flex gap-x-4 hidden">
+        <div className="sm:flex gap-x-4 hidden w-10/12 justify-between text-gtahidiDarkBlue font-semibold">
           <a href="#benefits" className="cursor-pointer">
             Benefits
           </a>
@@ -40,6 +40,9 @@ export const Nav = () => {
           </a>
           <a className="cursor-pointer" href="#pricing">
             Pricing
+          </a>
+          <a className="cursor-pointer" href="#contact">
+            Contact Us
           </a>
         </div>
         <PillButton onClick={handleStart}>Start Creating</PillButton>

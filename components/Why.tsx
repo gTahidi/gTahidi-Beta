@@ -2,7 +2,7 @@ import React from "react";
 import {
   faClock,
   faDownload,
-  faHandHoldingDollar,
+  faHandHoldingUsd,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import ReasonTab from "./ReasonTab";
@@ -15,7 +15,7 @@ const Why = () => {
       </h2>
       <div className="w-full flex justify-between flex-wrap">
         <ReasonTab
-          icon={faHandHoldingDollar}
+          icon={faHandHoldingUsd}
           text="It`s Free, STOP buying Lesson Plans and Schemes of Work"
         />
         <ReasonTab icon={faClock} text="Saves You Time (Of Course 👌)" />
