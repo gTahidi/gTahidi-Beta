@@ -61,6 +61,8 @@ module.exports = {
         linearGradientPurple: "#D8DFF1",
         linearGradientPink: "#F8EFE4",
         gtahidiDarkBlue: "#494080",
+        dashboardPurple: "#494080",
+        dashboardBackground: "#F5F8FF",
       },
       borderRadius: {
         lg: "var(--radius)",
