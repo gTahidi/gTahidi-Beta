@@ -9,6 +9,7 @@ import {
   faRightFromBracket,
   faSpa,
   faUpload,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -43,7 +44,13 @@ export const dashboardTabs = [
   },
 ];
 
-export const LeftNav = ({ className }: { className: string }) => {
+export const LeftNav = ({
+  className,
+  closeSmallScreenMenu,
+}: {
+  className: string;
+  closeSmallScreenMenu?: () => void;
+}) => {
   const isBrowser = typeof window !== "undefined"; // added this to Check if running in the browser environment
 
   let isSmallScreen = false;
@@ -61,6 +68,11 @@ export const LeftNav = ({ className }: { className: string }) => {
       exit={isSmallScreen ? { x: -1000 } : undefined}
       transition={isSmallScreen ? { duration: 0.5, type: "tween" } : undefined}
     >
+      <FontAwesomeIcon
+        icon={faXmark}
+        className="sm:hidden h-5 w-5 ml-auto my-5"
+        onClick={closeSmallScreenMenu}
+      />
       <div className="flex items-center py-4 px-2 rounded cursor-pointer border-2 mt-2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/gtahidi_logo 2.png" alt="" className="w-5 h-5 mr-3" />

@@ -11,16 +11,23 @@ import { signOut, useSession } from "next-auth/react";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const [isShowingSmallScreen, setIsShowingSmallScreen] = useState(false);
 
+  const closeSmallScreenMenu = () => {
+    setIsShowingSmallScreen(false);
+  };
+
   return (
     <main className="bg-dashboardBackground h-screen w-screen flex">
       <LeftNav className="hidden sm:flex" />
       <AnimatePresence>
         {isShowingSmallScreen && (
-          <LeftNav className="absolute top-0 left-0 bottom-0 w-[50vw]" />
+          <LeftNav
+            className="absolute top-0 left-0 bottom-0 w-[50vw]"
+            closeSmallScreenMenu={closeSmallScreenMenu}
+          />
         )}
       </AnimatePresence>
       <div className="flex-grow">
-        <div className="py-4 flex items-center px-5 border-b border-b-gtahidiDarkBlue">
+        <div className="py-4 px-[5%] flex items-center border-b border-b-gtahidiDarkBlue">
           <div className="block sm:hidden">
             {isShowingSmallScreen ? (
               <FontAwesomeIcon
