@@ -12,7 +12,7 @@ const Dashboard = () => {
   const router = useRouter();
 
   return (
-    <div className="flex-grow flex flex-col p-[5%]">
+    <div className="flex-grow dashboard-container">
       <div className="bg-white shadow-lg p-[2%] rounded-md">
         <p className="text-gtahidiDarkBlue font-semibold">
           Welcome to gTahidi AI

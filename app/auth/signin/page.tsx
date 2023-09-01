@@ -43,6 +43,7 @@ const SignIn = ({ context }: { context: "sign-in" | "sign-up" }) => {
   const emailRef = useRef<HTMLInputElement | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
   const params = useSearchParams();
+  const router = useRouter();
 
   const { data: session, status } = useSession();
 
@@ -69,8 +70,9 @@ const SignIn = ({ context }: { context: "sign-in" | "sign-up" }) => {
 
     if (status === "authenticated") {
       toast.success("you are signed in");
+      router.push("/dashboard");
     }
-  }, [status]);
+  }, [router, status]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

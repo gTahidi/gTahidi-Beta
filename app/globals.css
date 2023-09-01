@@ -119,3 +119,7 @@ html {
   @apply bg-gtahidiDarkBlue;
   transition: 300ms ease;
 }
+
+.dashboard-container {
+  @apply px-[5%] py-5 flex flex-col gap-y-5;
+}
