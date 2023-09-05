@@ -15,6 +15,7 @@ const Dashboard = () => {
   const [subStrand, setSubStrand] = useState("");
   const [grade, setGrade] = useState("");
   const [duration, setDuration] = useState("");
+  const [content, setContent] = useState(""); 
 
   const createLessonPlan = async () => {
     // Check if all input fields are filled
@@ -50,6 +51,9 @@ const Dashboard = () => {
       toast.success("Lesson created successfully.");
 
       router.push("/dashboard/result");
+
+      // Set the content state with the response content
+      setContent(response.data.choices[0].message.content);
     } catch (error) {
 
       console.error("API Error:", error);
