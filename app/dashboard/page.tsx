@@ -1,43 +1,60 @@
 "use client";
 
-import { IMsalContext, MsalAuthenticationTemplate } from "@azure/msal-react";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import React, { ElementType } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createLessonPlanService } from "../../redux/slices/createService";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { toast } from "react-toastify"; // Import Toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import the Toastify CSS
+
 
 const Dashboard = () => {
-  const dispatch = useDispatch();
-  const response = useSelector((state) => state.dashboard.response);
-  const [inputData, setInputData] = useState({
-    subject: "",
-    topic: "",
-    subStrand: "",
-    grade: "",
-    duration: "",
-  });
+  const router = useRouter();
+  const [subject, setSubject] = useState("");
+  const [topic, setTopic] = useState("");
+  const [subStrand, setSubStrand] = useState("");
+  const [grade, setGrade] = useState("");
+  const [duration, setDuration] = useState("");
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setInputData({
-      ...inputData,
-      [name]: value,
-    });
-  };
+  const createLessonPlan = async () => {
+    // Check if all input fields are filled
+    if (!subject || !topic || !subStrand || !grade || !duration) {
+      toast.error("Please fill in all input fields."); 
+      return;
+    }
 
-  const handleCreateLessonPlan = () => {
-    const requestData = {
-      messages: [
-        {
-          role: "user",
-          content: `create a lesson plan on\n'subject':'${inputData.subject}',\n'substrand': '${inputData.subStrand}',\n'topic': '${inputData.topic}',\n'duration': '${inputData.duration}',\n'grade': ${inputData.grade}\n`,
+    try {
+      const apiKey = "7052b7dc980e44e3a52ec96cb9bf3792";
+      const apiUrl =
+        "https://ailogic.openai.azure.com/openai/deployments/gtahidiAI/chat/completions?api-version=2023-03-15-preview";
+
+      const requestBody = {
+        messages: [
+          {
+            role: "user",
+            content: `create a lesson plan on\n'subject':'${subject}',\n'substrand':'${subStrand}',\n'topic':'${topic}',\n'duration':'${duration}',\n'grade':${grade}\n`,
+          },
+        ],
+      };
+
+      // Make  request
+      const response = await axios.post(apiUrl, requestBody, {
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": apiKey, 
         },
-      ],
-    };
+      });
 
-    dispatch(createLessonPlanService(requestData));
+      // Handle the API response as needed
+      console.log("API Response:", response.data);
+      toast.success("Lesson created successfully.");
+
+      router.push("/dashboard/result");
+    } catch (error) {
+
+      console.error("API Error:", error);
+      toast.error("Failed to create the lesson plan."); 
+    }
   };
 
   return (
@@ -47,72 +64,61 @@ const Dashboard = () => {
           Welcome to gTahidi AI
         </p>
         <p className="font-semibold">
-          Create Personalized Lesson Plans, Notes, and Quizzes With Our Advanced AI
+          Create Personalized Lesson Plans, Notes And Quizzes With Our Advanced
+          AI
         </p>
       </div>
-      <p className="py-2 mt-2 bg-dashboardPurple text-white p-[2%] text-sm rounded-md">
-        Create your well-organized lesson plan with just a click of a button.
-        Fill in all the necessary fields according to your preference.
-      </p>
+      {/* Input fields for parameters */}
       <div className="w-3/4 sm:w-1/2 mx-auto mt-10 text-sm">
         <div className="flex gap-x-2">
           <input
             type="text"
-            name="subject"
             placeholder="Enter Subject"
-            value={inputData.subject}
-            onChange={handleInputChange}
             className="w-1/2 p-3 rounded"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
           />
           <input
             type="text"
-            name="topic"
             placeholder="Enter Topic"
-            value={inputData.topic}
-            onChange={handleInputChange}
             className="w-1/2 p-3 rounded"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
           />
         </div>
         <div className="flex gap-x-2 mt-5">
           <input
             type="text"
-            name="subStrand"
-            placeholder="Enter Substrand"
-            value={inputData.subStrand}
-            onChange={handleInputChange}
+            placeholder="Enter Sub strand"
             className="w-1/2 p-3 rounded"
+            value={subStrand}
+            onChange={(e) => setSubStrand(e.target.value)}
           />
           <input
             type="text"
-            name="grade"
             placeholder="Enter Grade"
-            value={inputData.grade}
-            onChange={handleInputChange}
             className="w-1/2 p-3 rounded"
+            value={grade}
+            onChange={(e) => setGrade(e.target.value)}
           />
         </div>
         <input
           type="text"
-          name="duration"
           placeholder="Enter Duration in minutes"
-          value={inputData.duration}
-          onChange={handleInputChange}
           className="w-full p-3 mt-5"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
         />
+        {/* Button to create the lesson plan */}
         <button
           type="submit"
           className="text-center w-full mt-7 bg-gtahidiPink py-3 text-white rounded-full"
-          onClick={handleCreateLessonPlan}
+          onClick={createLessonPlan}
         >
           Create Lesson Plan
         </button>
       </div>
-      {response && (
-        <div>
-          {/* Display the API response data here */}
-          <pre>{JSON.stringify(response, null, 2)}</pre>
-        </div>
-      )}
+      <ToastContainer/>
     </div>
   );
 };
