@@ -3,10 +3,9 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { toast } from "react-toastify"; // Import Toastify
+import { toast } from "react-toastify"; 
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Import the Toastify CSS
-
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const Dashboard = () => {
   const router = useRouter();
@@ -15,10 +14,10 @@ const Dashboard = () => {
   const [subStrand, setSubStrand] = useState("");
   const [grade, setGrade] = useState("");
   const [duration, setDuration] = useState("");
-  const [content, setContent] = useState(""); 
+  // const [content, setContent] = useState(""); 
 
   const createLessonPlan = async () => {
-    // Check if all input fields are filled
+
     if (!subject || !topic || !subStrand || !grade || !duration) {
       toast.error("Please fill in all input fields."); 
       return;
@@ -53,7 +52,7 @@ const Dashboard = () => {
       router.push("/dashboard/result");
 
       // Set the content state with the response content
-      setContent(response.data.choices[0].message.content);
+      // setContent(response.data.choices[0].message.content);
     } catch (error) {
 
       console.error("API Error:", error);
@@ -72,7 +71,10 @@ const Dashboard = () => {
           AI
         </p>
       </div>
-      {/* Input fields for parameters */}
+      <p className="py-2 mt-2 bg-dashboardPurple text-white p-[2%] text-sm rounded-md">
+        Create your well organised lesson plan with just a click of a button.
+        Fill in all the necessary fields according to your preference.
+      </p>
       <div className="w-3/4 sm:w-1/2 mx-auto mt-10 text-sm">
         <div className="flex gap-x-2">
           <input
