@@ -7,11 +7,11 @@ const Result = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // Define the URL with the objectId as a parameter
+
     const apiUrl =
       "https://serverlogic.azurewebsites.net/api/fetchData?objectId=64f9527731f5dc105a19849a";
 
-    // Fetch data from the API using Axios
+
     axios
       .get(apiUrl)
       .then((response) => {
