@@ -1,18 +1,28 @@
 "use client";
 
 import { IMsalContext, MsalAuthenticationTemplate } from "@azure/msal-react";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBookBible,
+  faBookOpen,
+  faPen,
+  faSpa,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ElementType } from "react";
 import { InteractionType } from "@azure/msal-browser";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { ResourceDistributionChart } from "@/components/ResourceDistributionChart";
+import TopTutors from "@/components/TopTutors";
 
 const Dashboard = () => {
-  const router = useRouter();
+  const plans = 20;
+  const notes = 12;
+  const quizzes = 30;
 
   return (
-    <div className="flex-grow dashboard-container">
+    <div className="flex-grow dashboard-container flex flex-col overflow-y-auto">
       <div className="bg-white shadow-lg p-[2%] rounded-md">
         <p className="text-gtahidiDarkBlue font-semibold">
           Welcome to gTahidi AI
@@ -26,43 +36,32 @@ const Dashboard = () => {
         Create your well organised lesson plan with just a click of a button.
         Fill in all the necessary fields according to your preference.
       </p>
-      <div className="w-3/4 sm:w-1/2 mx-auto mt-10 text-sm">
-        <div className="flex gap-x-2">
-          <input
-            type="text"
-            placeholder="Enter Subject"
-            className="w-1/2 p-3 rounded"
-          />
-          <input
-            type="text"
-            placeholder="Enter Topic"
-            className="w-1/2 p-3 rounded"
-          />
+      <div className="flex justify-between gap-3 flex-col sm:flex-row">
+        <div className="bg-black p-5 rounded-md flex items-start justify-between text-white w-full sm:w-1/3">
+          <div>
+            <p className="font-semibold text-4xl">{plans}</p>
+            <p className="font-medium text-sm">Lesson Plans</p>
+          </div>
+          <FontAwesomeIcon icon={faSpa} className="w-5 h-5" />
         </div>
-        <div className="flex gap-x-2 mt-5">
-          <input
-            type="text"
-            placeholder="Enter Sub strand"
-            className="w-1/2 p-3 rounded"
-          />
-          <input
-            type="text"
-            placeholder="Enter Grade"
-            className="w-1/2 p-3 rounded"
-          />
+        <div className="bg-white p-5 rounded-md flex items-start justify-between text-gtahidiDarkBlue w-full sm:w-1/3">
+          <div>
+            <p className="font-medium text-4xl">{quizzes}</p>
+            <p className="font-medium text-sm">Quizzes</p>
+          </div>
+          <FontAwesomeIcon icon={faPen} className="w-5 h-5" />
         </div>
-        <input
-          type="text"
-          placeholder="Enter Duration in minutes"
-          className="w-full p-3 mt-5"
-        />
-        <button
-          type="submit"
-          className="text-center w-full mt-7 bg-gtahidiPink py-3 text-white rounded-full"
-          onClick={() => router.push("/dashboard/result")}
-        >
-          Create Lesson Plan
-        </button>
+        <div className="p-5 rounded-md flex items-start justify-between bg-gtahidiDarkBlue text-black w-full sm:w-1/3">
+          <div>
+            <p className="font-medium text-4xl">{notes}</p>
+            <p className="font-medium text-sm">Notes</p>
+          </div>
+          <FontAwesomeIcon icon={faBookOpen} className="w-5 h-5" />
+        </div>
+      </div>
+      <div className="flex-grow gap-3 flex">
+        <ResourceDistributionChart />
+        <TopTutors />
       </div>
     </div>
   );
