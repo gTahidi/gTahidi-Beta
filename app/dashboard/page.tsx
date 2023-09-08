@@ -1,11 +1,11 @@
 "use client";
 
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { toast } from "react-toastify"; 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
+import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -14,49 +14,39 @@ const Dashboard = () => {
   const [subStrand, setSubStrand] = useState("");
   const [grade, setGrade] = useState("");
   const [duration, setDuration] = useState("");
-  // const [content, setContent] = useState(""); 
 
+  // Function to create a lesson plan
   const createLessonPlan = async () => {
-
-    if (!subject || !topic || !subStrand || !grade || !duration) {
-      toast.error("Please fill in all input fields."); 
-      return;
-    }
-
     try {
-      const apiKey = "7052b7dc980e44e3a52ec96cb9bf3792";
-      const apiUrl =
-        "https://ailogic.openai.azure.com/openai/deployments/gtahidiAI/chat/completions?api-version=2023-03-15-preview";
-
+      // Prepare the request body
       const requestBody = {
-        messages: [
-          {
-            role: "user",
-            content: `create a lesson plan on\n'subject':'${subject}',\n'substrand':'${subStrand}',\n'topic':'${topic}',\n'duration':'${duration}',\n'grade':${grade}\n`,
-          },
-        ],
+        subject: subject,
+        topic: topic,
+        substrand: subStrand,
+        minutes: duration,
+        grade: grade,
       };
 
-      // Make  request
-      const response = await axios.post(apiUrl, requestBody, {
-        headers: {
-          "Content-Type": "application/json",
-          "api-key": apiKey, 
-        },
-      });
+      // Make a POST request using Axios
+      const response = await axios.post(
+        "https://serverlogic.azurewebsites.net/api/createLessonPlan",
+        requestBody
+      );
 
-      // Handle the API response as needed
-      console.log("API Response:", response.data);
-      toast.success("Lesson created successfully.");
+      // Handle success
+      if (response.status === 200) {
+        toast.success("Lesson plan created successfully!");
+        
+        // Extract the objectId from the response
+        const objectId = response.data._id;
 
-      router.push("/dashboard/result");
-
-      // Set the content state with the response content
-      // setContent(response.data.choices[0].message.content);
+        // Navigate to the Result page with the objectId
+        router.push(`/result?objectId=${objectId}`);
+      }
     } catch (error) {
-
-      console.error("API Error:", error);
-      toast.error("Failed to create the lesson plan."); 
+      // Handle errors
+      console.error("Error creating lesson plan:", error);
+      toast.error("Error creating lesson plan. Please try again later.");
     }
   };
 
