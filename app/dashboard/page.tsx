@@ -15,10 +15,10 @@ const Dashboard = () => {
   const [grade, setGrade] = useState("");
   const [duration, setDuration] = useState("");
 
-  // Function to create a lesson plan
+  
   const createLessonPlan = async () => {
     try {
-      // Prepare the request body
+     
       const requestBody = {
         subject: subject,
         topic: topic,
@@ -27,24 +27,24 @@ const Dashboard = () => {
         grade: grade,
       };
 
-      // Make a POST request using Axios
+      
       const response = await axios.post(
         "https://serverlogic.azurewebsites.net/api/createLessonPlan",
         requestBody
       );
 
-      // Handle success
+      
       if (response.status === 200) {
         toast.success("Lesson plan created successfully!");
         
-        // Extract the objectId from the response
+       
         const objectId = response.data._id;
 
-        // Navigate to the Result page with the objectId
+        
         router.push(`/result?objectId=${objectId}`);
       }
     } catch (error) {
-      // Handle errors
+      
       console.error("Error creating lesson plan:", error);
       toast.error("Error creating lesson plan. Please try again later.");
     }
