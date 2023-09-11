@@ -33,6 +33,8 @@ const Dashboard = () => {
         requestBody
       );
 
+      // console.log("Response from server:", response);
+
       
       if (response.status === 200) {
         toast.success("Lesson plan created successfully!");
@@ -42,6 +44,7 @@ const Dashboard = () => {
 
         
         router.push(`/result?objectId=${objectId}`);
+        
       }
     } catch (error) {
       

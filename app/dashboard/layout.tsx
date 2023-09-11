@@ -16,7 +16,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <main className="bg-dashboardBackground h-screen w-screen flex">
+    <main className="bg-dashboardBackground h-screen w-screen flex overflow-x-hidden">
       <LeftNav className="hidden sm:flex" />
       <AnimatePresence>
         {isShowingSmallScreen && (
@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           />
         )}
       </AnimatePresence>
-      <div className="flex-grow">
+      <div className="flex-grow flex flex-col">
         <div className="py-4 px-[5%] flex items-center border-b border-b-gtahidiDarkBlue">
           <div className="block sm:hidden">
             {isShowingSmallScreen ? (

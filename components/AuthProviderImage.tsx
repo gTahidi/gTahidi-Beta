@@ -13,7 +13,7 @@ export const AuthProviderImage = ({
 }: {
   providerId: LiteralUnion<BuiltInProviderType, string>;
 }) => {
-  if (providerId === "azure-ad") {
+  if (providerId === "azure-ad-b2c") {
     return <FontAwesomeIcon icon={faMicrosoft} className="h-5 w-5" />;
   }
   if (providerId === "google") {
