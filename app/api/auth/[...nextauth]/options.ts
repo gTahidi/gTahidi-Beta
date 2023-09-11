@@ -7,20 +7,20 @@ import CredentialsProvider from "next-auth/providers/credentials";
 export const options: NextAuthOptions = {
   providers: [
     GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_SECRET as string,
+      clientId: process.env.GITHUB_CLIENT_ID ?? throw new Error("GITHUB_CLIENT_ID is not defined"),
+      clientSecret: process.env.GITHUB_SECRET ?? throw new Error("GITHUB_SECRET is not defined"),
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID ?? throw new Error("GOOGLE_CLIENT_ID is not defined"),
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? throw new Error("GOOGLE_CLIENT_SECRET is not defined"),
     }),
-    // AzureADProvider({
-    //   clientId: process.env.AZURE_AD_CLIENT_ID as string,
-    //   clientSecret: process.env.AZURE_AD_CLIENT_SECRET as string,
-    //   tenantId: process.env.AZURE_AD_TENANT_ID as string,
-    // }),
     AzureADB2CProvider({
-      tenantId: process.env.AZURE_AD_B2C_TENANT_NAME,
+      tenantId: process.env.AZURE_AD_B2C_TENANT_NAME ?? throw new Error("AZURE_AD_B2C_TENANT_NAME is not defined"),
+      clientId: process.env.AZURE_AD_B2C_CLIENT_ID ?? throw new Error("AZURE_AD_B2C_CLIENT_ID is not defined"),
+      clientSecret: process.env.AZURE_AD_B2C_CLIENT_SECRET ?? throw new Error("AZURE_AD_B2C_CLIENT_SECRET is not defined"),
+      primaryUserFlow: process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW ?? throw new Error("AZURE_AD_B2C_PRIMARY_USER_FLOW is not defined"),
+      authorization: { params: { scope: "offline_access openid" } },
+    }),
       clientId: process.env.AZURE_AD_B2C_CLIENT_ID!,
       clientSecret: process.env.AZURE_AD_B2C_CLIENT_SECRET!,
       primaryUserFlow: process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW,
