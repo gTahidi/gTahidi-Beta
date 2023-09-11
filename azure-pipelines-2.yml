@@ -29,12 +29,15 @@ stages:
           vmImage: $(vmImageName)
         steps:
           - task: Docker@2
-            displayName: Pull the latest Docker image
+            displayName: Login to Container Registry
             inputs:
-              command: pull
-              repository: $(imageRepository)
+              command: login
               containerRegistry: $(dockerRegistryServiceConnection)
-              tags: latest
+
+          - script: |
+              docker pull $(containerRegistry)/$(imageRepository):latest || true
+            displayName: Pull the latest Docker image
+
           - task: Docker@2
             displayName: Build and push an image to container registry
             inputs:
