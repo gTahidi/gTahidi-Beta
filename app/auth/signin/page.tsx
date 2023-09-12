@@ -75,22 +75,31 @@ const SignIn = ({ context }: { context: "sign-in" | "sign-up" }) => {
   }, [router, status]);
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-
-    const formData = new FormData(formRef?.current!);
-
-    const userData = {
-      email: formData.get("email"),
-      password: formData.get("password"),
-      csrfToken: formData.get("csrfToken"),
+      e.preventDefault();
+  
+      const formData = new FormData(formRef?.current!);
+  
+      const email = formData.get("email");
+      const password = formData.get("password");
+      const csrfToken = formData.get("csrfToken");
+  
+      if (!email || !password) {
+        console.error("Email or password is missing");
+        return;
+      }
+  
+      try {
+        signIn("credentials", {
+          email,
+          password,
+          csrfToken,
+          redirect: true,
+          callbackUrl: "/dashboard",
+        });
+      } catch (error) {
+        console.error(error);
+      }
     };
-
-    signIn("credentials", {
-      ...userData,
-      redirect: true,
-      callbackUrl: "/dashboard",
-    });
-  };
 
   return (
     <main className="bg-gtahidiCream h-screen w-screen flex flex-col">
