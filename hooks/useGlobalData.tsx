@@ -28,10 +28,9 @@ export const GlobalDataProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const router = useRouter();
-
   const handleStart = () => {
-    router.push("/dashboard");
+    // Initiate the Azure AD B2C sign-in/sign-up process
+    signIn("azure-ad-b2c", { redirect: true, callbackUrl: "/dashboard" });
   };
 
   const notify = (message: string) => toast(message);
@@ -47,5 +46,6 @@ export const GlobalDataProvider = ({
     </globalDataContext.Provider>
   );
 };
+
 
 export const useGlobalData = () => useContext(globalDataContext);
