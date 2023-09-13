@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from "next-auth";
 import AzureADB2CProvider from "next-auth/providers/azure-ad-b2c";
 
-export const options: NextAuthOptions = {
+export const options: NextAuthOptions = {authsetup
     providers: [
         AzureADB2CProvider({
             tenantId: process.env.AZURE_AD_B2C_TENANT_NAME,
@@ -23,4 +23,4 @@ export const options: NextAuthOptions = {
         signIn: undefined,
         newUser: undefined,
     },
-};
+
