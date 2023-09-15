@@ -10,25 +10,25 @@ const Page = () => {
   const [quizzes, setQuizzes] = useState([]);
   
   useEffect(() => {
-    // Define the API URL
+    
     const apiUrl = "https://serverlogic.azurewebsites.net/api/fetchQuizz";
 
-    // Define the request headers
+    
     const headers = {
       lessonPlanId: "64ffe2b8c107100e95e43731",
     };
 
-    // Make a GET request to fetch the quizzes
+    
     axios
       .get(apiUrl, { headers })
       .then((response) => {
-        // Set the fetched quizzes in the state
+        
         setQuizzes(response.data);
       })
       .catch((error) => {
         console.error("Error fetching quizzes:", error);
       });
-  }, []); // Empty dependency array to fetch quizzes once when the component mounts
+  }, []); 
 
   return (
     <div className="dashboard-container">

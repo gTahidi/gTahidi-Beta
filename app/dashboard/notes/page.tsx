@@ -11,26 +11,23 @@ const Page = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    // Define the API URL
     const apiUrl =
       "https://serverlogic.azurewebsites.net/api/fetchNotes?code=15isWYDPB2miM2wIhlzmIS-ASI4IptnoV0PH8XOR41mdAzFuB_LnoA==";
 
-    // Define the request headers
     const headers = {
       lessonplanId: "65017336a27f3e2cb4ee83a4",
     };
 
-    // Make a GET request to fetch the notes
     axios
       .get(apiUrl, { headers })
       .then((response) => {
-        // Set the fetched notes in the state
+
         setNotes(response.data);
       })
       .catch((error) => {
         console.error("Error fetching notes:", error);
       });
-  }, []); // Empty dependency array to fetch notes once when the component mounts
+  }, []); 
 
   return (
     <div className="dashboard-container">
