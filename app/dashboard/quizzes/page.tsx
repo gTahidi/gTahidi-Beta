@@ -8,35 +8,31 @@ import axios from "axios";
 
 const Page = () => {
   const [quizzes, setQuizzes] = useState([]);
-  
+
   useEffect(() => {
-    
-    const apiUrl = "https://serverlogic.azurewebsites.net/api/fetchQuizz";
+    const lessonPlanId = "64ffe2b8c107100e95e43731";
+    const apiUrl = `https://serverlogic.azurewebsites.net/api/fetchQuizz?lessonPlanId=${lessonPlanId}`;
 
-    
-    const headers = {
-      lessonPlanId: "64ffe2b8c107100e95e43731",
-    };
-
-    
     axios
-      .get(apiUrl, { headers })
+      .get(apiUrl)
       .then((response) => {
-        
         setQuizzes(response.data);
       })
       .catch((error) => {
         console.error("Error fetching quizzes:", error);
       });
-  }, []); 
+  }, []);
 
   return (
     <div className="dashboard-container">
       <DashboardPageTitle>Quizzes</DashboardPageTitle>
       <DashboardPageButton text="Create New Quiz" />
-      <div className="flex flex-wrap sm:flex-nowrap justify-between gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {quizzes.map((quiz, i) => (
-          <QuizButton quiz={quiz} key={i} />
+          <div key={i} className="bg-white rounded-lg shadow-md p-4">
+            <h3 className="text-xl font-semibold mb-2">{quiz.title}</h3>
+            <p className="text-gray-600">{quiz.description}</p>
+          </div>
         ))}
       </div>
     </div>
