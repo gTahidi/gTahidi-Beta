@@ -90,8 +90,19 @@ const ResultPage = () => {
 
   return (
     <div className="flex-grow flex flex-col p-5">
+      <div className="ml-auto  mt-0  flex flex-col text-white">
+        <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
+          Create Notes
+        </button>
+        <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
+          Create Quizzes
+        </button>
+      </div>
+      
       <h2 className="text-xl font-bold mb-3">{subject}</h2>
       <h3 className="text-lg font-semibold mb-2">{topic}</h3>
+
+      
       <div className="text-gray-700 mb-5">
         {content.split("\n").map((paragraph, index) => (
           <p key={index} className="mb-2">
@@ -104,14 +115,7 @@ const ResultPage = () => {
         <p>Grade: {grade}</p>
         <p>Minutes: {minutes}</p>
       </div>
-      <div className="ml-auto top-0 flex flex-col text-white">
-        <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
-          Create Notes
-        </button>
-        <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
-          Create Quizzes
-        </button>
-      </div>
+      
     </div>
   );
 };
