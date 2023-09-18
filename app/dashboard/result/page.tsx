@@ -1,28 +1,25 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation";  // Changed from 'next/navigation'
 import axios from "axios";
-import { useRouter } from "next/router";
 
-const Result = () => {
-  const [data, setData] = useState(null);
+const ResultPage = () => {
   const router = useRouter();
 
+  const [lessonPlan, setLessonPlan] = useState(null);
+
   useEffect(() => {
-    // Retrieve the objectId from the query parameters
-    const objectId = router.query.objectId;
+    const storedPlan = localStorage.getItem('lessonPlan');
+    if (storedPlan) {
+      const parsedPlan = JSON.parse(storedPlan);
+      setLessonPlan(parsedPlan.lessonPlan);  // Access the nested lessonPlan key
+    }
+  }, []);
 
-    const apiUrl = `https://serverlogic.azurewebsites.net/api/fetchData?objectId=${objectId}`;
+  if (!lessonPlan) return <div className="flex justify-center items-center h-screen">Loading...</div>;
 
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, [router]);
+  const { subject, topic, substrand, grade, minutes, content } = lessonPlan;
 
   const handleCreateNotes = () => {
     const apiUrl = "https://serverlogic.azurewebsites.net/api/createNotes";
@@ -30,11 +27,22 @@ const Result = () => {
       lessonPlanId: "65017336a27f3e2cb4ee83a4",
     };
 
-    axios
-      .post(apiUrl, requestBody)
-      .then(() => {
+    axios.post(apiUrl, requestBody)
+      .then((response) => {
+        let createdNotes = localStorage.getItem('createdNotes');
+        if (!createdNotes) {
+          createdNotes = [];
+        } else {
+          createdNotes = JSON.parse(createdNotes);
+        }
+        createdNotes.push(response.data);
+        localStorage.setItem('createdNotes', JSON.stringify(createdNotes));
+
+
+        console.log("jephuneh", createdNotes);
+
         // Navigate to the dashboard page
-        router.push("/dashboard");
+        router.push("/dashboard/notes");
       })
       .catch((error) => {
         console.error("Error creating notes:", error);
@@ -47,11 +55,19 @@ const Result = () => {
       lessonPlanId: "64fdc074b65c6e8c6613b4f6",
     };
 
-    axios
-      .post(apiUrl, requestBody)
-      .then(() => {
+    axios.post(apiUrl, requestBody)
+      .then((response) => {
+        let createdQuizzes = localStorage.getItem('createdQuizzes');
+        if (!createdQuizzes) {
+          createdQuizzes = [];
+        } else {
+          createdQuizzes = JSON.parse(createdQuizzes);
+        }
+        createdQuizzes.push(response.data);
+        localStorage.setItem('createdQuizzes', JSON.stringify(createdQuizzes));
+
         // Navigate to the dashboard page
-        router.push("/dashboard");
+        router.push("/dashboard/quizzes");
       })
       .catch((error) => {
         console.error("Error creating quiz:", error);
@@ -59,35 +75,26 @@ const Result = () => {
   };
 
   return (
-    <div className="flex-grow flex p-5">
-      <div className="flex-grow overflow-y-auto max-h-screen">
-        {data ? (
-          <div className="max-h-screen">
-            <h2 className="text-lg font-bold mb-3">{data.subject}</h2>
-            <h3 className="text-md font-semibold mb-2">{data.topic}</h3>
-            <div className="text-gray-700">
-              {data.content.split("\n").map((paragraph, index) => (
-                <p key={index} className="mb-2">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <p>Loading...</p>
-        )}
+    <div className="flex-grow flex flex-col p-5">
+      <h2 className="text-xl font-bold mb-3">{subject}</h2>
+      <h3 className="text-lg font-semibold mb-2">{topic}</h3>
+      <div className="text-gray-700 mb-5">
+        {content.split("\n").map((paragraph, index) => (
+          <p key={index} className="mb-2">
+            {paragraph}
+          </p>
+        ))}
       </div>
-      <div className="ml-auto flex flex-col text-white">
-        <button
-          className="bg-gtahidiPurple p-3 rounded"
-          onClick={handleCreateNotes}
-        >
+      <div className="mt-auto flex flex-col text-white space-y-5">
+        <p>Substrand: {substrand}</p>
+        <p>Grade: {grade}</p>
+        <p>Minutes: {minutes}</p>
+      </div>
+      <div className="ml-auto top-0 flex flex-col text-white">
+        <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
           Create Notes
         </button>
-        <button
-          className="bg-gtahidiPurple p-3 rounded mt-5"
-          onClick={handleCreateQuiz}
-        >
+        <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
           Create Quizzes
         </button>
       </div>
@@ -95,4 +102,4 @@ const Result = () => {
   );
 };
 
-export default Result;
+export default ResultPage;

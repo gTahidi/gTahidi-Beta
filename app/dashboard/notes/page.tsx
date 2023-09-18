@@ -1,28 +1,34 @@
 'use client'
+
 import DashboardPageButton from "@/components/DashboardPageButton";
 import { DashboardPageTableHeader } from "@/components/DashboardPageTableHeader";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 const Page = () => {
-  const [notes, setNotes] = useState([]);
+  const [storedNotes, setStoredNotes] = useState([]);
+
+
+  function formatNotes(notes) {
+    // Add line breaks before numbers followed by a dot (e.g., 1., 2., etc.)
+    notes = notes.replace(/(\d+\.) /g, '<br />$1 ');
+  
+    // Add line breaks before uppercase roman numerals followed by a dot (e.g., I., II., etc.)
+    notes = notes.replace(/( [IVXLCDM]+\.) /g, '<br />$1 ');
+  
+    // Add line breaks before "Step" followed by numbers
+    notes = notes.replace(/(Step \d+:)/g, '<br />$1');
+  
+    return notes;
+  }
+  
 
   useEffect(() => {
-    // Define the lesson plan ID
-    const lessonPlanId = "65017336a27f3e2cb4ee83a4";
-
-    // Define the API URL with the lesson plan ID as a query parameter
-    const apiUrl = `https://serverlogic.azurewebsites.net/api/fetchNotes?code=15isWYDPB2miM2wIhlzmIS-ASI4IptnoV0PH8XOR41mdAzFuB_LnoA==&lessonplanId=${lessonPlanId}`;
-
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        setNotes(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching notes:", error);
-      });
+    const notesFromLocalStorage = localStorage.getItem('createdNotes');
+    console.log("notes from local storage", notesFromLocalStorage);
+    if (notesFromLocalStorage) {
+      setStoredNotes(JSON.parse(notesFromLocalStorage));
+    }
   }, []);
 
   return (
@@ -30,17 +36,23 @@ const Page = () => {
       <DashboardPageTitle>Notes</DashboardPageTitle>
       <DashboardPageButton text="Create Notes" />
       <DashboardPageTableHeader />
-      {/* Render the notes */}
       <div className="notes-list">
-        {notes.map((note, index) => (
-          <div key={index} className="note-item">
-            {/* Render the note content */}
-            <p>{note.content}</p>
-          </div>
-        ))}
+        {storedNotes.map((noteWrapper, i) => {
+          const note = noteWrapper.lessonNotes;
+          const formattedNote = formatNotes(note.notes); // Format the note here
+          
+          return (
+            <div key={i} className="note">
+              <h3>{note.notes.split("\n")[0]}</h3>
+              <p dangerouslySetInnerHTML={{ __html: formattedNote }}></p> {/* Render the formatted note using dangerouslySetInnerHTML */}
+            </div>
+          )
+        })}
       </div>
     </div>
   );
 };
 
 export default Page;
+
+
