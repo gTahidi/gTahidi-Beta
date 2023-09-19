@@ -12,7 +12,7 @@ export const options: NextAuthOptions = {
             profile: profile => {
                 return {
                     id: profile.oid, // Use the OID as the unique identifier
-                    name: profile.given_name, // Use the given name
+                    name: profile.display_name, // Use the given name
                     email: profile.email || null, // Extract email, or default to null if not provided
                     image: null // No image in the provided OAuth profile
                 }
