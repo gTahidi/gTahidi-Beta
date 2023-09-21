@@ -9,7 +9,7 @@ import { SectionTitle } from "./SectionTitle";
 
 export const Contact = () => {
   return (
-    <section className="p-[5%] bg-gtahidiCream" id="contact">
+    <section className="p-[5%] bg-white" id="contact">
       <SectionTitle inPink="Touch" text="Get In" />
       <div className="flex mx-5 flex-col sm:flex-row">
         <div className="w-full sm:w-1/3">

@@ -4,7 +4,7 @@ import { Socials } from "./Socials";
 
 export const SocialsSection = () => {
   return (
-    <section className="bg-gtahidiCream flex justify-center gap-x-6 py-7">
+    <section className="bg-white flex justify-center gap-x-6 py-7">
       <Socials />
     </section>
   );

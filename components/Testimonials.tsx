@@ -9,7 +9,7 @@ export const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState<boolean>(true);
   return (
     <section
-      className="px-[5%] py-[15%] sm:p-[5%] bg-gtahidiCream"
+      className="px-[5%] py-[15%] sm:p-[5%] bg-white"
       id="testimonials"
     >
       <h2 className="section-title sm:w-1/3 w-full mx-auto">

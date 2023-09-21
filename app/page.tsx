@@ -13,7 +13,8 @@ import { Faqs } from "@/components/Faqs";
 const page = () => {
   return (
     <main>
-      <section className="bg-gradient-to-b from-linearGradientPurple to-linearGradientPink">
+      {/* <section className="bg-gradient-to-b from-linearGradientPurple to-linearGradientPink"> */}
+      <section >
         <Nav />
         <Welcome />
       </section>
@@ -24,7 +25,7 @@ const page = () => {
       <Pricing />
       <Faqs />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };

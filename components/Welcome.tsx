@@ -26,7 +26,7 @@ export const Welcome = () => {
             }}
           />
         </h1>
-        <h2 className="text-white text-3xl my-5">
+        <h2 className="text-gtahidiDarkBlue text-3xl my-5">
           Revolutionize your <span className="text-gtahidiPink">Teaching</span>{" "}
           <br /> with gTahidi AI.
         </h2>
