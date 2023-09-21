@@ -1,14 +1,12 @@
-'use client';
-
+'use client'
 import DashboardPageButton from "@/components/DashboardPageButton";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import { QuizButton } from "@/components/QuizButton";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";  
 
-// Define the structure of a quiz
 interface Quiz {
   questions: string[];
-  // Add any other properties related to a quiz here.
 }
 
 interface QuizWrapper {
@@ -17,6 +15,7 @@ interface QuizWrapper {
 
 const Page = () => {
   const [storedQuizzes, setStoredQuizzes] = useState<QuizWrapper[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const quizzesFromLocalStorage = localStorage.getItem('createdQuizzes');
@@ -25,23 +24,40 @@ const Page = () => {
     }
   }, []);
 
+
+  const handleBack = () => {
+    router.push("/dashboard/result"); 
+  };
+
   return (
     <div className="dashboard-container">
       <DashboardPageTitle>Quizzes</DashboardPageTitle>
-      {/* <DashboardPageButton text="Create New Quiz" /> */}
-      <div className="flex flex-wrap sm:flex-nowrap justify-between gap-5">
+      <button 
+        onClick={handleBack}
+        className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
+      </button>
+      <div className="flex flex-col sm:flex-col justify-between gap-5 overflow-y-auto h-[70vh] scrollbar-hide">
         {storedQuizzes.map((quizWrapper, i) => {
-          const quiz = quizWrapper.quiz; // Access the inner quiz object
+          const quiz = quizWrapper.quiz;
           return (
-            <div key={i} className="quiz-container">
-              <h3>Quiz {i + 1}</h3> {/* Example title; adjust as needed */}
+            <div key={i} className="quiz-container bg-white shadow-lg rounded-lg p-6 my-4 w-full">
+              <h3 className="text-xl font-semibold mb-2 tracking-wide">Quiz {i + 1}</h3>
               {quiz.questions.map((question, qIndex) => (
-                <p key={qIndex}>{question}</p>
+                <p key={qIndex} className="text-base leading-relaxed tracking-wide mb-2">{question}</p>
               ))}
             </div>
           )
         })}
       </div>
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };

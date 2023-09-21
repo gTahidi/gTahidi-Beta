@@ -24,7 +24,7 @@ const ResultPage = () => {
     const storedPlan = localStorage.getItem('lessonPlan');
     if (storedPlan) {
       const parsedPlan = JSON.parse(storedPlan);
-      setLessonPlan(parsedPlan.lessonPlan);  // Access the nested lessonPlan key
+      setLessonPlan(parsedPlan.lessonPlan); 
     }
   }, []);
 
@@ -41,7 +41,7 @@ const ResultPage = () => {
     axios.post(apiUrl, requestBody)
       .then((response) => {
         const createdNotesString = localStorage.getItem('createdNotes');
-        let createdNotes: any[]; // We specify the type here as an array
+        let createdNotes: any[]; 
         if (!createdNotesString) {
           createdNotes = [];
         } else {
@@ -52,7 +52,6 @@ const ResultPage = () => {
   
         console.log("jephuneh", createdNotes);
   
-        // Navigate to the dashboard page
         router.push("/dashboard/notes");
       })
       .catch((error) => {
@@ -70,7 +69,7 @@ const ResultPage = () => {
     axios.post(apiUrl, requestBody)
       .then((response) => {
         const createdQuizzesString = localStorage.getItem('createdQuizzes');
-        let createdQuizzes: any[]; // We specify the type here as an array
+        let createdQuizzes: any[]; 
         if (!createdQuizzesString) {
           createdQuizzes = [];
         } else {
@@ -79,7 +78,6 @@ const ResultPage = () => {
         createdQuizzes.push(response.data);
         localStorage.setItem('createdQuizzes', JSON.stringify(createdQuizzes));
   
-        // Navigate to the dashboard pagez
         router.push("/dashboard/quizzes");
       })
       .catch((error) => {
@@ -90,32 +88,43 @@ const ResultPage = () => {
 
   return (
     <div className="flex-grow flex flex-col p-5">
-      <div className="ml-auto  mt-0  flex flex-col text-white">
-        <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
-          Create Notes
-        </button>
-        <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
-          Create Quizzes
-        </button>
-      </div>
-      
-      <h2 className="text-xl font-bold mb-3">{subject}</h2>
-      <h3 className="text-lg font-semibold mb-2">{topic}</h3>
+      <div className="bg-white shadow-lg rounded-lg p-6 my-4 overflow-y-auto h-[80vh] scrollbar-hide">
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl font-bold mb-3">{subject}</h2>
+          <div className="flex flex-col text-black">
+            <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
+              Create Notes
+            </button>
+            <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
+              Create Quizzes
+            </button>
+          </div>
+        </div>
+        
+        <h3 className="text-lg font-semibold mb-2">{topic}</h3>
 
-      
-      <div className="text-gray-700 mb-5">
-        {content.split("\n").map((paragraph, index) => (
-          <p key={index} className="mb-2">
-            {paragraph}
-          </p>
-        ))}
+        <div className="text-gray-700 mb-5">
+          {content.split("\n").map((paragraph, index) => (
+            <p key={index} className="mb-2">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <div className="mt-auto flex flex-col text-black space-y-5">
+          <p>Substrand: {substrand}</p>
+          <p>Grade: {grade}</p>
+          <p>Minutes: {minutes}</p>
+        </div>
       </div>
-      <div className="mt-auto flex flex-col text-white space-y-5">
-        <p>Substrand: {substrand}</p>
-        <p>Grade: {grade}</p>
-        <p>Minutes: {minutes}</p>
-      </div>
-      
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };
