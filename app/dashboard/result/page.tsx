@@ -3,9 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";  // Changed from 'next/navigation'
 import axios from "axios";
+import { toast } from "react-toastify";
+
 
 const ResultPage = () => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingAction, setLoadingAction] = useState<string | null>(null);
+
 
   interface LessonPlanType {
     subject: string;
@@ -33,6 +38,7 @@ const ResultPage = () => {
   const { subject, topic, substrand, grade, minutes, content, _id } = lessonPlan;
 
   const handleCreateNotes = () => {
+    setLoadingAction('notes'); // Set loading action to 'notes'
     const apiUrl = "https://serverlogic.azurewebsites.net/api/createNotes";
     const requestBody = {
       lessonPlanId: _id,
@@ -49,18 +55,23 @@ const ResultPage = () => {
         }
         createdNotes.push(response.data);
         localStorage.setItem('createdNotes', JSON.stringify(createdNotes));
-  
-        console.log("jephuneh", createdNotes);
-  
+    
+        toast.success("Notes created successfully!");
         router.push("/dashboard/notes");
+        setLoadingAction(null); // Clear loading action
+
       })
       .catch((error) => {
         console.error("Error creating notes:", error);
+        setLoadingAction(null); // Clear loading action
       });
+       
+
   };
   
 
   const handleCreateQuiz = () => {
+    setLoadingAction('quiz'); // Set loading action to 'quiz'
     const apiUrl = "https://serverlogic.azurewebsites.net/api/createQuizz";
     const requestBody = {
       lessonPlanId: _id,
@@ -77,12 +88,18 @@ const ResultPage = () => {
         }
         createdQuizzes.push(response.data);
         localStorage.setItem('createdQuizzes', JSON.stringify(createdQuizzes));
-  
+
+        toast.success("Quizzes created successfully!");
         router.push("/dashboard/quizzes");
+        setLoadingAction(null); // Clear loading action
+
       })
       .catch((error) => {
         console.error("Error creating quiz:", error);
+        setLoadingAction(null); // Clear loading action
       });
+      
+
   };
   
 
@@ -94,9 +111,21 @@ const ResultPage = () => {
           <div className="flex flex-col text-black">
             <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
               Create Notes
+              {loadingAction === 'notes' && (
+                <svg className="animate-spin ml-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l1-2.647z"></path>
+                </svg>
+              )}
             </button>
             <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
               Create Quizzes
+              {loadingAction === 'quiz' && (
+                <svg className="animate-spin ml-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l1-2.647z"></path>
+                </svg>
+              )}
             </button>
           </div>
         </div>
