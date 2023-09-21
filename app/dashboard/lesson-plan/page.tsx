@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 
 const Page = () => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     subject: "",
     topic: "",
@@ -26,6 +28,8 @@ const Page = () => {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true); // Set loading to true
+
     try {
       const response = await fetch(
         "https://serverlogic.azurewebsites.net/api/createLessonPlan",
@@ -48,7 +52,7 @@ const Page = () => {
         toast.success("Lesson plan created successfully!");
         router.push('/dashboard/result');
     
-        console.log("response", response);
+        // console.log("response", response);
 
       } else {
         toast.error("Failed to create lesson plan. Please fill in all inputs.");
@@ -56,6 +60,7 @@ const Page = () => {
     } catch (error) {
       console.error("Error creating lesson plan:", error);
     }
+    setIsLoading(false); // End loading
   };
 
   return (
@@ -113,8 +118,9 @@ const Page = () => {
           className="text-center w-full mt-7 bg-gtahidiPink py-3 text-white rounded-full"
           onClick={handleSubmit}
         >
-          Create Lesson Plan
+          Create Lesson Plan {isLoading && <span>Loading...</span>}
         </button>
+
       </div>
     </div>
   );
