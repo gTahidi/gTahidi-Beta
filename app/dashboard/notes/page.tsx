@@ -4,6 +4,8 @@ import DashboardPageButton from "@/components/DashboardPageButton";
 import { DashboardPageTableHeader } from "@/components/DashboardPageTableHeader";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";  // Changed from 'next/navigation'
+
 
 // Define the interface for the note structure
 interface NoteWrapper {
@@ -14,48 +16,61 @@ interface NoteWrapper {
 }
 
 const Page = () => {
-  // Specify the type for storedNotes as an array of NoteWrapper
   const [storedNotes, setStoredNotes] = useState<NoteWrapper[]>([]);
+  const router = useRouter();
+
 
   function formatNotes(notes: string): string {
-    // Add line breaks before numbers followed by a dot (e.g., 1., 2., etc.)
     notes = notes.replace(/(\d+\.) /g, '<br />$1 ');
-    
-    // Add line breaks before uppercase roman numerals followed by a dot (e.g., I., II., etc.)
     notes = notes.replace(/( [IVXLCDM]+\.) /g, '<br />$1 ');
-    
-    // Add line breaks before "Step" followed by numbers
     notes = notes.replace(/(Step \d+:)/g, '<br />$1');
-    
+    notes = notes.replace(/([a-zA-Z]\)) /g, '<br />$1 ');
     return notes;
   }
   
   useEffect(() => {
     const notesFromLocalStorage = localStorage.getItem('createdNotes');
-    console.log("notes from local storage", notesFromLocalStorage);
     if (notesFromLocalStorage) {
       setStoredNotes(JSON.parse(notesFromLocalStorage));
     }
   }, []);
+  
+  const handleBack = () => {
+    router.push("/dashboard/result"); 
+  };
+    
+
+
+  
 
   return (
     <div className="dashboard-container">
-      {/* <DashboardPageTitle>Notes</DashboardPageTitle>
-      <DashboardPageButton text="Create Notes" />
-      <DashboardPageTableHeader /> */}
-      <div className="notes-list">
+      <DashboardPageTitle>Notes</DashboardPageTitle>
+      <button 
+        onClick={handleBack}
+        className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan</button>
+      <div className="notes-list overflow-y-auto h-screen scrollbar-hide"> 
         {storedNotes.map((noteWrapper, i) => {
           const note = noteWrapper.lessonNotes;
-          const formattedNote = formatNotes(note.notes); // Format the note here
+          const formattedNote = formatNotes(note.notes);
           
           return (
-            <div key={i} className="note">
-              <h3>{note.notes.split("\n")[0]}</h3>
-              <p dangerouslySetInnerHTML={{ __html: formattedNote }}></p> {/* Render the formatted note using dangerouslySetInnerHTML */}
+            <div key={i} className="note bg-white shadow-lg rounded-lg p-6 my-4">
+              <h3 className="text-xl font-semibold mb-2 tracking-wide">{note.notes.split("\n")[0]}</h3>
+              <p className="text-base leading-relaxed tracking-wide" dangerouslySetInnerHTML={{ __html: formattedNote }}></p>
             </div>
           )
         })}
       </div>
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };
