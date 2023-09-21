@@ -28,7 +28,7 @@ const Page = () => {
   return (
     <div className="dashboard-container">
       <DashboardPageTitle>Quizzes</DashboardPageTitle>
-      <DashboardPageButton text="Create New Quiz" />
+      {/* <DashboardPageButton text="Create New Quiz" /> */}
       <div className="flex flex-wrap sm:flex-nowrap justify-between gap-5">
         {storedQuizzes.map((quizWrapper, i) => {
           const quiz = quizWrapper.quiz; // Access the inner quiz object

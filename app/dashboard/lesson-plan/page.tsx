@@ -60,9 +60,9 @@ const Page = () => {
 
   return (
     <div className="dashboard-container">
-      <DashboardPageTitle>Lesson Plans</DashboardPageTitle>
+      {/* <DashboardPageTitle>Lesson Plans</DashboardPageTitle>
       <DashboardPageButton text="Create New Plan" />
-      <DashboardPageTableHeader />
+      <DashboardPageTableHeader /> */}
       <div className="w-3/4 sm:w-1/2 mx-auto mt-10 text-sm">
         <div className="flex gap-x-2">
           <input

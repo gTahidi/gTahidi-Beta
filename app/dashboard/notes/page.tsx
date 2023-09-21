@@ -40,9 +40,9 @@ const Page = () => {
 
   return (
     <div className="dashboard-container">
-      <DashboardPageTitle>Notes</DashboardPageTitle>
+      {/* <DashboardPageTitle>Notes</DashboardPageTitle>
       <DashboardPageButton text="Create Notes" />
-      <DashboardPageTableHeader />
+      <DashboardPageTableHeader /> */}
       <div className="notes-list">
         {storedNotes.map((noteWrapper, i) => {
           const note = noteWrapper.lessonNotes;
