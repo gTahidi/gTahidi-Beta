@@ -11,8 +11,9 @@ export const Welcome = () => {
     <header className="p-[5%] flex justify-between flex-col sm:flex-row">
       <div className="w-3/5">
         <h1 className="text-7xl text-gtahidiDarkBlue">
-          Karibu <br />{" "}
-          <Typewriter
+          Karibu gTahidi
+          {/* <br />{" "} */}
+          {/* <Typewriter
             options={{
               strings: [
                 "gTahidi",
@@ -24,7 +25,7 @@ export const Welcome = () => {
               autoStart: true,
               loop: true,
             }}
-          />
+          /> */}
         </h1>
         <h2 className="text-gtahidiDarkBlue text-3xl my-5">
           Revolutionize your <span className="text-gtahidiPink">Teaching</span>{" "}
@@ -34,12 +35,21 @@ export const Welcome = () => {
           Create Curriculum-Compliant Lesson Plans, Schemes of Work and
           Assessment Questions in Minutes.
         </p>
-        <button
-          className="py-5 bg-gtahidiPurple rounded-lg text-white w-1/2"
-          onClick={handleStart}
-        >
-          Start Creating
-        </button>
+        <div className="flex  space-x-5"> 
+          <button
+            className="py-3 bg-gtahidiPurple rounded-lg text-white w-1/4" 
+            onClick={handleStart}
+          >
+            Getstarted
+          </button>
+          <button
+            className="py-3 border-2 border-gtahidiPurple rounded-lg text-gtahidiPurple w-1/4"
+            onClick={handleStart}
+          >
+            Demo
+          </button>
+        </div>
+
       </div>
       <Image
         src="/teacher-with-board.png"

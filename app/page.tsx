@@ -18,7 +18,7 @@ const page = () => {
         <Nav />
         <Welcome />
       </section>
-      <SocialsSection />
+      {/* <SocialsSection /> */}
       <Why />
       <HDIW />
       <Testimonials />
