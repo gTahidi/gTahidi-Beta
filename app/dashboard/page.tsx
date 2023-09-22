@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ElementType } from "react";
+import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import { InteractionType } from "@azure/msal-browser";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -23,6 +24,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex-grow dashboard-container flex flex-col overflow-y-auto">
+     <DashboardPageTitle>Dashboard</DashboardPageTitle>
       <div className="bg-white shadow-lg p-[2%] rounded-md">
         <p className="text-gtahidiDarkBlue font-semibold">
           Welcome to gTahidi AI
@@ -36,13 +38,14 @@ const Dashboard = () => {
         Create your well organised lesson plan with just a click of a button.
         Fill in all the necessary fields according to your preference.
       </p>
-      <div className="flex justify-between gap-3 flex-col sm:flex-row">
+      <div className="justify-between flex gap-3 w-full sm:flex-row">
         <div className="bg-black p-5 rounded-md flex items-start justify-between text-white w-full sm:w-1/3">
+        <FontAwesomeIcon icon={faSpa} className="w-14 h-14" />
           <div>
             <p className="font-semibold text-4xl">{plans}</p>
             <p className="font-medium text-sm">Lesson Plans</p>
           </div>
-          <FontAwesomeIcon icon={faSpa} className="w-5 h-5" />
+          
         </div>
         <div className="bg-white p-5 rounded-md flex items-start justify-between text-gtahidiDarkBlue w-full sm:w-1/3">
           <div>
@@ -58,10 +61,11 @@ const Dashboard = () => {
           </div>
           <FontAwesomeIcon icon={faBookOpen} className="w-5 h-5" />
         </div>
+        
       </div>
       <div className="flex-grow gap-3 flex">
-        <ResourceDistributionChart />
-        <TopTutors />
+        {/* <ResourceDistributionChart /> */}
+        {/* <TopTutors /> */}
       </div>
     </div>
   );

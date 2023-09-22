@@ -44,7 +44,7 @@ export const Welcome = () => {
           </button>
           <button
             className="py-3 border-2 border-gtahidiPurple rounded-lg text-gtahidiPurple w-1/4"
-            onClick={handleStart}
+            // onClick={handleStart}
           >
             Demo
           </button>
