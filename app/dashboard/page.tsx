@@ -17,7 +17,11 @@ import { useSession } from "next-auth/react";
 import { ResourceDistributionChart } from "@/components/ResourceDistributionChart";
 import TopTutors from "@/components/TopTutors";
 
+
+
 const Dashboard = () => {
+  const router = useRouter();
+
   
   const plans = 20;
   const notes = 12;
@@ -118,32 +122,33 @@ const Dashboard = () => {
           <div className="bg-white p-4 sm:p-6 rounded-lg shadow-xl max-w-xs sm:max-w-md md:max-w-lg max-h-full overflow-y-auto">
             <h2 className="text-xl font-bold mb-4">Choose a lesson plan to generate your Quiz</h2>
             <div className="flex flex-col space-y-2">
-              <div className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
+              <button onClick={() => {}} className="flex items-center bg-dashboardPurple p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
                 <span className="mr-2">1.</span>
                 English_verbs Lesson plan
-              </div>
-              <div className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
+              </button>
+              <button onClick={() => {}} className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
                 <span className="mr-2">2.</span>
                 Math Lesson plan
-              </div>
-              <div className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
+              </button>
+              <button onClick={() => {}} className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
                 <span className="mr-2">3.</span>
                 Math Lesson plan
-              </div>
-              <div className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
+              </button>
+              <button onClick={() => {}} className="flex items-center bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
                 <span className="mr-2">4.</span>
                 Math Lesson plan
-              </div>
+              </button>
             </div>
             <div className="text-center font-bold my-4">OR</div>
-            <div className="bg-gray-200 p-4 rounded-lg transition-colors duration-300 hover:bg-gray-300 cursor-pointer text-center">
+            <button onClick={() => router.push('/dashboard/lesson-plan')} className="bg-gray-200 p-4 w-full rounded-lg transition-colors duration-300 hover:bg-gray-300 cursor-pointer text-center">
               Generate from scratch
-            </div>
-            <button onClick={closeModal} className="mt-4 bg-red-500 text-white p-2 rounded">Close</button>
+            </button>
+            <button onClick={closeModal} className="mt-4 bg-red-500 text-white p-2 rounded w-full">Close</button>
           </div>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30" onClick={closeModal}></div>
+          {/* <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30" onClick={closeModal}></div> */}
         </div>
       )}
+
 
 
 

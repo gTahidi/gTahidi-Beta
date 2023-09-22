@@ -65,9 +65,19 @@ const Page = () => {
 
   return (
     <div className="dashboard-container">
-      {/* <DashboardPageTitle>Lesson Plans</DashboardPageTitle>
-      <DashboardPageButton text="Create New Plan" />
-      <DashboardPageTableHeader /> */}
+      <div className="bg-white shadow-lg p-[2%] rounded-md">
+        <p className="text-gtahidiDarkBlue font-semibold">
+          Welcome to gTahidi AI
+        </p>
+        <p className="font-semibold">
+          Create Personalized Lesson Plans, Notes And Quizzes With Our Advanced
+          AI
+        </p>
+      </div>
+      <p className="py-2 mt-2 bg-dashboardPurple text-white p-[2%] text-sm rounded-md">
+        Create your well organised lesson plan with just a click of a button.
+        Fill in all the necessary fields according to your preference.
+      </p>
       <div className="w-3/4 sm:w-1/2 mx-auto mt-10 text-sm">
         <div className="flex gap-x-2">
           <input
