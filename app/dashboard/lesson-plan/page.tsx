@@ -136,8 +136,6 @@ const Page = () => {
             </svg>
           )}
         </button>
-
-
       </div>
     </div>
   );
