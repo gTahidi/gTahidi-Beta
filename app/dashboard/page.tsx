@@ -3,6 +3,7 @@
 import { IMsalContext, MsalAuthenticationTemplate } from "@azure/msal-react";
 import {
   faBookBible,
+  faBookBookmark,
   faBookOpen,
   faPen,
   faSpa,
@@ -10,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ElementType } from "react";
-import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import { InteractionType } from "@azure/msal-browser";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -20,11 +20,11 @@ import TopTutors from "@/components/TopTutors";
 const Dashboard = () => {
   const plans = 20;
   const notes = 12;
+  const Schemes= 10;
   const quizzes = 30;
 
   return (
     <div className="flex-grow dashboard-container flex flex-col overflow-y-auto">
-     <DashboardPageTitle>Dashboard</DashboardPageTitle>
       <div className="bg-white shadow-lg p-[2%] rounded-md">
         <p className="text-gtahidiDarkBlue font-semibold">
           Welcome to gTahidi AI
@@ -38,35 +38,54 @@ const Dashboard = () => {
         Create your well organised lesson plan with just a click of a button.
         Fill in all the necessary fields according to your preference.
       </p>
-      <div className="justify-between flex gap-3 w-full sm:flex-row">
-        <div className="bg-black p-5 rounded-md flex items-start justify-between text-white w-full sm:w-1/3">
-        <FontAwesomeIcon icon={faSpa} className="w-14 h-14" />
-          <div>
-            <p className="font-semibold text-4xl">{plans}</p>
-            <p className="font-medium text-sm">Lesson Plans</p>
+      <div className=" w-full gap-5"> 
+        <div className="bg-black p-5 shadow-lg rounded-lg flex  mb-3 items-start justify-between text-white  ">
+          <FontAwesomeIcon icon={faSpa} className=" p-4  w-14 h-14" />
+          <div className="p-4">
+            <h1>Generate a Lesson Plan</h1>
+            <p>You can generate a plan based on your uploaded data or just from scratch </p>
           </div>
-          
-        </div>
-        <div className="bg-white p-5 rounded-md flex items-start justify-between text-gtahidiDarkBlue w-full sm:w-1/3">
           <div>
-            <p className="font-medium text-4xl">{quizzes}</p>
-            <p className="font-medium text-sm">Quizzes</p>
+            <p className="font-medium text-xl">Lesson Plans: {plans}</p>
           </div>
-          <FontAwesomeIcon icon={faPen} className="w-5 h-5" />
         </div>
-        <div className="p-5 rounded-md flex items-start justify-between bg-gtahidiDarkBlue text-black w-full sm:w-1/3">
+        <div className="bg-white shadow-2xl p-5 rounded-lg mb-3 flex items-start justify-between text-black ">
+          <FontAwesomeIcon icon={faPen} className=" p-4 w-14 h-14" />
+          <div className="p-5">
+            <h1>Generate a Quiz</h1>
+            <p>You can generate a quiz based on your lessonPlan or just from scratch </p>
+          </div>
           <div>
-            <p className="font-medium text-4xl">{notes}</p>
-            <p className="font-medium text-sm">Notes</p>
-          </div>
-          <FontAwesomeIcon icon={faBookOpen} className="w-5 h-5" />
+            <p className="font-medium text-xl">Quizzes:{quizzes}</p>
+          </div>          
         </div>
-        
+        <div className="p-5 rounded-lg flex mb-3 items-start justify-between shadow-2xl bg-white text-black ">
+          <FontAwesomeIcon icon={faBookOpen} className="w-14 h-14" />
+          <div className="p-5">
+            <h1>Generate Notes</h1>
+            <p>You can generate notes based on your lessonPlan or just from scratch </p>
+          </div>
+          <div>
+            <p className="font-medium text-xl">Notes:{notes}</p>
+          </div>
+         
+        </div>
+        <div className="p-5 rounded-lg flex items-start mb-2 shadow-2xl justify-between bg-white text-black ">
+          <FontAwesomeIcon icon={faBookBookmark} className="w-14 h-14" />
+          <div className="p-5">
+            <h1>Generate Schemes Of Work</h1>
+            <p>You can generate Schemes of Work based on your  lessonPlan or just from scratch </p>
+          </div>
+          <div>
+            <p className="font-medium text-xl">Schemes:{Schemes}</p>
+          </div>
+         
+        </div>
       </div>
-      <div className="flex-grow gap-3 flex">
-        {/* <ResourceDistributionChart /> */}
-        {/* <TopTutors /> */}
-      </div>
+      {/* <div className="flex-grow gap-3 flex">
+        <ResourceDistributionChart /> 
+         <TopTutors />
+      </div> */}
     </div>
   );
 };
