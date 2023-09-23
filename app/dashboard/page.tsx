@@ -78,9 +78,9 @@ const Dashboard = () => {
             <h1>Generate a Quiz</h1>
             <p>You can generate a quiz based on your lessonPlan</p>
           </div>
-          <div>
+          
             <p className="font-medium text-xl">Quizzes:{quizzes}</p>
-          </div>          
+         
         </div>
 
         <div 
