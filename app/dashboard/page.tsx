@@ -56,13 +56,13 @@ const Dashboard = () => {
       </p>
       <div className=" w-full gap-5"> 
         <div 
-          className="bg-black p-5 shadow-lg rounded-xl flex justify-start mb-3 items-start text-white cursor-pointer transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+          className="bg-black p-5 shadow-lg rounded-xl flex justify-start mb-3 items-start text-white cursor-pointer transform transition-transform duration-200 hover:scale-105 hover:shadow-lg sm:w-full"
           onClick={handleCardClick}
         >
           <FontAwesomeIcon icon={faSpa} className=" p-4  w-14 h-14" />
           <div className="p-4 flex-grow">
             <h1>Generate a Lesson Plan</h1>
-            <p>You can generate a plan based on your uploaded data or just from scratch </p>
+            <p>You can generate a plan based on your uploaded data</p>
           </div>
           <div>
             <p className="font-medium text-xl">Lesson Plans: {plans}</p>
@@ -76,7 +76,7 @@ const Dashboard = () => {
           <FontAwesomeIcon icon={faPen} className=" p-4 w-14 h-14" />
           <div className="p-5 flex-grow">
             <h1>Generate a Quiz</h1>
-            <p>You can generate a quiz based on your lessonPlan or just from scratch </p>
+            <p>You can generate a quiz based on your lessonPlan</p>
           </div>
           <div>
             <p className="font-medium text-xl">Quizzes:{quizzes}</p>
@@ -87,10 +87,10 @@ const Dashboard = () => {
           className="p-5 rounded-xl flex mb-3 items-start justify-between shadow-xl bg-white text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
           onClick={handleCardClick}
           >
-          <FontAwesomeIcon icon={faBookOpen} className="w-14 h-14" />
+          <FontAwesomeIcon icon={faBookOpen} className="p-4 w-14 h-14" />
           <div className="p-5 flex-grow">
             <h1>Generate Notes</h1>
-            <p>You can generate notes based on your lessonPlan or just from scratch </p>
+            <p>You can generate notes based on your lessonPlan</p>
           </div>
           <div>
             <p className="font-medium text-xl">Notes:{notes}</p>
@@ -102,10 +102,10 @@ const Dashboard = () => {
           className="p-5 rounded-xl flex items-start mb-2 shadow-xl justify-between bg-white text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
           onClick={handleCardClick}
           >
-          <FontAwesomeIcon icon={faBookBookmark} className="w-14 h-14" />
+          <FontAwesomeIcon icon={faBookBookmark} className="p-4 w-14 h-14" />
           <div className="p-5 flex-grow">
             <h1>Generate Schemes Of Work</h1>
-            <p>You can generate Schemes of Work based on your  lessonPlan or just from scratch </p>
+            <p>You can generate Schemes of Work based on your lessonPlan</p>
           </div>
           <div>
             <p className="font-medium text-xl">Schemes:{Schemes}</p>
