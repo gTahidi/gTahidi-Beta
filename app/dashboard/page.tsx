@@ -62,7 +62,7 @@ const Dashboard = () => {
           <FontAwesomeIcon icon={faSpa} className=" p-4  w-14 h-14" />
           <div className="p-4 flex-grow">
             <h1>Generate a Lesson Plan</h1>
-            <p>You can generate a plan based on your uploaded data</p>
+            <p className="hidden md:block">You can generate a plan based on your uploaded data</p>
           </div>
           <div>
             <p className="font-medium text-xl">Lesson Plans: {plans}</p>
@@ -76,7 +76,7 @@ const Dashboard = () => {
           <FontAwesomeIcon icon={faPen} className=" p-4 w-14 h-14" />
           <div className="p-5 flex-grow">
             <h1>Generate a Quiz</h1>
-            <p>You can generate a quiz based on your lessonPlan</p>
+            <p className="hidden md:block">You can generate a quiz based on your lessonPlan</p>
           </div>
           
             <p className="font-medium text-xl">Quizzes:{quizzes}</p>
@@ -90,7 +90,7 @@ const Dashboard = () => {
           <FontAwesomeIcon icon={faBookOpen} className="p-4 w-14 h-14" />
           <div className="p-5 flex-grow">
             <h1>Generate Notes</h1>
-            <p>You can generate notes based on your lessonPlan</p>
+            <p className="hidden md:block">You can generate notes based on your lessonPlan</p>
           </div>
           <div>
             <p className="font-medium text-xl">Notes:{notes}</p>
@@ -105,7 +105,7 @@ const Dashboard = () => {
           <FontAwesomeIcon icon={faBookBookmark} className="p-4 w-14 h-14" />
           <div className="p-5 flex-grow">
             <h1>Generate Schemes Of Work</h1>
-            <p>You can generate Schemes of Work based on your lessonPlan</p>
+            <p className="hidden md:block">You can generate Schemes of Work based on your lessonPlan</p>
           </div>
           <div>
             <p className="font-medium text-xl">Schemes:{Schemes}</p>
