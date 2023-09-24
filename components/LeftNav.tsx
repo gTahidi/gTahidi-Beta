@@ -62,7 +62,7 @@ export const LeftNav = ({
 
   return (
     <motion.div
-      className={`bg-dashboardPurple w-1/5 text-white flex flex-col text-sm px-2 ${className}`}
+      className={`bg-dashboardPurple w-1/5 text-white flex flex-col text-sm px-2 ${className} z-20`}
       initial={isSmallScreen ? { x: -1000 } : undefined}
       animate={isSmallScreen ? { x: 0 } : undefined}
       exit={isSmallScreen ? { x: -1000 } : undefined}
