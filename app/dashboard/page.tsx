@@ -56,7 +56,7 @@ const Dashboard = () => {
       </p>
       <div className=" w-full gap-5"> 
         <div 
-          className="bg-black p-5 shadow-lg rounded-xl flex justify-start mb-3 items-start text-white cursor-pointer transform transition-transform duration-200 hover:scale-105 hover:shadow-lg sm:w-full"
+          className="bg-white hover:bg-gtahidiDarkBlue p-5 shadow-lg rounded-xl flex justify-start mb-3 items-start text-black cursor-pointer transform transition-transform duration-200 hover:scale-105 hover:shadow-lg sm:w-full"
           onClick={handleCardClick}
         >
           <FontAwesomeIcon icon={faSpa} className=" p-4  w-14 h-14" />
@@ -70,7 +70,7 @@ const Dashboard = () => {
         </div>
 
         <div 
-          className="bg-white p-5 shadow-xl rounded-xl mb-3 flex items-start justify-between text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+          className="bg-white hover:bg-gtahidiDarkBlue p-5 shadow-xl rounded-xl mb-3 flex items-start justify-between text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
           onClick={handleCardClick}
           >
           <FontAwesomeIcon icon={faPen} className=" p-4 w-14 h-14" />
@@ -84,7 +84,7 @@ const Dashboard = () => {
         </div>
 
         <div 
-          className="p-5 rounded-xl flex mb-3 items-start justify-between shadow-xl bg-white text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+          className="p-5 rounded-xl  hover:bg-gtahidiDarkBlue flex mb-3 items-start justify-between shadow-xl bg-white text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
           onClick={handleCardClick}
           >
           <FontAwesomeIcon icon={faBookOpen} className="p-4 w-14 h-14" />
@@ -99,7 +99,7 @@ const Dashboard = () => {
         </div>
 
         <div     
-          className="p-5 rounded-xl flex items-start mb-2 shadow-xl justify-between bg-white text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+          className="p-5 rounded-xl  hover:bg-gtahidiDarkBlue flex items-start mb-2 shadow-xl justify-between bg-white text-black transform transition-transform duration-200 hover:scale-105 hover:shadow-lg"
           onClick={handleCardClick}
           >
           <FontAwesomeIcon icon={faBookBookmark} className="p-4 w-14 h-14" />
