@@ -120,8 +120,8 @@ const Dashboard = () => {
       {isModalOpen && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
           <div className="bg-white p-4 sm:p-6 rounded-lg shadow-xl max-w-xs sm:max-w-md md:max-w-lg max-h-full overflow-y-auto">
-            <h2 className="text-xl font-bold mb-4">Choose a lesson plan to generate your Quiz</h2>
-            <div className="flex flex-col space-y-2">
+            {/* <h2 className="text-xl font-bold mb-4">Choose a lesson plan to generate your Quiz</h2> */}
+            {/* <div className="flex flex-col space-y-2">
               <button onClick={() => {}} className="flex items-center bg-dashboardPurple p-4 rounded-lg transition-colors duration-300 hover:bg-black hover:text-white cursor-pointer">
                 <span className="mr-2">1.</span>
                 English_verbs Lesson plan
@@ -139,9 +139,9 @@ const Dashboard = () => {
                 Math Lesson plan
               </button>
             </div>
-            <div className="text-center font-bold my-4">OR</div>
+            <div className="text-center font-bold my-4">OR</div> */}
             <button onClick={() => router.push('/dashboard/lesson-plan')} className="bg-gray-200 p-4 w-full rounded-lg transition-colors duration-300 hover:bg-gray-300 cursor-pointer text-center">
-              Generate from scratch
+              Generate a Lesson Plan
             </button>
             <button onClick={closeModal} className="mt-4 bg-red-500 text-white p-2 rounded w-full">Close</button>
           </div>
