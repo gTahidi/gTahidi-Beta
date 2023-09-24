@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";  // Changed from 'next/navigation'
 import axios from "axios";
 import { toast } from "react-toastify";
+import ReactMarkdown from 'react-markdown';
+
 
 
 const ResultPage = () => {
@@ -133,12 +135,9 @@ const ResultPage = () => {
         <h3 className="text-lg font-semibold mb-2">{topic}</h3>
 
         <div className="text-gray-700 mb-5">
-          {content.split("\n").map((paragraph, index) => (
-            <p key={index} className="mb-2">
-              {paragraph}
-            </p>
-          ))}
+          <ReactMarkdown>{content}</ReactMarkdown>
         </div>
+
         <div className="mt-auto flex flex-col text-black space-y-5">
           <p>Substrand: {substrand}</p>
           <p>Grade: {grade}</p>

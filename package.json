@@ -40,6 +40,8 @@
     "react": "^18.0.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.0.0",
+    "react-hot-toast": "^2.4.1",
+    "react-markdown": "^8.0.7",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.0",
