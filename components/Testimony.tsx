@@ -12,7 +12,7 @@ export const Testimony = ({
   position: string;
 }) => {
   return (
-    <div className="w-1/2 shadow p-[5%] rounded-2xl border border-black flex flex-col text-center">
+    <div className="w-full sm:w-1/2 shadow p-[5%] rounded-2xl border border-black flex flex-col text-center">
       <div className="mx-auto outline outline-gtahidiPink rounded-full aspect-square w-10 h-10 relative">
         <FontAwesomeIcon icon={faUser} className="h-5 w-5 center-absolutely" />
         <FontAwesomeIcon
