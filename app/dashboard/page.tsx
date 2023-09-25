@@ -46,13 +46,12 @@ const Dashboard = () => {
           Welcome to gTahidi AI
         </p>
         <p className="font-semibold">
-          Create Personalized Lesson Plans, Notes And Quizzes With Our Advanced
-          AI
+          Leading the Revolution in Education with  Artificial Intelligence
         </p>
       </div>
       <p className="py-2 mt-2 bg-dashboardPurple text-white p-[2%] text-sm rounded-md">
-        Create your well organised lesson plan with just a click of a button.
-        Fill in all the necessary fields according to your preference.
+        Create your Personalized lesson plan with just a click of a button.
+        Fill in the different fields and you are good to go👌.
       </p>
       <div className=" w-full gap-5"> 
         <div 
@@ -141,7 +140,7 @@ const Dashboard = () => {
             </div>
             <div className="text-center font-bold my-4">OR</div> */}
             <button onClick={() => router.push('/dashboard/lesson-plan')} className="bg-gray-200 p-4 w-full rounded-lg transition-colors duration-300 hover:bg-gray-300 cursor-pointer text-center">
-              Generate a Lesson Plan first!
+              Generate a Lesson Plan first🤗
             </button>
             <button onClick={closeModal} className="mt-4 bg-red-500 text-white p-2 rounded w-full">Close</button>
           </div>
