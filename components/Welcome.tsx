@@ -16,10 +16,10 @@ export const Welcome = () => {
           <Typewriter
             options={{
               strings: [
-                "AI in education",
+                "Mwalimu",
                 "Create Lesson Plans",
-                "Create Engaging Lesson notes"
-                "Create schemes of work",
+                "Create Short Notes",
+                "Organize schemes of work",
                 ],
               autoStart: true,
               loop: true,
