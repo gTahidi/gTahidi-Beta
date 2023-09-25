@@ -16,12 +16,11 @@ export const Welcome = () => {
           <Typewriter
             options={{
               strings: [
-                "gTahidi",
                 "AI in education",
                 "Create Lesson Plans",
+                "Create Engaging Lesson notes"
                 "Create schemes of work",
-                "much much more!",
-              ],
+                ],
               autoStart: true,
               loop: true,
             }}
