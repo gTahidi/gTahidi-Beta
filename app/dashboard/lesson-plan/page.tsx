@@ -1,67 +1,90 @@
 "use client";
 
-import DashboardPageButton from "@/components/DashboardPageButton";
-import { DashboardPageTableHeader } from "@/components/DashboardPageTableHeader";
-import { DashboardPageTitle } from "@/components/DashboardPageTitle";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { useSession } from 'next-auth/react';
+
+interface CustomSession {
+    user: {
+        id?: string;
+        name?: string | null;
+        email?: string | null;
+        image?: string | null;
+    };
+}
+
 
 const Page = () => {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(false);
+    const { data: session } = useSession() as { data: CustomSession | null };
 
-  const [formData, setFormData] = useState({
-    subject: "",
-    topic: "",
-    substrand: "",
-    grade: "",
-    minutes: "",
-  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    const [profile, setProfile] = useState<any>(null);
+    const [formData, setFormData] = useState({
+        subject: "",
+        topic: "",
+        substrand: "",
+        grade: "",
+        minutes: "",
+        oid: "",
     });
-  };
 
-  const handleSubmit = async () => {
-    setIsLoading(true); // Set loading to true
-
-    try {
-      const response = await fetch(
-        "https://serverlogic.azurewebsites.net/api/createLessonPlan",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
+    useEffect(() => {
+        if (session && session.user) {
+            setProfile(session.user);
         }
-      );
+    }, [session]);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async () => {
+        setIsLoading(true);
+        console.log('session:', session);
+
+        if (session && session.user && session.user.id) {
+            formData.oid = session.user.id;
+        }
 
 
-      if (response.ok) {
-        const responseData = await response.json();
-        localStorage.setItem('lessonPlan', JSON.stringify(responseData));
-        
+        console.log('Sending formData:', formData);
 
-        
-        toast.success("Lesson plan created successfully!");
-        router.push('/dashboard/result');
-    
-        // console.log("response", response);
 
-      } else {
-        toast.error("Failed to create lesson plan. Please fill in all inputs.");
-      }
-    } catch (error) {
-      console.error("Error creating lesson plan:", error);
-    }
-    setIsLoading(false); // End loading
-  };
+        try {
+            const response = await fetch(
+                "https://serverlogic.azurewebsites.net/api/createLessonPlan",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
+
+            if (response.ok) {
+                const responseData = await response.json();
+                localStorage.setItem('lessonPlan', JSON.stringify(responseData));
+                toast.success("Lesson plan created successfully!");
+                router.push('/dashboard/result');
+            } else {
+                toast.error("Failed to create lesson plan. Please fill in all inputs.");
+            }
+        } catch (error) {
+            console.error("Error creating lesson plan:", error);
+            toast.error("An error occurred. Please try again.");
+        }
+
+        setIsLoading(false);
+    };
+
 
   return (
     <div className="dashboard-container">

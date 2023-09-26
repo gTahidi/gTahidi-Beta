@@ -5,14 +5,25 @@ import { useRouter } from "next/navigation";  // Changed from 'next/navigation'
 import axios from "axios";
 import { toast } from "react-toastify";
 import ReactMarkdown from 'react-markdown';
+import { useSession } from 'next-auth/react';
 
+
+interface CustomSession {
+    user: {
+        id?: string;
+        name?: string | null;
+        email?: string | null;
+        image?: string | null;
+    };
+}
 
 
 const ResultPage = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [loadingAction, setLoadingAction] = useState<string | null>(null);
-
+    const [loadingAction, setLoadingAction] = useState<string | null>(null);
+    const { data: session } = useSession() as { data: CustomSession | null };
+    const [lessonPlan, setLessonPlan] = useState<LessonPlanType | null>(null);
 
   interface LessonPlanType {
     subject: string;
@@ -25,7 +36,7 @@ const ResultPage = () => {
   }
   
 
-  const [lessonPlan, setLessonPlan] = useState<LessonPlanType | null>(null);
+ 
 
   useEffect(() => {
     const storedPlan = localStorage.getItem('lessonPlan');
@@ -43,7 +54,8 @@ const ResultPage = () => {
     setLoadingAction('notes'); // Set loading action to 'notes'
     const apiUrl = "https://serverlogic.azurewebsites.net/api/createNotes";
     const requestBody = {
-      lessonPlanId: _id,
+        lessonPlanId: _id,
+        oid: session?.user?.id || ""
     };
   
     axios.post(apiUrl, requestBody)
@@ -74,11 +86,13 @@ const ResultPage = () => {
 
   const handleCreateQuiz = () => {
     setLoadingAction('quiz'); // Set loading action to 'quiz'
-    const apiUrl = "https://serverlogic.azurewebsites.net/api/createQuizz";
-    const requestBody = {
-      lessonPlanId: _id,
-    };
-  
+      const apiUrl = "https://serverlogic.azurewebsites.net/api/createQuizz";
+
+      const requestBody = {
+          lessonPlanId: _id,
+          oid: session?.user?.id || "" // Attach the oid from the session
+      };
+      
     axios.post(apiUrl, requestBody)
       .then((response) => {
         const createdQuizzesString = localStorage.getItem('createdQuizzes');
