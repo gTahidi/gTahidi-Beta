@@ -6,6 +6,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import ReactMarkdown from 'react-markdown';
 import { useSession } from 'next-auth/react';
+import { marked } from "marked";
+
 
 
 interface CustomSession {
@@ -33,6 +35,19 @@ const ResultPage = () => {
     minutes: string;
     content: string;
     _id: string;
+  }
+
+  function formatContent(content: string): string {
+    let formattedContent = marked(content); 
+    formattedContent = formattedContent.replace(/<h1>/g, '<h1 class="text-2xl font-bold my-4">');
+    formattedContent = formattedContent.replace(/<h2>/g, '<h2 class="text-xl font-semibold my-3">');
+    formattedContent = formattedContent.replace(/<h3>/g, '<h3 class="text-lg font-medium my-2">');
+    formattedContent = formattedContent.replace(/<ul>/g, '<ul class="list-disc pl-5">');
+    formattedContent = formattedContent.replace(/<ol>/g, '<ol class="list-decimal pl-5">');
+    formattedContent = formattedContent.replace(/<li>/g, '<li class="my-1">');
+    formattedContent = formattedContent.replace(/<p>/g, '<p class="my-2">');
+  
+    return formattedContent;
   }
   
 
@@ -148,9 +163,8 @@ const ResultPage = () => {
         
         <h3 className="text-lg font-semibold mb-2">{topic}</h3>
 
-        <div className="text-gray-700 mb-5">
-          <ReactMarkdown>{content}</ReactMarkdown>
-        </div>
+        <div className="text-gray-700 mb-5" dangerouslySetInnerHTML={{ __html: formatContent(content) }}></div>
+
 
         <div className="mt-auto flex flex-col text-black space-y-5">
           <p>Substrand: {substrand}</p>
