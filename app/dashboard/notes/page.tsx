@@ -58,7 +58,7 @@ const Page = () => {
         onClick={handleBack}
         className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
       </button>
-      <div className="notes-list overflow-y-auto h-screen scrollbar-hide space-y-4"> 
+      <div className="notes-list overflow-y-auto max-h-[80vh] scrollbar-hide space-y-4"> 
         {storedNotes.map((noteWrapper, i) => {
           const note = noteWrapper.lessonNotes;
           const fullyFormattedNote = formatContent(note.notes);

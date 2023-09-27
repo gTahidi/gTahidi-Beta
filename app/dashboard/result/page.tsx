@@ -87,12 +87,12 @@ const ResultPage = () => {
     
         toast.success("Notes created successfully!");
         router.push("/dashboard/notes");
-        setLoadingAction(null); // Clear loading action
+        setLoadingAction(null); 
 
       })
       .catch((error) => {
         console.error("Error creating notes:", error);
-        setLoadingAction(null); // Clear loading action
+        setLoadingAction(null); 
       });
        
 
@@ -122,12 +122,12 @@ const ResultPage = () => {
 
         toast.success("Quizzes created successfully!");
         router.push("/dashboard/quizzes");
-        setLoadingAction(null); // Clear loading action
+        setLoadingAction(null); 
 
       })
       .catch((error) => {
         console.error("Error creating quiz:", error);
-        setLoadingAction(null); // Clear loading action
+        setLoadingAction(null); 
       });
       
 
