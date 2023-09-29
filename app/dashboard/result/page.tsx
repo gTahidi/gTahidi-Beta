@@ -106,8 +106,13 @@ const ResultPage = () => {
       const requestBody = {
           lessonPlanId: _id,
           oid: session?.user?.id || "" // Attach the oid from the session
+          
       };
+
+
       
+    
+
     axios.post(apiUrl, requestBody)
       .then((response) => {
         const createdQuizzesString = localStorage.getItem('createdQuizzes');
@@ -130,6 +135,7 @@ const ResultPage = () => {
         setLoadingAction(null); 
       });
       
+      // console.log("object",oid)
 
   };
   

@@ -1,4 +1,5 @@
 'use client'
+
 import DashboardPageButton from "@/components/DashboardPageButton";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import { QuizButton } from "@/components/QuizButton";

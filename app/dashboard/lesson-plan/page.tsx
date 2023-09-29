@@ -88,7 +88,7 @@ const Page = () => {
 
   return (
     <div className="dashboard-container">
-      <div className="bg-white shadow-lg p-[2%] rounded-md">
+      <div className="bg-white shadow-lg p-[2%] max-h-[80vh] rounded-md">
         <p className="text-gtahidiDarkBlue font-semibold">
           Welcome to gTahidi AI
         </p>
