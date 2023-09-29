@@ -1,12 +1,13 @@
 'use client';
 
-import DashboardPageButton from "@/components/DashboardPageButton";
-import { DashboardPageTableHeader } from "@/components/DashboardPageTableHeader";
-import { DashboardPageTitle } from "@/components/DashboardPageTitle";
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; 
-import { marked } from "marked";
 
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { marked } from "marked";
+import { useSession } from 'next-auth/react'; // Assuming you're using NextAuth for session management
+import DashboardPageButton from '@/components/DashboardPageButton';
+import { DashboardPageTableHeader } from '@/components/DashboardPageTableHeader';
+import { DashboardPageTitle } from '@/components/DashboardPageTitle';
 
 interface NoteWrapper {
   lessonNotes: {
@@ -16,8 +17,30 @@ interface NoteWrapper {
 
 const Page = () => {
   const [storedNotes, setStoredNotes] = useState<NoteWrapper[]>([]);
+  const { data: session } = useSession();
   const router = useRouter();
+  const apiUrl = 'https://serverlogic.azurewebsites.net/api/createNotes';
+  const requestBody = {
+    lessonPlanId: _id,
+    oid: session?.user?.id || ""
+};
 
+  useEffect(() => {
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setStoredNotes(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching notes:', error);
+      });
+  }, []);
 
   function formatContent(content: string): string {
     let formattedContent = marked(content); 
@@ -33,42 +56,35 @@ const Page = () => {
     
     return formattedContent;
   }
-  
 
-  
-  useEffect(() => {
-    const notesFromLocalStorage = localStorage.getItem('createdNotes');
-    if (notesFromLocalStorage) {
-      setStoredNotes(JSON.parse(notesFromLocalStorage));
-    }
-  }, []);
-  
   const handleBack = () => {
-    router.push("/dashboard/result"); 
+    router.push('/dashboard/result');
   };
-    
-
-
-  
 
   return (
     <div className="dashboard-container">
       <DashboardPageTitle>Notes</DashboardPageTitle>
-      <button 
+      <button
         onClick={handleBack}
-        className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
+        className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto"
+      >
+        Lesson Plan
       </button>
-      <div className="notes-list overflow-y-auto max-h-[80vh] scrollbar-hide space-y-4"> 
+      <div className="notes-list overflow-y-auto max-h-[80vh] scrollbar-hide space-y-4">
         {storedNotes.map((noteWrapper, i) => {
           const note = noteWrapper.lessonNotes;
           const fullyFormattedNote = formatContent(note.notes);
-          
           return (
             <div key={i} className="note bg-white shadow-lg rounded-lg p-6 space-y-2">
-              <h3 className="text-xl font-semibold mb-2 tracking-wide">{note.notes.split("\n")[0]}</h3>
-              <div className="text-base leading-relaxed tracking-wide space-y-2" dangerouslySetInnerHTML={{ __html: fullyFormattedNote }}></div>
+              <h3 className="text-xl font-semibold mb-2 tracking-wide">
+                {note.notes.split('\n')[0]}
+              </h3>
+              <div
+                className="text-base leading-relaxed tracking-wide space-y-2"
+                dangerouslySetInnerHTML={{ __html: fullyFormattedNote }}
+              ></div>
             </div>
-          )
+          );
         })}
       </div>
       <style jsx>{`
