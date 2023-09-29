@@ -1,74 +1,116 @@
-'use client';
+'use client'
+import DashboardPageButton from "@/components/DashboardPageButton";
+import { DashboardPageTitle } from "@/components/DashboardPageTitle";
+import { QuizButton } from "@/components/QuizButton";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation"; 
+import InitialPopup from '@/components/InitialPopup'
+import FeedbackForm from '@/components/FeedbackForm'
 
-import DashboardPageButton from '@/components/DashboardPageButton';
-import { DashboardPageTitle } from '@/components/DashboardPageTitle';
-import { QuizButton } from '@/components/QuizButton';
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'; // Fixed the import from 'next/navigation' to 'next/router'
-import { useSession } from 'next-auth/react'; // Assuming you're using NextAuth for session management
-
-interface Quiz {
+interface QuizData {
+  _id: string;
+  oid: string;
   questions: string[];
-}
-
-interface QuizWrapper {
-  quiz: Quiz;
+  __v: number;
 }
 
 const Page = () => {
-  const [storedQuizzes, setStoredQuizzes] = useState<QuizWrapper[]>([]);
-  const { data: session } = useSession();
+  const [storedQuizzes, setStoredQuizzes] = useState<QuizData[]>([]);
+  const [loading, setLoading] = useState(true);  
   const router = useRouter();
-  const apiUrl = 'https://serverlogic.azurewebsites.net/api/fetchQuizz';
-  const requestBody = {
-    lessonPlanId: router.query._id, // Assuming _id is a query parameter
-    oid: session?.user?.id || '',
-  };
+
+  // const [showInitialPopup, setShowInitialPopup] = useState(true);
+  // const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+
+  // const handleLater = () => {
+  //   setShowInitialPopup(false);
+  // };
+
+  // const handleNow = () => {
+  //   setShowInitialPopup(false);
+  //   setShowFeedbackForm(true);
+  // };
+
+  // const handleCloseFeedbackForm = () => {
+  //   setShowFeedbackForm(false);
+  // };
 
   useEffect(() => {
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(requestBody),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchQuizzes = async () => {
+      try {
+        const response = await fetch('https://serverlogic.azurewebsites.net/api/fetchQuizz/?oid=fe2ec27d-8113-4a62-8f0d-d5b7c757b0dd');
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
         setStoredQuizzes(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching quizzes:', error);
-      });
+      } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchQuizzes();
   }, []);
 
   const handleBack = () => {
-    router.push('/dashboard/result');
+    router.push("/dashboard/result"); 
   };
 
   return (
     <div className="dashboard-container">
       <DashboardPageTitle>Quizzes</DashboardPageTitle>
-      <button
+      <button 
         onClick={handleBack}
-        className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto"
-      >
-        Lesson Plan
+        className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
       </button>
       <div className="flex flex-col sm:flex-col justify-between gap-5 overflow-y-auto h-[70vh] scrollbar-hide">
-        {storedQuizzes.map((quizWrapper, i) => {
-          const quiz = quizWrapper.quiz;
-          return (
-            <div key={i} className="quiz-container bg-white shadow-lg rounded-lg p-6 my-4 w-full">
-              <h3 className="text-xl font-semibold mb-2 tracking-wide">Quiz {i + 1}</h3>
-              {quiz.questions.map((question, qIndex) => (
-                <p key={qIndex} className="text-base leading-relaxed tracking-wide mb-2">{question}</p>
-              ))}
+        {loading ? (
+          <div className="loading-container flex flex-col items-center justify-center h-full">
+            <div className="spinner">
+              <span role="img" aria-label="spinner" className="spin-icon">⏳</span>
             </div>
-          );
-        })}
+            <p className="loading-text mt-4 text-center">
+              Sit tight, the quizzes are loading <span role="img" aria-label="smiley">😊</span>
+            </p>
+          </div>
+        ) : (
+          storedQuizzes.map((quizWrapper, i) => {
+            return (
+              <div key={i} className="quiz-container bg-white shadow-lg rounded-lg p-6 my-4 w-full">
+                <h3 className="text-xl font-semibold mb-2 tracking-wide">Quiz {i + 1}</h3>
+                {quizWrapper.questions ? (
+                  quizWrapper.questions.map((question, qIndex) => (
+                    <p key={qIndex} className="text-base leading-relaxed tracking-wide mb-2">{question}</p>
+                  ))
+                ) : (
+                  <p>No questions available for this quiz.</p>
+                )}
+              </div>
+            )
+          })
+        )}
+        {/* {showInitialPopup && <InitialPopup onLater={handleLater} onNow={handleNow} />}
+      {showFeedbackForm && <FeedbackForm onClose={handleCloseFeedbackForm} />} */}
       </div>
       <style jsx>{`
+        .loading-container {
+          /* Style for the loading container */
+        }
+        .spinner {
+          animation: spin 2s linear infinite;
+        }
+        .spin-icon {
+          /* Style for the spinning icon (text or image) */
+        }
+        .loading-text {
+          /* Style for the loading text */
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
