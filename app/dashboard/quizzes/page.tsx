@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
 import InitialPopup from '@/components/InitialPopup'
 import FeedbackForm from '@/components/FeedbackForm'
+import { useSession } from 'next-auth/react';
 
 interface QuizData {
   _id: string;
@@ -13,10 +14,19 @@ interface QuizData {
   questions: string[];
   __v: number;
 }
+interface CustomSession {
+  user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+  };
+}
 
 const Page = () => {
   const [storedQuizzes, setStoredQuizzes] = useState<QuizData[]>([]);
   const [loading, setLoading] = useState(true);  
+  const { data: session } = useSession() as { data: CustomSession | null };
   const router = useRouter();
 
   // const [showInitialPopup, setShowInitialPopup] = useState(true);
@@ -38,7 +48,13 @@ const Page = () => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const response = await fetch('https://serverlogic.azurewebsites.net/api/fetchQuizz/?oid=fe2ec27d-8113-4a62-8f0d-d5b7c757b0dd');
+        const oid = session?.user?.id;
+        if (!oid) {  
+          throw new Error("User ID is not found in session");  
+        }  
+        const url = `https://serverlogic.azurewebsites.net/api/fetchQuizz/?oid=${oid}`;  
+        const response = await fetch(url);
+        
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
         }
