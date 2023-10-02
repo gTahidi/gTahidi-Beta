@@ -38,7 +38,13 @@ const Page = () => {
   useEffect(() => {
     const fetchQuizzes = async () => {
       try {
-        const response = await fetch('https://serverlogic.azurewebsites.net/api/fetchQuizz/?oid=fe2ec27d-8113-4a62-8f0d-d5b7c757b0dd');
+        const oid = session?.user?.id;
+        if (!oid) {  
+          throw new Error("User ID is not found in session");  
+        }  
+        const url = `https://serverlogic.azurewebsites.net/api/fetchQuizz/?oid=${oid}`;  
+        const response = await fetch(url);
+        
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
         }
