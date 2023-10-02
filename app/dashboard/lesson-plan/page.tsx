@@ -105,7 +105,7 @@ const Page = () => {
         <div className="flex gap-x-2">
           <input
             type="text"
-            placeholder="Enter Subject"
+            placeholder="Learning Area"
             className="w-1/2 p-3 rounded"
             name="subject"
             value={formData.subject}
@@ -113,7 +113,7 @@ const Page = () => {
           />
           <input
             type="text"
-            placeholder="Enter Topic"
+            placeholder="Strand"
             className="w-1/2 p-3 rounded"
             name="topic"
             value={formData.topic}
@@ -123,7 +123,7 @@ const Page = () => {
         <div className="flex gap-x-2 mt-5">
           <input
             type="text"
-            placeholder="Enter Sub strand"
+            placeholder="Sub strand"
             className="w-1/2 p-3 rounded"
             name="substrand"
             value={formData.substrand}
