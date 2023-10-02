@@ -1,44 +1,60 @@
-'use client';
+'use client'
+
 
 import DashboardPageButton from "@/components/DashboardPageButton";
 import { DashboardPageTableHeader } from "@/components/DashboardPageTableHeader";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";  
+import { marked } from "marked";
 
 interface NoteWrapper {
-  lessonNotes: {
-    notes: string;
-  };
+  notes: string;
 }
 
 const Page = () => {
   const [storedNotes, setStoredNotes] = useState<NoteWrapper[]>([]);
+  const [loading, setLoading] = useState(true);  // added loading state
   const router = useRouter();
 
-
-  function formatNotes(notes: string): string {
-    notes = notes.replace(/(\d+\.) /g, '<br />$1 ');
-    notes = notes.replace(/( [IVXLCDM]+\.) /g, '<br />$1 ');
-    notes = notes.replace(/(Step \d+:)/g, '<br />$1');
-    notes = notes.replace(/([a-zA-Z]\)) /g, '<br />$1 ');
-    return notes;
+  function formatContent(content: string): string {
+    let formattedContent = marked(content); 
+    formattedContent = formattedContent.replace(/<h1>/g, '<h1 class="text-2xl font-bold my-4">');
+    formattedContent = formattedContent.replace(/<h2>/g, '<h2 class="text-xl font-semibold my-3">');
+    formattedContent = formattedContent.replace(/<h3>/g, '<h3 class="text-lg font-medium my-2">');
+    formattedContent = formattedContent.replace(/<ul>/g, '<ul class="list-disc pl-5">');
+    formattedContent = formattedContent.replace(/<ol>/g, '<ol class="list-decimal pl-5">');
+    formattedContent = formattedContent.replace(/<li>/g, '<li class="my-1">');
+  
+    formattedContent = formattedContent.replace(/<p>/g, '<p class="my-2">');
+  
+    
+    return formattedContent;
   }
   
+  
   useEffect(() => {
-    const notesFromLocalStorage = localStorage.getItem('createdNotes');
-    if (notesFromLocalStorage) {
-      setStoredNotes(JSON.parse(notesFromLocalStorage));
-    }
+    const fetchNotes = async () => {
+      try {
+        const response = await fetch('https://serverlogic.azurewebsites.net/api/fetchNotes?code=15isWYDPB2miM2wIhlzmIS-ASI4IptnoV0PH8XOR41mdAzFuB_LnoA==&oid=fe2ec27d-8113-4a62-8f0d-d5b7c757b0dd');
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        setStoredNotes(data);
+      } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+      } finally {
+        setLoading(false);  
+      }
+    };
+
+    fetchNotes();
   }, []);
   
   const handleBack = () => {
     router.push("/dashboard/result"); 
   };
-    
-
-
-  
 
   return (
     <div className="dashboard-container">
@@ -47,20 +63,47 @@ const Page = () => {
         onClick={handleBack}
         className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
       </button>
-      <div className="notes-list overflow-y-auto h-screen scrollbar-hide"> 
-        {storedNotes.map((noteWrapper, i) => {
-          const note = noteWrapper.lessonNotes;
-          const formattedNote = formatNotes(note.notes);
-          
-          return (
-            <div key={i} className="note bg-white shadow-lg rounded-lg p-6 my-4">
-              <h3 className="text-xl font-semibold mb-2 tracking-wide">{note.notes.split("\n")[0]}</h3>
-              <p className="text-base leading-relaxed tracking-wide" dangerouslySetInnerHTML={{ __html: formattedNote }}></p>
+      <div className="notes-list overflow-y-auto max-h-[80vh] scrollbar-hide space-y-4"> 
+        {loading ? (
+          <div className="loading-container flex flex-col items-center justify-center h-full">
+            <div className="spinner">
+              <span role="img" aria-label="spinner" className="spin-icon">⏳</span>
             </div>
-          )
-        })}
+            <p className="loading-text mt-4 text-center">
+              Sit tight, the notes are loading <span role="img" aria-label="smiley">😊</span>
+            </p>
+          </div>
+        ) : (
+          storedNotes.map((note, i) => {  // Changed noteWrapper to note
+            const fullyFormattedNote = formatContent(note.notes);  // Directly access notes property
+            
+            return (
+              <div key={i} className="note bg-white shadow-lg rounded-lg p-6 space-y-2">
+                <h3 className="text-xl font-semibold mb-2 tracking-wide">{note.notes.split("\n")[0]}</h3>
+                <div className="text-base leading-relaxed tracking-wide space-y-2" dangerouslySetInnerHTML={{ __html: fullyFormattedNote }}></div>
+              </div>
+            )
+          })
+        )}
       </div>
       <style jsx>{`
+        // ... (rest of your styles, plus styles for the loading container, spinner, and loading text)
+        .loading-container {
+          /* Style for the loading container */
+        }
+        .spinner {
+          animation: spin 2s linear infinite;
+        }
+        .spin-icon {
+          /* Style for the spinning icon (text or image) */
+        }
+        .loading-text {
+          /* Style for the loading text */
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
