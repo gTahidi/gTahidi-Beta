@@ -12,9 +12,19 @@ interface NoteWrapper {
   notes: string;
 }
 
+interface CustomSession {
+  user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+  };
+}
+
 const Page = () => {
   const [storedNotes, setStoredNotes] = useState<NoteWrapper[]>([]);
   const [loading, setLoading] = useState(true);  // added loading state
+  const { data: session } = useSession() as { data: CustomSession | null };
   const router = useRouter();
 
   function formatContent(content: string): string {

@@ -13,10 +13,19 @@ interface QuizData {
   questions: string[];
   __v: number;
 }
+interface CustomSession {
+  user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+  };
+}
 
 const Page = () => {
   const [storedQuizzes, setStoredQuizzes] = useState<QuizData[]>([]);
   const [loading, setLoading] = useState(true);  
+  const { data: session } = useSession() as { data: CustomSession | null };
   const router = useRouter();
 
   // const [showInitialPopup, setShowInitialPopup] = useState(true);
