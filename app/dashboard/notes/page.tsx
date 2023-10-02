@@ -47,7 +47,7 @@ const Page = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const oid = session?.user?.oid // extracting oid
+        const oid = session?.user?.id // extracting oid
         if(!oid) {
           throw new Error("User ID is not found");
         }
