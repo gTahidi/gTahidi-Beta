@@ -36,7 +36,12 @@ const Page = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await fetch('https://serverlogic.azurewebsites.net/api/fetchNotes?code=15isWYDPB2miM2wIhlzmIS-ASI4IptnoV0PH8XOR41mdAzFuB_LnoA==&oid=fe2ec27d-8113-4a62-8f0d-d5b7c757b0dd');
+        const oid = session?.user?.oid // extracting oid
+        if(!oid) {
+          throw new Error("User ID is not found");
+        }
+        const url = 'https://serverlogic.azurewebsites.net/api/fetchNotes?code=15isWYDPB2miM2wIhlzmIS-ASI4IptnoV0PH8XOR41mdAzFuB_LnoA==&oid=${oid}'
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
         }
@@ -48,9 +53,10 @@ const Page = () => {
         setLoading(false);  
       }
     };
-
+    if (session?.user?.id) {
     fetchNotes();
-  }, []);
+    }
+  }, [session]);
   
   const handleBack = () => {
     router.push("/dashboard/result"); 
