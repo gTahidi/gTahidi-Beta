@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
 import InitialPopup from '@/components/InitialPopup'
 import FeedbackForm from '@/components/FeedbackForm'
+import { useSession } from 'next-auth/react';
 
 interface QuizData {
   _id: string;

@@ -7,6 +7,7 @@ import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";  
 import { marked } from "marked";
+import { useSession } from 'next-auth/react';
 
 interface NoteWrapper {
   notes: string;
