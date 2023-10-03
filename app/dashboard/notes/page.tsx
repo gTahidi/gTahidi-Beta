@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { marked } from "marked";
 import { useSession } from 'next-auth/react';
 
+
 interface NoteWrapper {
   notes: string;
 }
@@ -51,7 +52,7 @@ const Page = () => {
         if(!oid) {
           throw new Error("User ID is not found");
         }
-        const url = 'https://serverlogic.azurewebsites.net/api/fetchNotes?code=15isWYDPB2miM2wIhlzmIS-ASI4IptnoV0PH8XOR41mdAzFuB_LnoA==&oid=${oid}'
+          const url = `https://serverlogic.azurewebsites.net/api/fetchNotes/?oid=${oid}`; 
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
