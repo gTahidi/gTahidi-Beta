@@ -113,7 +113,7 @@ const Page = () => {
           />
           <input
             type="text"
-            placeholder="Enter Topic"
+            placeholder="Enter Strand"
             className="w-1/2 p-3 rounded"
             name="topic"
             value={formData.topic}
