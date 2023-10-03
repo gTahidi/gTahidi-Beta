@@ -13,7 +13,7 @@ interface LessonPlanData {
 }
 
 const ViewLesson = () => {
-  const router = useRouter();
+  const router = useRouter() as any;
   const [lessonPlan, setLessonPlan] = useState<LessonPlanData | null>(null);
 
   useEffect(() => {
