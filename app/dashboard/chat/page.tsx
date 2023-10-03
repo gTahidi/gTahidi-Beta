@@ -3,9 +3,9 @@ import React from "react";
 const Page = () => {
   return (
     <div >
-      <h1>Dont be too harsh on me 😄. I'm still learning </h1>
+      <h1>Dont be too harsh on me 😄. I&apos;m still learning </h1>
       <div>
-        <h1> Welcome to 1 room Kenya, i'm gTahidi your personal assistant</h1>
+        <h1> Welcome to 1 room Kenya, i&apos;m gTahidi your personal assistant</h1>
       </div>
 
       <div>
