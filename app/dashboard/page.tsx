@@ -139,7 +139,7 @@ const Dashboard = () => {
               </button>
             </div>
             <div className="text-center font-bold my-4">OR</div> */}
-            <button onClick={() => router.push('/dashboard/lesson-plan')} className="bg-gray-200 p-4 w-full rounded-lg transition-colors duration-300 hover:bg-gray-300 cursor-pointer text-center">
+            <button onClick={() => router.push('/dashboard/createlessonPlan')} className="bg-gray-200 p-4 w-full rounded-lg transition-colors duration-300 hover:bg-gray-300 cursor-pointer text-center">
               Generate a Lesson Plan first🤗
             </button>
             <button onClick={closeModal} className="mt-4 bg-red-500 text-white p-2 rounded w-full">Close</button>

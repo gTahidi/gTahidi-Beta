@@ -1,42 +1,44 @@
 'use client'
 
-import { useRouter } from 'next/router'; // Import from 'next/router' instead of 'next/navigation'
 import { useEffect, useState } from 'react';
-
-const ViewLesson = () => {
-    const router = useRouter();
-  const { lessonPlanId } = router.query as { lessonPlanId: string | undefined }; // Cast router.query to the correct type
+import { useRouter } from 'next/navigation';
 
 interface LessonPlanData {
-    subject: string;
-    topic: string;
-    substrand: string;
-    grade: string;
-    minutes: number;
-    // Add more properties as needed
+  subject: string;
+  topic: string;
+  substrand: string;
+  grade: string;
+  minutes: number;
+  // Add more properties as needed
 }
 
-const [lessonPlan, setLessonPlan] = useState<LessonPlanData | null>(null);
+const ViewLesson = () => {
+  const router = useRouter();
+  const [lessonPlan, setLessonPlan] = useState<LessonPlanData | null>(null);
 
   useEffect(() => {
-    if (lessonPlanId) {
-      fetch(
-        `https://serverlogic.azurewebsites.net/api/fetchLessonPlan?oid=${lessonPlanId}`
-      )
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setLessonPlan(data);
-        })
-        .catch((error) => {
-          console.error('Error fetching lesson plan:', error);
-        });
+    // Check if the router is ready before attempting to access query parameters
+    if (router.isReady) {
+      const lessonPlanId = router.query.lessonPlanId as string | undefined;
+      if (lessonPlanId) {
+        fetch(
+          `https://serverlogic.azurewebsites.net/api/fetchLessonPlan?oid=${lessonPlanId}`
+        )
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            setLessonPlan(data);
+          })
+          .catch((error) => {
+            console.error('Error fetching lesson plan:', error);
+          });
+      }
     }
-  }, [lessonPlanId]);
+  }, [router.isReady, router.query]);  // Ensure the effect re-runs when router.isReady or router.query changes
 
   return (
     <div className="lesson-plan-container">
