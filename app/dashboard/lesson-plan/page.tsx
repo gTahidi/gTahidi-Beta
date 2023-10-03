@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import Link from "next/link"; 
+import { marked } from "marked";
+
 
 
 interface LessonPlanData {
@@ -13,6 +15,20 @@ interface LessonPlanData {
   substrand: string;
   grade: string;
   minutes: string;
+  content: string;
+}
+
+function formatContent(content: string): string {
+  let formattedContent = marked(content); 
+  formattedContent = formattedContent.replace(/<h1>/g, '<h1 class="text-2xl font-bold my-4">');
+  formattedContent = formattedContent.replace(/<h2>/g, '<h2 class="text-xl font-semibold my-3">');
+  formattedContent = formattedContent.replace(/<h3>/g, '<h3 class="text-lg font-medium my-2">');
+  formattedContent = formattedContent.replace(/<ul>/g, '<ul class="list-disc pl-5">');
+  formattedContent = formattedContent.replace(/<ol>/g, '<ol class="list-decimal pl-5">');
+  formattedContent = formattedContent.replace(/<li>/g, '<li class="my-1">');
+  formattedContent = formattedContent.replace(/<p>/g, '<p class="my-2">');
+
+  return formattedContent;
 }
 
 const Page = () => {
@@ -88,9 +104,9 @@ const Page = () => {
                 key={i}
                 className="lesson-plan-container bg-white shadow-lg rounded-lg p-6 my-4 w-full"
               >
-                <Link
-                  href={`/dashboard/viewlessonsPlan?lessonPlanId=${lessonPlan._id}`}
-                >
+                {/* <Link
+                  href={`/dashboard/viewlessonPlan?lessonPlanId=${lessonPlan._id}`}
+                > */}
                     <p className=" text-xl font-semibold  leading-relaxed tracking-wide mb-2">
                       Subject: {lessonPlan.subject}
                     </p>
@@ -106,8 +122,16 @@ const Page = () => {
                     <p className="text-base leading-relaxed tracking-wide mb-2">
                       Duration in minutes: {lessonPlan.minutes}
                     </p>
+                    <p className="text-base leading-relaxed tracking-wide mb-2"
+                      dangerouslySetInnerHTML={{ __html: formatContent(lessonPlan.content) }}
+                    >
+                      {/* content:{lessonPlan.content} */}
+                    </p>
+
+                    {/* <div className="text-gray-700 mb-5" dangerouslySetInnerHTML={{ __html: formatContent(content) }}></div> */}
+
                   
-                </Link>
+                {/* </Link> */}
               </div>
             );
           })
