@@ -68,7 +68,7 @@ const Page = () => {
     };
 
     fetchQuizzes();
-  }, []);
+  }, [session]);
 
   const handleBack = () => {
     router.push("/dashboard/result"); 
