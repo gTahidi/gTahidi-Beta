@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import InitialPopup from '@/components/InitialPopup'
 import FeedbackForm from '@/components/FeedbackForm'
 import { useSession } from 'next-auth/react';
+import Link from "next/link";
 
 interface QuizData {
   _id: string;
@@ -77,6 +78,13 @@ const Page = () => {
   return (
     <div className="dashboard-container">
       <DashboardPageTitle>Quizzes</DashboardPageTitle>
+      <button className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">
+        <Link
+          href="https://forms.office.com/pages/responsepage.aspx?id=7qH76bbTlUW3HBSB25ZKWAVfIcbcZZJLjemdITQ6iQNUNkpGOUJRTENYSlkwNVdRVEcwNDBURE0zMyQlQCN0PWcu"
+        >
+          Give us feedback
+        </Link>
+      </button>
       <button 
         onClick={handleBack}
         className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
