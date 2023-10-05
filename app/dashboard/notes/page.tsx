@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";  
 import { marked } from "marked";
 import { useSession } from 'next-auth/react';
+import Link from "next/link";
 
 
 interface NoteWrapper {
@@ -80,6 +81,13 @@ const Page = () => {
       <button 
         onClick={handleBack}
         className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">Lesson Plan
+      </button>
+      <button className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">
+        <Link
+          href="https://forms.office.com/pages/responsepage.aspx?id=7qH76bbTlUW3HBSB25ZKWAVfIcbcZZJLjemdITQ6iQNUNkpGOUJRTENYSlkwNVdRVEcwNDBURE0zMyQlQCN0PWcu"
+        >
+          Give us feedback
+        </Link>
       </button>
       <div className="notes-list overflow-y-auto max-h-[80vh] scrollbar-hide space-y-4"> 
         {loading ? (
