@@ -32,21 +32,23 @@ export const Nav = () => {
           <a href="#benefits" className="cursor-pointer">
             Benefits
           </a>
-          <a href="#how-it-works" className="cursor-pointer">
-            How it works
-          </a>
-          <a href="#testimonials" className="cursor-pointer">
-            Testimonials
-          </a>
-          <a className="cursor-pointer" href="#pricing">
-            Pricing
-          </a>
-          <a className="cursor-pointer" href="#contact">
-            Contact Us
-          </a>
-        </div>
-        <PillButton onClick={handleStart}>Start Creating</PillButton>
-      </ul>
+              <a href="#how-it-works" className="cursor-pointer">
+                How it works
+              </a>
+              <a href="#testimonials" className="cursor-pointer">
+                Testimonials
+              </a>
+              <a className="cursor-pointer" href="#pricing">
+                Pricing
+              </a>
+              <a className="cursor-pointer" href="#contact">
+                Contact Us
+              </a>
+            </div>
+            <PillButton
+            className="hidden sm:block"
+             onClick={handleStart}>Start Creating</PillButton>
+          </ul>
     </nav>
   );
 };
