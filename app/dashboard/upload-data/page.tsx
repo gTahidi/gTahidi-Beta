@@ -27,7 +27,7 @@ const UploadDataPage = () => {
         <div className="bg-white p-4 md:p-8 rounded shadow-lg w-full md:w-1/3 text-center">
           <h3 className="text-2xl font-bold text-black mb-4">Upgrade to Premium</h3>
           <p className="text-gtahidiPurple">
-            Get access to advanced features like "Upload Data" and "Chat" by upgrading to our premium plan.
+            Get access to advanced features like Upload Data and Chat by upgrading to our premium plan.
           </p>
           <div className="md:space-x-3 sm:space-x-3 mt-4">
             <button className="bg-gtahidiPurple p-3 rounded text-white font-medium" onClick={upgrade}>

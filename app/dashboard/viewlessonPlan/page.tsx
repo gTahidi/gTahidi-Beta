@@ -50,13 +50,13 @@ const ViewLesson = () => {
 
 
 
-  const handleCreateNotes = () => {
-    setLoadingAction('notes'); // Set loading action to 'notes'
-    const apiUrl = "https://serverlogic.azurewebsites.net/api/createNotes";
-    const requestBody = {
-        lessonPlanId: _id,
-        oid: session?.user?.id || ""
-    };
+      const handleCreateNotes = (lessonPlan: LessonPlanData) => {
+        setLoadingAction('notes'); // Set loading action to 'notes'
+        const apiUrl = "https://serverlogic.azurewebsites.net/api/createNotes";
+        const requestBody = {
+          lessonPlanId: lessonPlan._id, // Use lessonPlan._id here
+          oid: session?.user?.id || "",
+        };
   
     axios.post(apiUrl, requestBody)
       .then((response) => {
@@ -83,13 +83,13 @@ const ViewLesson = () => {
 
   };
 
-  const handleCreateQuiz = () => {
+  const handleCreateQuiz = (lessonPlan: LessonPlanData) => {
     setLoadingAction('quiz'); // Set loading action to 'quiz'
       const apiUrl = "https://serverlogic.azurewebsites.net/api/createQuizz";
 
       const requestBody = {
-          lessonPlanId: _id,
-          oid: session?.user?.id || "" // Attach the oid from the session
+        lessonPlanId: lessonPlan._id, // Use lessonPlan._id here
+        oid: session?.user?.id || "" // Attach the oid from the session
           
       }; 
 
@@ -154,7 +154,7 @@ return (
           <div className="lesson-plan-container bg-white shadow-lg rounded-lg p-6 my-4 w-full">
             <div className="flex justify-between items-center">
               <div className="flex flex-col text-black">
-                <button className="bg-gtahidiPurple p-3 rounded" onClick={handleCreateNotes}>
+                <button className="bg-gtahidiPurple p-3 rounded" onClick={() => handleCreateNotes(lessonPlan)} >
                   Create Notes
                   {loadingAction === 'notes' && (
                     <svg className="animate-spin ml-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -163,7 +163,7 @@ return (
                     </svg>
                   )}
                 </button>
-                <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={handleCreateQuiz}>
+                <button className="bg-gtahidiPurple p-3 rounded mt-5" onClick={() => handleCreateQuiz(lessonPlan)} >
                   Create Quizzes
                   {loadingAction === 'quiz' && (
                     <svg className="animate-spin ml-2 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
