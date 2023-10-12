@@ -47,13 +47,8 @@ export const Welcome = () => {
           </button>
         </div>
       </div>
-      <Image
-        src="/teacher-with-board.png"
-        alt="blob"
-        height={300}
-        width={300}
-        className="mx-auto sm:mx-0 w-full sm:w-1/3"
-      />
+      <img src="/teacher-with-board.png" alt="blob" className="mx-auto sm:mx-0 w-full sm:w-1/3" />
+
     </header>
   );
 };
