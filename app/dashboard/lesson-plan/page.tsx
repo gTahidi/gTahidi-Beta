@@ -108,12 +108,14 @@ const Page = () => {
           storedLessonPlans.map((lessonPlan, i) => {
             return (
               <div
-                key={i}
-                className="lesson-plan-container bg-white shadow-lg rounded-lg p-6 my-4 w-full"
-              >
-                {/* <Link
-                  href={`/dashboard/viewlessonPlan?lessonPlanId=${lessonPlan._id}`}
-                > */}
+                    key={i}
+                    className="lesson-plan-container bg-white shadow-lg rounded-lg p-6 my-4 w-full"
+                    onClick={() => {
+                        localStorage.setItem("selectedLessonPlanId", lessonPlan._id);
+                        router.push(`/dashboard/viewlessonPlan?lessonPlanId=${lessonPlan._id}`);
+                    }}
+                >
+                
                     <p className=" text-xl font-semibold  leading-relaxed tracking-wide mb-2">
                       Subject: {lessonPlan.subject}
                     </p>
@@ -129,16 +131,15 @@ const Page = () => {
                     <p className="text-base leading-relaxed tracking-wide mb-2">
                       Duration in minutes: {lessonPlan.minutes}
                     </p>
-                    <p className="text-base leading-relaxed tracking-wide mb-2"
+                    {/* <p className="text-base leading-relaxed tracking-wide mb-2"
                       dangerouslySetInnerHTML={{ __html: formatContent(lessonPlan.content) }}
                     >
-                      {/* content:{lessonPlan.content} */}
-                    </p>
+                    </p> */}
 
                     {/* <div className="text-gray-700 mb-5" dangerouslySetInnerHTML={{ __html: formatContent(content) }}></div> */}
 
                   
-                {/* </Link> */}
+                
               </div>
             );
           })
