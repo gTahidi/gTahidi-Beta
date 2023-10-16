@@ -33,6 +33,7 @@ const ChatPage = () => {
             </button>
           </div>
         </div>
+        </div>
 
     <div className=''>
       <h1>Dont be too harsh on me 😄. I&apos;m still learning </h1>
@@ -49,5 +50,5 @@ const ChatPage = () => {
 
 
 export default ChatPage;
-export default Page;
+
 
