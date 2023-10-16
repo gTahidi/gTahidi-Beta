@@ -16,7 +16,6 @@ const ChatPage = () => {
   };
 
   return (
-
     <div className="">
       <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div className="bg-white p-4 md:p-8 rounded shadow-lg w-full md:w-1/3 text-center">
@@ -33,22 +32,20 @@ const ChatPage = () => {
             </button>
           </div>
         </div>
-        </div>
-
-    <div className=''>
-      <h1>Dont be too harsh on me 😄. I&apos;m still learning </h1>
-      <div>
-        <h1> Welcome to 1 room Kenya, i&apos;m gTahidi your personal assistant</h1>
-
       </div>
-      <div className="flex flex-col px-4 md:px-[5%] py-5 gap-y-5">
-        {/* Your chat content goes here */}
+
+      <div className=''>
+        <h1>Dont be too harsh on me 😄. I&apos;m still learning </h1>
+        <div>
+          <h1> Welcome to 1 room Kenya, i&apos;m gTahidi your personal assistant</h1>
+        </div>
+        <div className="flex flex-col px-4 md:px-[5%] py-5 gap-y-5">
+          {/* Your chat content goes here */}
+        </div>
       </div>
     </div>
   );
 };
 
-
 export default ChatPage;
-
 
