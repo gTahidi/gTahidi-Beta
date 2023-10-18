@@ -44,6 +44,7 @@
     "react-dom": "^18.0.0",
     "react-hot-toast": "^2.4.1",
     "react-markdown": "^8.0.7",
+    "react-modal": "^3.16.1",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.0",
@@ -77,5 +78,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-modal": "^3.16.1"
   }
 }

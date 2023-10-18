@@ -1,12 +1,38 @@
-"use client";
+'use client'
 
 import { useGlobalData } from "@/hooks/useGlobalData";
-import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
+import Modal from 'react-modal';
+
+const modalStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Transparent background
+  },
+  content: {
+    top: '50%', // Center vertically
+    left: '50%', // Center horizontally
+    transform: 'translate(-50%, -50%)',
+    border: 'none', // Remove border
+    background: 'transparent', // Transparent background
+  },
+};
 
 export const Welcome = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const { handleStart } = useGlobalData();
+
+  // Function to open the modal
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <header className="p-4 sm:p-[5%] flex flex-col sm:justify-between sm:flex-row">
       <div className="mb-4 sm:mb-0 sm:w-3/5">
@@ -20,7 +46,7 @@ export const Welcome = () => {
                 "Create Lesson Plans",
                 "Create Short Notes",
                 "Organize schemes of work",
-                ],
+              ],
               autoStart: true,
               loop: true,
             }}
@@ -41,7 +67,7 @@ export const Welcome = () => {
           </button>
           <button
             className="py-2 border-2 border-gtahidiPurple rounded-lg text-gtahidiPurple w-full sm:w-1/4"
-            // onClick={handleStart}
+            onClick={openModal}
           >
             Demo
           </button>
@@ -49,6 +75,23 @@ export const Welcome = () => {
       </div>
       <img src="/teacher-with-board.png" alt="blob" className="mx-auto sm:mx-0 w-full sm:w-1/3" />
 
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel="YouTube Video"
+        style={modalStyles} // Apply custom styles
+        ariaHideApp={false}
+      >
+        <iframe
+          title="Demo Video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/Bl1FOKpFY2Q?autoplay=1" // Autoplay the video
+          // https://youtu.be/Bl1FOKpFY2Q?si=GlmsyPbawkcJ0Hvb
+          frameBorder="0"
+          allowFullScreen
+        />
+      </Modal>
     </header>
   );
 };
