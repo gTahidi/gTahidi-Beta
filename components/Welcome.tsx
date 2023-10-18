@@ -12,7 +12,7 @@ const modalStyles = {
   content: {
     top: '50%', // Center vertically
     left: '50%', // Center horizontally
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, -80%)',
     border: 'none', // Remove border
     background: 'transparent', // Transparent background
   },
@@ -85,9 +85,9 @@ export const Welcome = () => {
         <iframe
           title="Demo Video"
           width="560"
-          height="315"
-          src="https://www.youtube.com/embed/Bl1FOKpFY2Q?autoplay=1" // Autoplay the video
-          // https://youtu.be/Bl1FOKpFY2Q?si=GlmsyPbawkcJ0Hvb
+          height="400"
+          src="https://www.youtube.com/embed/glOdPxxRD2M?autoplay=1" // Autoplay the video
+          // https://youtu.be/glOdPxxRD2M?si=tNzpO6VdGbeVyz4A
           frameBorder="0"
           allowFullScreen
         />
