@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import { DashboardPageTitle } from "@/components/DashboardPageTitle";
 import Link from "next/link"; 
 import { marked } from "marked";
+import { useSession } from 'next-auth/react';
+
 
 
 
@@ -17,6 +19,19 @@ interface LessonPlanData {
   minutes: string;
   content: string;
 }
+
+interface CustomSession {
+  user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+  };
+
+}
+const customSession: CustomSession = { user: {} };
+console.log('custom', JSON.stringify(customSession));
+
 
 function formatContent(content: string): string {
   let formattedContent = marked(content); 
@@ -36,33 +51,34 @@ const Page = () => {
     []
   );
   const [loading, setLoading] = useState(true);
+  const { data: session } = useSession() as { data: CustomSession | null };
   const router = useRouter();
 
   useEffect(() => {
     const fetchLessonPlans = async () => {
       try {
-        const response = await fetch(
-          "https://serverlogic.azurewebsites.net/api/fetchLessonPlan?oid=fe2ec27d-8113-4a62-8f0d-d5b7c757b0dd"
-        );
+        const oid = session?.user?.id; // extracting oid from the session
+        if (!oid) {
+          throw new Error("User ID is not found");
+        }
+        const url = `https://serverlogic.azurewebsites.net/api/fetchLessonPlans/?oid=${oid}`; 
+        const response = await fetch(url);
         if (!response.ok) {
-          throw new Error(
-            "Network response was not ok " + response.statusText
-          );
+          throw new Error('Network response was not ok ' + response.statusText);
         }
         const data = await response.json();
         setStoredLessonPlans(data);
       } catch (error) {
-        console.error(
-          "There has been a problem with your fetch operation:",
-          error
-        );
+        console.error('There has been a problem with your fetch operation:', error);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchLessonPlans();
-  }, []);
+  
+    if (session?.user?.id) {
+      fetchLessonPlans();
+    }
+  }, [session]);
 
   const handleBack = () => {
     router.push("/dashboard/createlessonPlan");
