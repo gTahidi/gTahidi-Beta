@@ -4,6 +4,8 @@ import { useGlobalData } from "@/hooks/useGlobalData";
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import Modal from 'react-modal';
+import Image from "next/image";
+
 
 const modalStyles = {
   overlay: {
@@ -73,8 +75,13 @@ export const Welcome = () => {
           </button>
         </div>
       </div>
-      <img src="/teacher-with-board.png" alt="blob" className="mx-auto sm:mx-0 w-full sm:w-1/3" />
-
+      <Image 
+        src="/teacher-with-board.png" 
+        alt="teacher with board" 
+        width={500} 
+        height={500} 
+        className="mx-auto sm:mx-0 w-full sm:w-1/3" 
+      />
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
