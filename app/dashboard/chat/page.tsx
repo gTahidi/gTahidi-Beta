@@ -12,6 +12,7 @@ const ChatPage: React.FC = () => {
     const [showUpgradeModal, setShowUpgradeModal] = useState<boolean>(true);
     const [message, setMessage] = useState<string>("");
     const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+    const chatContainerRef = React.useRef(null);
     const router = useRouter();
 
     const upgrade = () => {
@@ -24,6 +25,9 @@ const ChatPage: React.FC = () => {
 
     const sendMessage = async () => {
         try {
+            // Immediately display the user's message
+            setChatHistory(prevHistory => [...prevHistory, { type: "user", content: message }]);
+    
             const response = await fetch('https://gtahidicopilot.azurewebsites.net/api/copilot', {
                 method: 'POST',
                 headers: {
@@ -32,18 +36,30 @@ const ChatPage: React.FC = () => {
                 body: JSON.stringify({ message: message }),
             });
     
-            // Check if the response is okay, otherwise throw an error
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
     
-            const data = await response.text(); // Change this line to get plain text
-            setChatHistory([...chatHistory, { type: "user", content: message }, { type: "response", content: data }]);
+            const data = await response.text();
+    
+            // Introduce a delay (e.g., 1 second) before displaying the response
+            setTimeout(() => {
+                setChatHistory(prevHistory => [...prevHistory, { type: "response", content: data }]);
+            }, 1000);
+    
             setMessage("");
         } catch (error) {
             console.error("There was an error sending the message:", error);
         }
     };
+    
+
+    React.useEffect(() => {
+        if (chatContainerRef.current) {
+            (chatContainerRef.current as HTMLDivElement).scrollTop = (chatContainerRef.current as HTMLDivElement).scrollHeight;
+        }
+    }, [chatHistory]);
+    
     
 
     return (
@@ -61,31 +77,32 @@ const ChatPage: React.FC = () => {
                 </div>
             )} */}
 
-            <div className='flex flex-col items-center m-4'>
+            <div className='flex flex-col items-center m-2'>
                 <h1 className='text-3xl font-bold p-4 '>gTahidiAI Chat</h1>
                 <h1 className=''>Don't be too harsh on me 😄. I'm still learning </h1>
             </div>
 
-            <div className="min-h-screen flex items-center justify-center">
+            <div className="min-h-screen flex items-center justify-center top-0">
                 <div className="w-full md:w-3/4 lg:w-1/2 xl:w-2/5">
-                    <div className="p-4  rounded mb-4">
-                        {chatHistory.map((msg, index) => (
-                            <div key={index} className={`p-2 ${msg.type === "user" ? "text-right" : ""}`}>
-                                <span className={`inline-block rounded px-3 py-2 ${msg.type === "user" ? "bg-blue-200 text-blue-800" : "bg-gray-200 text-gray-800"}`}>
-                                    {msg.content}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
+                <div className="p-4 rounded mb-4 overflow-y-auto h-full" ref={chatContainerRef}>
+                    {chatHistory.map((msg, index) => (
+                        <div key={index} className={`p-2 ${msg.type === "user" ? "text-right" : ""}`}>
+                            <span className={`inline-block rounded px-3 py-2 ${msg.type === "user" ? "bg-blue-200 text-blue-800" : "bg-gray-200 text-gray-800"}`}>
+                                {msg.content}
+                            </span>
+                        </div>
+                    ))}
+                </div>
 
-                    <div className="flex flex-col md:flex-row items-center p-4 justify-center space-y-4 md:space-y-0 md:space-x-4">
+
+                    {/* <div className="flex flex-col md:flex-row items-center p-4 justify-center space-y-4 md:space-y-0 md:space-x-4">
                         <button className="flex-1 py-2 px-4 border border-gray-300 rounded-md hover:bg-gray-100 text-center">Time-based Activity
                             <p className="text-gray-500 text-sm">Ideas for engaging student activities.</p>
                         </button>
                         <button className="flex-1 py-2 px-4 border border-gray-300 rounded-md hover:bg-gray-100 text-center">Generate Homework
                             <p className="text-gray-500 text-sm">For students to work on after lessons.</p>
                         </button>
-                    </div>
+                    </div> */}
                     <div className="mt-4 flex items-center border border-gray-300 rounded-full">
                         <input
                             className="flex-grow py-2 px-4 rounded-full"
