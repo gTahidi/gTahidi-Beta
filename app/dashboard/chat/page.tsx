@@ -64,7 +64,7 @@ const ChatPage: React.FC = () => {
 
     return (
         <div className="">
-            {/* {showUpgradeModal && (
+            {showUpgradeModal && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-4 md:p-8 rounded shadow-lg w-full md:w-1/3 text-center">
                         <h3 className="text-2xl font-bold text-black mb-4">Upgrade to Premium</h3>
@@ -75,7 +75,7 @@ const ChatPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            )} */}
+            )}
 
             <div className='flex flex-col items-center m-2'>
                 <h1 className='text-3xl font-bold p-4 '>gTahidiAI Chat</h1>
@@ -87,7 +87,7 @@ const ChatPage: React.FC = () => {
                 <div className="p-4 rounded mb-4 overflow-y-auto h-full" ref={chatContainerRef}>
                     {chatHistory.map((msg, index) => (
                         <div key={index} className={`p-2 ${msg.type === "user" ? "text-right" : ""}`}>
-                            <span className={`inline-block rounded px-3 py-2 ${msg.type === "user" ? "bg-blue-200 text-blue-800" : "bg-gray-200 text-gray-800"}`}>
+                            <span className={`inline-block rounded-lg px-3 py-2 ${msg.type === "user" ? "bg-blue-200 text-blue-800" : "bg-gray-200 text-gray-800"}`}>
                                 {msg.content}
                             </span>
                         </div>
