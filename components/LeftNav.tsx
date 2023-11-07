@@ -22,10 +22,10 @@ export const dashboardTabs = [
     icon: faGauge,
     name: "Dashboard",
   },
-  {
-    icon: faUpload,
-    name: "Upload Data",
-  },
+  // {
+  //   icon: faUpload,
+  //   name: "Upload Data",
+  // },
   {
     icon: faSpa,
     name: "Lesson Plan",
