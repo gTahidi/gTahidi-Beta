@@ -64,7 +64,7 @@ const ChatPage: React.FC = () => {
 
     return (
         <div className="">
-            {showUpgradeModal && (
+            {/* {showUpgradeModal && (
                 <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white p-4 md:p-8 rounded shadow-lg w-full md:w-1/3 text-center">
                         <h3 className="text-2xl font-bold text-black mb-4">Upgrade to Premium</h3>
@@ -75,7 +75,7 @@ const ChatPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
 
             <div className='flex flex-col items-center m-2'>
                 <h1 className='text-3xl font-bold p-4 '>gTahidiAI Chat</h1>
