@@ -34,6 +34,7 @@
     "firebase": "^10.3.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^10.16.2",
+    "heroicons": "^2.0.18",
     "marked": "^9.0.3",
     "next": "^13.5.3",
     "next-auth": "^4.2.0",

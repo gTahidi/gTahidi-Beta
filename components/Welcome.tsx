@@ -88,7 +88,7 @@ export const Welcome = () => {
         contentLabel="YouTube Video"
         style={modalStyles} // Apply custom styles
         ariaHideApp={false}
-      >
+      > 
         <iframe
           title="Demo Video"
           width="560"
