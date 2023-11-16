@@ -21,7 +21,7 @@ export const Contact = () => {
               </div>
             </div>
             <div className="flex items-center mb-6">
-              <FontAwesomeIcon icon={faEnvelope} className="text-gtahidiPink mr-3" size="lg" />
+              <FontAwesomeIcon icon={faEnvelope} className="text-gtahidiPink mr-3" size="sm" />
               <div className="text-sm">
                 <p className="font-semibold">Write to us at</p>
                 <a href="mailto:gtahidiai@gmail.com" className="hover:underline">gtahidiai@gmail.com</a>
