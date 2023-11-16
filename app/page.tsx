@@ -10,6 +10,7 @@ import Footer  from "@/components/Footer";
 import { Contact } from "@/components/Contact";
 import { SocialsSection } from "@/components/SocialsSection";
 import FAQ  from "@/components/Faqs"
+import Trusted from "@/components/Trusted";
 
 const page = () => {
   return (
@@ -20,8 +21,9 @@ const page = () => {
         <Welcome />
       </section>
       {/* <SocialsSection /> */}
-      <Why />
-      <HDIW />
+      <Trusted/>
+      {/* <Why /> */}
+      {/* <HDIW /> */}
       <Privacy />
       <Testimonials />
       <FAQ />
