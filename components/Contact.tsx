@@ -14,21 +14,21 @@ export const Contact = () => {
               For any Queries and Support
             </h3>
             <div className="flex items-center mb-6">
-              <FontAwesomeIcon icon={faLocationArrow} className="text-gtahidiPink mr-3" size="lg" />
+              {/* <FontAwesomeIcon icon={faLocationArrow} className="text-gtahidiPink mr-3" size="lg" /> */}
               <div className="text-sm">
                 <p className="font-semibold">Company Location</p>
                 <p>Nairobi, Kenya</p>
               </div>
             </div>
             <div className="flex items-center mb-6">
-              <FontAwesomeIcon icon={faEnvelope} className="text-gtahidiPink mr-3" size="sm" />
+              {/* <FontAwesomeIcon icon={faEnvelope} className="text-gtahidiPink mr-3" size="sm" /> */}
               <div className="text-sm">
                 <p className="font-semibold">Write to us at</p>
                 <a href="mailto:gtahidiai@gmail.com" className="hover:underline">gtahidiai@gmail.com</a>
               </div>
             </div>
             <div className="flex items-center mb-6">
-              <FontAwesomeIcon icon={faPhone} className="text-gtahidiPink mr-3" size="lg" />
+              {/* <FontAwesomeIcon icon={faPhone} className="text-gtahidiPink mr-3" size="lg" /> */}
               <div className="text-sm">
                 <p className="font-semibold">Call us on</p>
                 <p>0790456789</p>

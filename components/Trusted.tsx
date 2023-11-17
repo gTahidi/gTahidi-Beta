@@ -1,9 +1,9 @@
 import React from 'react';
-import Bars from '@/public/bars.svg';
-import Progress from '@/public/progress.svg';
+import Bars from '@/public/Woman-working.svg';
+import Progress from '@/public/checkout-window.svg';
 import Rectangle from '@/public/rectangle.svg';
 import Vector from '@/public/Vector.svg';
-import lesson from '@/public/lessonnotes.svg';
+import lesson from '@/public/healthtrackingwatch.svg';
 import Enterprise from '@/public/enterprise.svg';
 import Image from 'next/image';
 
