@@ -11,6 +11,7 @@ import { Contact } from "@/components/Contact";
 import { SocialsSection } from "@/components/SocialsSection";
 import FAQ  from "@/components/Faqs"
 import Trusted from "@/components/Trusted";
+import BackedByMicrosoft from "@/components/microsoft";
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
         <Welcome />
       </section>
       {/* <SocialsSection /> */}
+      <BackedByMicrosoft />
       <Trusted/>
       {/* <Why /> */}
       {/* <HDIW /> */}
