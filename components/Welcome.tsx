@@ -18,8 +18,7 @@ export const Welcome = () => {
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Empowering Future <p>Generations </p> </h1>
             <p className="mb-8 text-sm font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">Discover gTahidi AI's innovative learning solutions, all conveniently delivered<br/> through WhatsApp. We bring education to your fingertips ensuring an engaging and specialized learning experience.</p>
             <div className=" flex flex-row space-x-8 items-center justify-center">
-            <div className="w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div className="flex justify-center pb-5">
+            <div className="w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">                <div className="flex justify-center pb-5">
                     <Image 
                         src={EducatorsIconSVG}
                         alt="Educators"
@@ -28,16 +27,15 @@ export const Welcome = () => {
                     />
                 </div>
                 <a href="#">
-                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Educators</h5>
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Educators</h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-500 dark:text-gray-400"> This innovative AI service is designed to empower educators and teachers by providing them with cutting-edge AI solutions to streamline the process of creating lesson plans, notes, and quizzes.</p>
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more     
+                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Get Started    
                 </a>
             </div>
 
-            <div className="w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div className="flex justify-center pb-5">
+            <div className="w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">                <div className="flex justify-center pb-5">
                     <Image 
                         src={LearnersIconSVG}
                         alt="Educators"
@@ -46,15 +44,14 @@ export const Welcome = () => {
                     />
                 </div>
                 <a href="#">
-                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Learners</h5>
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Learners</h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Discover gTahidi AI's innovative learning solutions, all conveniently delivered through WhatsApp. We bring education to your fingertips ensuring an engaging and specialized learning experience.</p>
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more     
+                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Get Started    
                 </a>
             </div>
-            <div className="w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <div className="flex justify-center pb-5">
+            <div className="w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">                <div className="flex justify-center pb-5">
                     <Image 
                         src={EnterprisesIconSVG}
                         alt="Educators"
@@ -63,11 +60,11 @@ export const Welcome = () => {
                     />
                 </div>
                 <a href="#">
-                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Enterprises</h5>
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Enterprises</h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Unlock the potential of your edtech company with gTahidi AI. Our solutions can empower your platform, enhance the learning experience, and stay ahead of the competition.</p>
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more     
+                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Get Started    
                 </a>
             </div>
             </div>
