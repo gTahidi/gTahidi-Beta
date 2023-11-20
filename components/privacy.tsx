@@ -8,7 +8,7 @@ const PrivacySection: React.FC = () => {
   return (
     <section className="bg-gtahidiDarkBlue text-white p-12 flex flex-col space-y-16 justify-center items-center">
       <div className="max-w-4xl mx-auto flex justify-between items-center">
-        <div className="flex-1">
+        <div className="floating">
           <Image
             src={Paddy}
             alt="Secure Lock and Key"
@@ -37,7 +37,7 @@ const PrivacySection: React.FC = () => {
           a traditional classroom or a comfortable home setting.
           </p>
         </div>
-        <div className="flex-1">
+        <div className="floating">
           <Image
             src={Cartoon}
             alt="Secure Lock and Key"
