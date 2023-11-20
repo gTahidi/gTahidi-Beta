@@ -1,52 +1,55 @@
-import React from 'react';
+// components/PrivacySection.tsx
+
 import Image from 'next/image';
-import TeacherIllustration from '@/public/teacher.png'; // Replace with your actual image path
-import DocumentIcon from '@/public/doc.png'; // Replace with your actual image path
+import Cartoon from '@/public/cartoon.svg'; // Replace with your actual image path
+import Paddy from '@/public/paddy.svg'; // Replace with your actual image path
 
-const InfoSection: React.FC = () => {
+const PrivacySection: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="space-y-10">
-        <div className="flex items-start space-x-4">
-          <div className="flex-shrink-0">
-            <Image
-              src={DocumentIcon}
-              alt="Document Icon"
-              width={150} // Set width as needed
-              height={150} // Set height as needed
-              layout="fixed"
-            />
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold text-gray-800">Your Privacy is Our Priority</h2>
-            <p className="text-gray-600 mt-2">
-              At gTahidi, we take your privacy seriously. We adhere to the highest standards of data security...
-              {/* Full privacy text goes here */}
-            </p>
-          </div>
+    <section className="bg-gtahidiDarkBlue text-white p-12 flex flex-col space-y-16 justify-center items-center">
+      <div className="max-w-4xl mx-auto flex justify-between items-center">
+        <div className="flex-1">
+          <Image
+            src={Paddy}
+            alt="Secure Lock and Key"
+            width={400}  // Adjust based on your image aspect ratio
+            height={400} // Adjust based on your image aspect ratiok
+          />
         </div>
-
-        <div className="flex items-start space-x-4">
-          <div className="flex-shrink-0">
-            <Image
-              src={TeacherIllustration}
-              alt="Teacher Illustration"
-              width={150} // Set width as needed
-              height={150} // Set height as needed
-              layout="fixed"
-            />
-          </div>
-          <div>
-            <h2 className="text-xl font-semibold text-gray-800">Our foundation in the field of education</h2>
-            <p className="text-gray-600 mt-2">
-              gTahidi was co-founded by an accomplished educator, making it specifically crafted to address...
-              {/* Full foundation text goes here */}
-            </p>
-          </div>
+        <div className="flex-1 px-6">
+          <h2 className="text-3xl text-gtahidiPink font-bold mb-4">Your Privacy is Our Priority</h2>
+          <p>
+            At gTahidi, we take your privacy seriously. We adhere to the highest standards of data
+            security. Your personal information is never used without your permission. We collect only
+            the data necessary to provide our services, and we will never sell your data to any third
+            party.
+          </p>
         </div>
       </div>
-    </div>
+      <div className="max-w-4xl mx-auto flex justify-between items-center">
+        
+        <div className="flex-1 px-6">
+          <h2 className="text-3xl font-bold text-gtahidiPink mb-4">Our foundation in the field of education</h2>
+          <p>
+          gTahidi was co-founded by an accomplished educator, making it specifically 
+          crafted to address the complex challenges faced by teachers. Our robust suite 
+          of tools elevates the way you deliver education, whether you find yourself in 
+          a traditional classroom or a comfortable home setting.
+          </p>
+        </div>
+        <div className="flex-1">
+          <Image
+            src={Cartoon}
+            alt="Secure Lock and Key"
+            width={400}  // Adjust based on your image aspect ratio
+            height={400} // Adjust based on your image aspect ratio
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default InfoSection;
+export default PrivacySection;
+
+
