@@ -1,4 +1,4 @@
-import { HDIW } from "@/components/HDIW";
+import  HDIW  from "@/components/HDIW";
 import { Nav } from "@/components/Nav";
 import {Welcome}  from "@/components/Welcome";
 import Why from "@/components/Why";

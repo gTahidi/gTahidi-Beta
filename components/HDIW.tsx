@@ -1,39 +1,41 @@
-import Image from "next/image";
-import React from "react";
-import { HDIWStep } from "./HDIWStep";
+// components/HowItWorksSection.tsx
+import Image from 'next/image';
+import React from 'react';
+import CharacterIllustration from '@/public/character-illustration.svg'; // Replace with your actual image path
+import Icon1 from '@/public/icon1.svg'; // Replace with your actual image path
+import Icon2 from '@/public/icon2.svg'; // Replace with your actual image path
+import Icon3 from '@/public/icon3.svg'; // Replace with your actual image path
 
-export const HDIW = () => {
+const HowItWorksSection: React.FC = () => {
   return (
-    <section className="p-[5%] flex flex-col" id="how-it-works">
-      <h2 className="section-title mx-auto">
-        How it <span className="text-gtahidiPink">works</span>
-      </h2>
-      <div className="flex gap-x-10 flex-col sm:flex-row">
-        <Image
-          alt="lesson plan"
-          src="/lessonplan.jpeg"
-          width={600}
-          height={600}
-          className="sm:w-1/2 h-[400px] object-cover w-full mb-5 sm:mb-0"
-        />
-        <div className="flex-grow">
-          <HDIWStep
-            description="Input your Topic, Sub-topic, Grade & Lesson Duration"
-            step={1}
-            title="Input your Requirements"
+    <section className="bg-indigo-600 text-white p-12 flex justify-center items-center">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-around">
+        <div className="flex-1 flex justify-center">
+          <Image
+            src={CharacterIllustration}
+            alt="Character Illustration"
+            width={400} // Adjust based on your image's aspect ratio
+            height={400} // Adjust based on your image's aspect ratio
           />
-          <HDIWStep
-            title="Click Create Lesson Plan"
-            step={2}
-            description="Just like that, click create, wait a few seconds and you have your lesson plan!"
-          />
-          <HDIWStep
-            title="Edit, Save & Download"
-            description="Edit, Download & Save your Lesson plans & notes and Assessment Questions to your Schemes of Work."
-            step={3}
-          />
+        </div>
+        <div className="flex-1 space-y-4">
+          <h2 className="text-4xl font-bold text-center lg:text-left">How it works!</h2>
+          <div className="flex items-center">
+            <Image src={Icon1} alt="Step 1" width={50} height={50} />
+            <p className="ml-4">Input your Requirements - Input your Topic, Sub-topic, Grade & Lesson Duration.</p>
+          </div>
+          <div className="flex items-center">
+            <Image src={Icon2} alt="Step 2" width={50} height={50} />
+            <p className="ml-4">Click Create Lesson Plan - Just like that, click create, wait for a few seconds and you have your Lesson Plan!</p>
+          </div>
+          <div className="flex items-center">
+            <Image src={Icon3} alt="Step 3" width={50} height={50} />
+            <p className="ml-4">Edit, Save & Download - Edit, Download & Save your lesson plans, notes and Assessment Questions to your Schemes of work.</p>
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
+export default HowItWorksSection;
