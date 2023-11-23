@@ -3,6 +3,8 @@ import React from 'react';
 import Head from 'next/head';
 import Hero from '@/components/hero_educators';
 import Microsoft from '@/components/microsoft';
+import Support from '@/components/support_teachers';
+import WhyEducators from '@/components/why_educators';
 
 // Import Tailwind CSS components
 
@@ -11,6 +13,8 @@ const HomePage = () => {
     <div>
       <Hero />
       <Microsoft />
+      <WhyEducators />
+      <Support />
     </div>
   );
 };
