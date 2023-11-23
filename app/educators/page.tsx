@@ -5,6 +5,8 @@ import Hero from '@/components/hero_educators';
 import Microsoft from '@/components/microsoft';
 import Support from '@/components/support_teachers';
 import WhyEducators from '@/components/why_educators';
+import HowItWorks from '@/components/HDIWStep';
+import Testimonials  from '@/components/testimony_educators';
 
 // Import Tailwind CSS components
 
@@ -14,7 +16,9 @@ const HomePage = () => {
       <Hero />
       <Microsoft />
       <WhyEducators />
+      <HowItWorks />
       <Support />
+      <Testimonials/>
     </div>
   );
 };
