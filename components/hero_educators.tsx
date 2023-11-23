@@ -1,35 +1,47 @@
-import React from 'react'
-import Cartoon from '@/public/cartoon.svg'; // Replace with your actual image path
-import Image from 'next/image';
+'use client'
 
-function hero_educators() {
+import { useGlobalData } from "@/hooks/useGlobalData";
+import React, { useState } from "react";
+import Typewriter from "typewriter-effect";
+import Image from "next/image";
+
+
+
+
+export const Welcome = () => {
   return (
-    <div>
-      <div className="container px-24 py-24 mx-auto">
-        <div className="items-center lg:flex">
-            <div className="w-full lg:w-1/2">
-                <div className="lg:max-w-lg">
-                    <h1 className="text-6xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Karibu <br/> gTahidi </h1>
-                    
-                    <p className="mt-3 text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</p>
-                    
-                    <button className="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Start Learning</button>
-                </div>
-            </div>
-
-            <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-                <Image 
-                className="lg:max-w-2xl" 
-                src={Cartoon} 
-                alt="Catalogue-pana.svg"
-                width={600}
-                height={600}
-                />
-            </div>
+    <header className="p-4 sm:p-[5%] flex flex-col sm:justify-between  max-h-full sm:flex-row">
+      <div className="mb-4 sm:mb-0 sm:w-3/5">
+        <h1 className="text-4xl sm:text-7xl text-gtahidiDarkBlue">
+          Karibu 
+          <br />
+          gTahidi
+        </h1>
+        <h2 className="text-gtahidiDarkBlue text-2xl sm:text-3xl my-3">
+          Revolutionize your <span className="text-gtahidiPink">Teaching</span> with gTahidi AI.
+        </h2>
+        <p className="my-2">
+          Create Curriculum-Compliant Lesson Plans, Schemes of Work, and Assessment Questions in Minutes.
+        </p>
+        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-5">
+          <button
+            className="py-2 bg-gtahidiPurple rounded-lg text-white w-full sm:w-1/4"
+          >
+            Get started
+          </button>
+          
         </div>
-    </div>
-    </div>
-  )
-}
+      </div>
+      <Image 
+        src="/teacher-with-board.png" 
+        alt="teacher with board" 
+        width={500} 
+        height={500} 
+        className="mx-auto sm:mx-0 w-full sm:w-1/3" 
+      />
+      
+    </header>
+  );
+};
 
-export default hero_educators
+export default Welcome;

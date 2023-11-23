@@ -10,8 +10,8 @@ const HowItWorks = () => {
           <Image 
             src="/teacher1.png" 
             alt="Character" 
-            width={600} 
-            height={600} 
+            width={900} 
+            height={900} 
             className=' w-full h-full'
             />
         </div>
