@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["collapsibe", "fortawesome", "gtahidi", "HDIW", "Substrand"]
+  "cSpell.words": [
+    "collapsibe",
+    "fortawesome",
+    "gtahidi",
+    "HDIW",
+    "Substrand"
+  ],
+  "editor.inlineSuggest.showToolbar": "onHover"
 }
