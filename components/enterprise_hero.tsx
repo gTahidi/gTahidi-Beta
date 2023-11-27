@@ -1,15 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
-import YourIllustration from '@/public/enterprisehero.png'; // Replace with your actual image path
+import YourIllustration from '@/public/enterprisehero.png'; 
 
 const LandingPage = () => {
   return (
     <div className="flex justify-center items-center bg-blue-100 h-screen">
-      <div className="container mx-auto px-20 md:px-12 xl:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-25 md:px-12 xl:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-4xl font-extrabold text-purple-700 mb-4">
-              Experience excellence with us.
+            <h1 className="text-7xl font-extrabold text-purple-700 mb-4 space-x-2">
+              Experience <br/>
+              excellence <br/>
+              with us.
             </h1>
             <p className="text-lg text-purple-600 mb-6">
               Your partner in learning.
@@ -22,9 +24,9 @@ const LandingPage = () => {
             <Image 
               src={YourIllustration} 
               alt="Learning Illustration" 
-              width={500} // Adjust based on your image's aspect ratio
-              height={300} // Adjust based on your image's aspect ratio
-              layout="intrinsic" // This can be fixed, responsive, fill, etc.
+              width={700} 
+              height={700}
+              layout="intrinsic" 
             />
           </div>
         </div>
