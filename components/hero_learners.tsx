@@ -3,9 +3,9 @@ import React from 'react'
 function hero_learners() {
   return (
     <div className=''>
-    <div className="container px-6 py-16 mx-auto text-center ">
+    <div className="container px-6 py-16 mx-auto text-center  ">
         <div className="max-w-lg mx-auto">
-            <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Lead the way with <br/><span className=' text-gtahidiPink'>gTahidi AI</span></h1>
+            <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-6xl">Lead the way with <br/><span className=' text-gtahidiPink'>gTahidi AI</span></h1>
 
             <p className="mt-6 text-gray-500 dark:text-gray-300">
             Join the AI revolution and get ahead of your competitors           

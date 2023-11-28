@@ -6,7 +6,7 @@ import Microsoft from '@/components/microsoft'
 function page() {
   return (
     <>
-    <div className=' py-40 h-full'>
+    <div className='mt-20 py-10 h-full bg-blue-100'>
         <Hero/>
     </div>
     <Microsoft/>
