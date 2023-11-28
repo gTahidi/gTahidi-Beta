@@ -16,8 +16,9 @@ function hero_learners() {
         </div>
         <div className='mt-8  mb-3'>
             <h1 className=' font-bold '>Our existing partners</h1>
+            
         </div>
-
+        <hr/>
         <div className="max-w-screen-xl mx-auto mt-20">
             <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
                 <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
