@@ -1,14 +1,10 @@
 import React from 'react'
-import Hero from '@/components/enterprise_hero'
-import Microsoft from '@/components/microsoft'
-import Features from '@/components/features_enterprise'
+import Hero from '@/components/hero_learners'
 
 function page() {
   return (
-    <div>
-      <Hero/>
-      <Microsoft/>
-      <Features/>
+    <div className=' py-40 h-full'>
+        <Hero/>
     </div>
   )
 }
