@@ -15,7 +15,7 @@ const OurImpact = () => {
             {/* Include your icons inline or as components */}
             <div className="icon">
                 <Image
-                    src={Families}
+                    src={Data}
                     alt="Our Impact"
                     width={150} // Adjust as per your image's aspect ratio
                     height={150} // Adjust as per your image's aspect ratio
@@ -31,7 +31,7 @@ const OurImpact = () => {
           <div className="flex items-center space-x-8">
             <div className="icon">
                 <Image
-                        src={Data}
+                        src={OnlineSupport}
                         alt="Our Impact"
                         width={150} // Adjust as per your image's aspect ratio
                         height={150} // Adjust as per your image's aspect ratio
@@ -47,7 +47,7 @@ const OurImpact = () => {
           <div className="flex items-center space-x-8">
             <div className="icon">
                 <Image
-                    src={OnlineSupport}
+                    src={Families}
                     alt="Our Impact"
                     width={150} 
                     height={150} 
@@ -69,7 +69,7 @@ const OurImpact = () => {
           width={500} // Adjust as per your image's aspect ratio
           height={300} // Adjust as per your image's aspect ratio
           // objectFit="cover"
-          // className="rounded-lg"
+          className="rounded"
         />
       </div>
     </div>
