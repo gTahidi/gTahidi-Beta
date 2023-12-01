@@ -4,6 +4,8 @@ import Microsoft from '@/components/microsoft'
 import About from '@/components/aboutus_enterprise'
 import Contact from '@/components/Contact'
 import { Testimonials } from '@/components/Testimonials'
+import Impact from '@/components/impact'
+import Solutions from '@/components/solution'
 
 
 function page() {
@@ -15,6 +17,8 @@ function page() {
     <Microsoft/>
     <About/>
     <Testimonials/>
+    <Impact/>
+    <Solutions/>
     <Contact/>
     </>
 
