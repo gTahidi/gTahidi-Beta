@@ -1,6 +1,9 @@
 import React from 'react'
 import Hero from '@/components/hero_learners'
 import Microsoft from '@/components/microsoft'
+import About from '@/components/aboutus_enterprise'
+import Contact from '@/components/Contact'
+import { Testimonials } from '@/components/Testimonials'
 
 
 function page() {
@@ -10,6 +13,9 @@ function page() {
         <Hero/>
     </div>
     <Microsoft/>
+    <About/>
+    <Testimonials/>
+    <Contact/>
     </>
 
   )
