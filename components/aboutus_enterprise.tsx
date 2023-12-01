@@ -14,7 +14,7 @@ const AboutUs = () => {
             width={640}
             height={400}
             layout="responsive"
-            className="rounded-lg"
+            className="rounded"
           />
         </div>
         <div className="lg:w-3/5 pr-0 md:pr-20 md:mt-0"> {/* Consider adjusting pr-0 if too much padding on right */}

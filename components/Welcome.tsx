@@ -43,11 +43,11 @@ export const Welcome = () => {
                         height={46}
                     />
                 </div>
-                <a href="#">
+                <a href="/learners">
                     <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Learners</h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Discover gTahidi AI's innovative learning solutions, all conveniently delivered through WhatsApp. We bring education to your fingertips ensuring an engaging and specialized learning experience.</p>
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <a href="/learners" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Get Started    
                 </a>
             </div>
