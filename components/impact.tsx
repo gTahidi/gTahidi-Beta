@@ -10,7 +10,7 @@ const OurImpact = () => {
     <div className="bg-purple-800 text-white p-6 flex flex-col md:flex-row items-center md:justify-between rounded-lg">
       <div className="md:flex-1 md:mr-4 px-20 py-16">
       <h2 className="text-6xl font-bold mb-6">Our Impact</h2>
-        <div className="flex flex-col space-y--6">
+        <div className="flex flex-col space-y-6">
           <div className="flex items-center space-x-8">
             {/* Include your icons inline or as components */}
             <div className="icon">
@@ -69,7 +69,7 @@ const OurImpact = () => {
           width={500} // Adjust as per your image's aspect ratio
           height={300} // Adjust as per your image's aspect ratio
           // objectFit="cover"
-          className="rounded-lg"
+          // className="rounded-lg"
         />
       </div>
     </div>

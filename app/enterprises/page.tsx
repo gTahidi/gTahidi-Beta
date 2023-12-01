@@ -16,9 +16,9 @@ function page() {
     </div>
     <Microsoft/>
     <About/>
-    <Testimonials/>
-    <Impact/>
     <Solutions/>
+    <Impact/>
+    <Testimonials/>
     <Contact/>
     </>
 
