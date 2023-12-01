@@ -7,10 +7,10 @@ import Families from '@/public/Familiescelebrate.svg';
 
 const OurImpact = () => {
   return (
-    <div className="bg-purple-800 text-white p-6 flex flex-col md:flex-row items-center md:justify-between rounded-lg">
-      <div className="md:flex-1 md:mr-4 px-20 py-16">
-      <h2 className="text-6xl font-bold mb-6">Our Impact</h2>
-        <div className="flex flex-col space-y-6">
+    <div className="bg-purple-800 text-white p-6 flex flex-col md:flex-row items-center rounded-lg">
+      <div className=" space-x-14 px-20 py-16 ml-[200px] ">
+      <h2 className="text-5xl font-bold mb-6">Our Impact</h2>
+        <div className="flex flex-col  ">
           <div className="flex items-center space-x-8">
             {/* Include your icons inline or as components */}
             <div className="icon">

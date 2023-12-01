@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurSolutions = () => {
   return (
-    <div className="bg-gray-100 p-10">
+    <div className="bg-gray-100 h-full p-10">
       <h2 className="text-3xl font-bold text-center pt-8 mb-12">Our Solutions</h2>
       <div className="flex flex-wrap justify-center gap-4">
         <SolutionCard
