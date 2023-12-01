@@ -12,7 +12,6 @@ function page() {
       <Hero/>
       <Microsoft/>
       {/* <Features/> */}
-      
       {/* <Top_Features/> */}
       {/* <Experience/> */}
       <Testimonials/>
