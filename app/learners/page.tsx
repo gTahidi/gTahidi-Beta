@@ -11,9 +11,9 @@ function page() {
     <div>
       <Hero/>
       <Microsoft/>
-      <Features/> */}
+      {/* <Features/> */}
       {/* <Top_Features/> */}
-      {/* <Experience/>
+      {/* <Experience/> */}
       <Testimonials/>
     </div>
   )

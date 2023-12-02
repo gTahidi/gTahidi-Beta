@@ -12,7 +12,7 @@ import Testimonials  from '@/components/testimony_educators';
 
 const HomePage = () => {
   return (
-    <div className=' h-full'>
+    <div>
       <Hero />
       <Microsoft />
       <WhyEducators />
