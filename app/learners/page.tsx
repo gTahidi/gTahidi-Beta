@@ -5,6 +5,7 @@ import Features from '@/components/features_enterprise'
 import { Testimonials } from '@/components/Testimonials'
 import Top_Features from '@/components/features_Ieaners'
 import Experience from '@/components/experience'
+import Learn from '@/components/learn'
 
 function page() {
   return (
@@ -15,6 +16,7 @@ function page() {
       <Top_Features/>
       <Experience/>
       <Testimonials/>
+      <Learn/>
     </div>
   )
 }

@@ -6,5 +6,5 @@
     "HDIW",
     "Substrand"
   ],
-  "editor.inlineSuggest.showToolbar": "onHover"
+  "editor.inlineSuggest.showToolbar": "always"
 }
