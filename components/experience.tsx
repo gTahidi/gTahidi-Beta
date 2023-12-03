@@ -1,32 +1,55 @@
-import Image from 'next/image';
-import React from 'react';
-import Girl from '@/public/phone.svg'; // Ensure the path to your image is correct
+import React from 'react'
+import Image from 'next/image'
+import Phone from '@/public/phonegraphs.svg'
+import Math from '@/public/maths decoration.svg'; // Replace with your actual image path
 
-const AboutUs = () => {
+
+function support_teachers() {
   return (
-      <div className=" w-full">
-        <div className="bg-white r">
-          <div className="md:flex">
-            
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Noteworthy Technology Acquisitions 2021</h2>
-              <p className="text-gray-700 dark:text-gray-400 text-lg">
-                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order. The technology sector has seen a lot of consolidation over the years. 2021 is no exception, with several large companies making significant acquisitions. These mergers and acquisitions can help organizations rapidly scale their operations, expand into new markets, or acquire new technologies and talent.
-              </p>
-              {/* Additional content could go here */}
-            </div>
-            <div className="md:flex-shrink-0">
-              <Image 
-                src={Girl} 
-                alt="A girl with a phone"
-                width={640}
-                height={400}
-              />
-            </div>
-          </div>
+    <div >
+      <section className="bg-gtahidiDarkBlue text-white p-8 flex flex-col space-y-20 justify-center items-center">
+      <div className=" space-x-11 mx-auto flex mb-8 mt-8 justify-between ">
+        <div className="flex-1 bg-white rounded-2xl w-[350px] p-8 ">
+          <h2 className="text-3xl text-gtahidiPink font-bold mb-4">We'll help perfect your learning experience.</h2>
+          <p className=' text-black'>
+            Share your services or product offerings here. Present them 
+            as simple headers that can lead out to their pages 
+            where you can expound on them further. 
+          </p>
         </div>
+        <div className="floating">
+          <Image
+            src={Phone}
+            alt="Secure Lock and Key"
+            width={350} 
+            height={350} 
+          />
+        </div>
+        
       </div>
-  );
-};
+      <div className="max-w-4xl mx-auto flex space-x-12 justify-between items-center">
+        <div className="floating">
+          <Image
+            src={Math}
+            alt="Secure Lock and Key"
+            width={350}  
+            height={350} 
+          />
+        </div>        
+        <div className="flex-1 bg-white rounded-2xl w-[350px] p-8">
+          <h2 className="text-3xl font-bold text-gtahidiPink mb-4">STEM learning</h2>
+          <p className=' text-black'>
+            Share your services or product offerings here. Present 
+            them as simple headers that can lead out to their pages 
+            where you can expound on them further.   
+            tional classroom or a comfortable home setting.
+          </p>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+  )
+}
 
-export default AboutUs;
+export default support_teachers

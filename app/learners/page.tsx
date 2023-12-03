@@ -13,7 +13,7 @@ function page() {
       <Microsoft/>
       {/* <Features/> */}
       <Top_Features/>
-      {/* <Experience/> */}
+      <Experience/>
       <Testimonials/>
     </div>
   )
