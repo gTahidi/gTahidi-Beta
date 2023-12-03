@@ -12,7 +12,7 @@ function page() {
       <Hero/>
       <Microsoft/>
       {/* <Features/> */}
-      {/* <Top_Features/> */}
+      <Top_Features/>
       {/* <Experience/> */}
       <Testimonials/>
     </div>
