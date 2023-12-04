@@ -34,7 +34,7 @@ const HowItWorks = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Image src="/calender.png" alt="Calendar" width={64} height={64} />
+            <Image src="/calender.png" alt="Calendar" width={200} height={200} />
             <div className="bg-white rounded text-black p-2 ">
               <h3 className="text-xl font-semibold">
                 Click Create Lesson Plan
@@ -46,7 +46,7 @@ const HowItWorks = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Image src="/book.png" alt="Edit" width={64} height={64} />
+            <Image src="/book.png" alt="Edit" width={200} height={200} />
             <div className="bg-white rounded text-black p-2 ">
               <h3 className="text-xl font-semibold">Edit, Save & Download</h3>
               <p>
