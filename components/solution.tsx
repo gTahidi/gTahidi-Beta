@@ -25,7 +25,7 @@ const OurSolutions = () => {
 const SolutionCard = ({ title, description }) => {
   return (
     <div className="max-w-sm w-full p-6 bg-white rounded-xl border space-x-4 shadow-md">
-      <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900">{title}</h3>
+      <h3 className=" text-3xl p-4 mb-5 font-bold tracking-tight text-gtahidiPink">{title}</h3>
       <p className="font-normal text-gray-700 text-xl ">{description}</p>
     </div>
   );

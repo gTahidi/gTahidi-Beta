@@ -4,11 +4,11 @@ import Phone from '@/public/mtoinasimu.svg';
 
 function learn() {
   return (
-    <div className="max-w-[85rem] mx-auto px-4 bg-gtahidiPurple">
+    <div className=" bg-gtahidiPurple">
         <div className="grid lg:grid-cols-2 lg:gap-x-8 xl:gap-x-12 space-x-4 lg:items-center">
             <div className="px-20 items-center ">
                 <h1 className="font-bold text-gtahidiPink text-4xl mb-6">We'll help perfect your learning experience.</h1>
-                <p className="mt-3 text-lg text-gray-800 ">
+                <p className="mt-3 text-lg text-white ">
                     Share your services or product offerings here. 
                     Present them as simple headers that can lead 
                     out to their pages where you can expound on them further.
@@ -27,7 +27,7 @@ function learn() {
                     alt="Secure Lock and Key"
                     width={500} 
                     height={500}
-                />
+                    />
             </div>
         </div>
     </div>

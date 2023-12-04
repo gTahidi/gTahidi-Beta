@@ -11,7 +11,7 @@ import Solutions from '@/components/solution'
 function page() {
   return (
     <>
-    <div className='mt-20 py-10 h-full bg-blue-100'>
+    <div className='py-10 h-full bg-blue-100'>
         <Hero/>
     </div>
     <Microsoft/>
