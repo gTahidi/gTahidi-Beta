@@ -5,7 +5,7 @@ import { SectionTitle } from "./SectionTitle";
 
 export const Contact = () => {
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8" id="contact">
+    <section className="bg-blue-100 py-16 px-4 sm:px-6 lg:px-8" id="contact">
       <SectionTitle inPink="Touch" text="Get In" />
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col lg:flex-row items-start">

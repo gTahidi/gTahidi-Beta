@@ -14,8 +14,8 @@ const WhyComponent = () => {
           { src: "/pen.png", alt: "Pencil", text: "Copy, Edit & Download. It's Yours." },
           { src: "/go.png", alt: "Rocket", text: "Compliant with over 80% of Global Curricula." },
         ].map((item, index) => (
-          <div key={index} className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4">
-            <div className="relative mb-4">
+          <div key={index} className="flex flex-col items-center  rounded-lg p-4">
+            <div className="relative mb-4 floating">
               <Image
                 src={item.src}
                 alt={item.alt}
