@@ -17,13 +17,15 @@ const HowItWorks = () => {
         </div>
         <div className="space-y-10">
           <div className="flex items-center space-x-4">
+            <div className="">
             <Image 
               src="/bulb.png" 
               alt="Lightbulb" 
               width={200} 
               height={200} 
-              className="ml-[200px]"
+              className=""
             />
+            </div>
             <div className="bg-white rounded text-black p-2 ">
               <h3 className="text-xl font-semibold text-gtahidiPink">
                 Input your Requirements
