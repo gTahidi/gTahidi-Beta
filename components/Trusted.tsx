@@ -10,12 +10,12 @@ import Dashboard from '@/public/dashboard-screen-app.svg'
 
 const FeatureSection: React.FC = () => {
   return (
-    <section className="bg-gray-100 py-12 px-8">
-      <div className="container mx-auto px-20">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mt-7 mb-16">
+    <section className="bg-gray-100 py-8 px-4 md:py-12 md:px-8">
+      <div className="container mx-auto px-4 md:px-20">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mt-5 md:mt-7 mb-10 md:mb-16">
           Trusted tools. <span className='text-gtahidiPink'>Accurate Results</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Feature 1 */}
           <div className="flex flex-col items-center space-y-6 transition  duration-300 ease-in-out transform hover:scale-105 rounded-xl  hover:shadow-xl hover:border hover:border-blue-200 hover:bg-gray-50">
             <Image 
