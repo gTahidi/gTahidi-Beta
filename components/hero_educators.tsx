@@ -9,7 +9,8 @@ const Welcome = () => {
       <section className="container mx-auto  py-20 px-20 flex flex-col lg:flex-row items-center justify-between">
         <div className="flex-1">
           <h1 className="text-6xl font-extrabold text-purple-900 capitalize">
-            Qaribu <br /> gTahidi
+          karibu <br/> gTahidi
+          
           </h1>
           <p className="mt-4 text-xl font-bold text-black">
             Revolutionize your Teaching with gTahidi
@@ -37,7 +38,7 @@ const Welcome = () => {
           </div>
 
           <a
-            href="#"
+            href="/dashboard"
             className="mt-6 inline-block bg-gtahidiPink rounded-lg border-2 px-6 py-3 uppercase text-sm font-bold tracking-widest text-white"
           >
             Start Now

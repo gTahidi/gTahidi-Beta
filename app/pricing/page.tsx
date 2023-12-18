@@ -179,9 +179,7 @@ function page() {
                 <button className="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gtahidiPink rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
                     Choose plan
                 </button>
-            </div>
-
-            
+            </div>            
         </div>
     </div>
 </section>
