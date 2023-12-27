@@ -1,34 +1,51 @@
-import React from 'react';
+// WhyChoose.tsx
+import Image from 'next/image';
+import Subject from '@/public/subject.svg'
+import Experience from '@/public/experience.svg'
 
-const OurSolutions = () => {
+
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  imageUrl: string; 
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, imageUrl }) => {
   return (
-    <div className="bg-gray-100 h-full p-10">
-      <h2 className="text-3xl font-bold text-center pt-8 mb-12">Our Solutions</h2>
-      <div className="flex flex-wrap justify-center gap-4">
-        <SolutionCard
-          title="Premium Media Brands"
-          description="Our Premium Media Brands deliver digital campaigns by strategically distributing content across our owned platforms."
+    <div className="flex flex-col items-center bg-gtahidiDarkBlueTwo text-white p-6 rounded-xl shadow-lg max-w-sm mx-auto">
+      <div className="mb-4 w-28 h-28 relative">
+        <Image src={imageUrl} alt={title} layout="fill" objectFit="contain" />
+      </div>
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="text-sm text-center">{description}</p>
+    </div>
+  );
+};
+
+export default function WhyChoose() {
+  return (
+    <div className="py-12 bg-gtahidiDarkBlue p-4">
+      <h2 className="text-3xl font-bold text-center text-white mb-12 p-4">Accelerating Edtech with <span className=' text-gtahidiPink'>gTahidi AI</span></h2>
+      <div className="flex flex-wrap justify-center ">
+        
+        <FeatureCard 
+          title="Instant Help at Your Fingertips"
+          description="Stuck on a problem? Simply reach out on WhatsApp, and receive instant, 
+          step-by-step assistance whenever you need it. The convenience of on-demand support 
+          transforms learning into an interactive and dynamic experience, 
+          making sure you're never alone on your educational journey."
+          imageUrl="/subject.svg"
         />
-        <SolutionCard
-          title="Ad Publisher Solutions"
-          description="Our Ad Publisher Solutions make it easy for advertisers to invest in minority-owned and led publishers. Advertisers can programmatically discover and reach multicultural audiences."
-        />
-        <SolutionCard
-          title="Career & Talent Solutions"
-          description="Our Career & Talent Solutions include a recruitment platform and a global gathering connecting a network of inclusive tech companies, professionals, and innovators."
+        <FeatureCard 
+          title="Unlock a Universe of Knowledge"
+          description="gTahidi AI doesn't just focus on one aspect of STEM – it opens the doors 
+          to a comprehensive spectrum. From Algebra to Zoology, and Python to Physics, 
+          gTahidi AI covers a diverse range of STEM subjects. This breadth of content 
+          ensures that learners have access to a wealth of knowledge, fostering a 
+          holistic understanding of science, technology, engineering, and mathematics."
+          imageUrl="/experience.svg"
         />
       </div>
     </div>
   );
-};
-
-const SolutionCard = ({ title, description }) => {
-  return (
-    <div className="max-w-sm w-full p-6 bg-white rounded-xl border space-x-4 shadow-md">
-      <h3 className=" text-3xl p-4 mb-5 font-bold tracking-tight text-gtahidiPink">{title}</h3>
-      <p className="font-normal text-gray-700 text-xl ">{description}</p>
-    </div>
-  );
-};
-
-export default OurSolutions;
+}

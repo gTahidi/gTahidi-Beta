@@ -3,6 +3,7 @@ import Hero from '@/components/enterprise_hero'
 import Microsoft from '@/components/microsoft'
 import Features from '@/components/features_enterprise'
 import { Testimonials } from '@/components/Testimonials'
+import WhyChoose from '@/components/WhyChoose'
 import Stats from '@/components/StatsBanner'
 import Top_Features from '@/components/features_Ieaners'
 import Experience from '@/components/experience'
@@ -16,6 +17,7 @@ function page() {
       {/* <Features/> */}
       <Stats/>
       <Top_Features/>
+      <WhyChoose/>
       <Experience/>
       <Testimonials/>
       <Learn/>

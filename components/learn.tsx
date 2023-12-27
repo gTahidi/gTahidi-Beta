@@ -5,7 +5,7 @@ import Phone from '@/public/mtoinasimu.svg';
 function learn() {
   return (
     <div className="bg-gtahidiPurple">
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 xl:gap-x-12 px-4 md:px-10 lg:px-20 py-8 lg:items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 xl:gap-x-12 md:px-10 lg:px-20 py-8 lg:items-center">
             <div className="text-center lg:text-left">
                 <h1 className="font-bold text-white text-3xl md:text-4xl mb-6">Join us in our mission to revolutionize education. gTahidi AI is not just a tool; it's a partner in creating a future where learning is limitless</h1>
                 

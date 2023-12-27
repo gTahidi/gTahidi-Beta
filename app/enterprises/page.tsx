@@ -5,7 +5,9 @@ import About from '@/components/aboutus_enterprise'
 import Contact from '@/components/Contact'
 import { Testimonials } from '@/components/Testimonials'
 import Impact from '@/components/impact'
+import Stats from '@/components/StatsBanner'
 import Solutions from '@/components/solution'
+import WhyChoose from '@/components/WhyChoose_enterprise'
 
 
 function page() {
@@ -15,8 +17,10 @@ function page() {
         <Hero/>
     </div>
     <Microsoft/>
-    <About/>
+    <Stats/>
+    {/* <About/> */}
     <Solutions/>
+    <WhyChoose/>
     <Impact/>
     <Testimonials/>
     <Contact/>

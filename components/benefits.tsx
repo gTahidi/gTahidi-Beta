@@ -20,7 +20,7 @@ export default function FeaturesAndBenefits() {
       {/* Content */}
       <div className="relative z-10 px-20  w-full ">
         <h2 className="text-4xl font-extrabold text-white mb-6 ">Features and <span className=" text-gtahidiPink">Benefits</span></h2>
-        <div className="bg-purple-900   p-8">
+        <div className=" bg-gtahidiDarkBlue  p-8">
           <ul className="space-y-4 ">
             {[
               ['Streamlined Lesson Creation', 'Quickly assemble detailed and curriculum-aligned lesson plans.'],
@@ -28,7 +28,7 @@ export default function FeaturesAndBenefits() {
               ['Interactive Quizzes', 'Engage your students with quizzes that are both informative and enjoyable.'],
               ['Efficient Schemes of Work', 'Plan your entire course structure seamlessly and effectively.'],
             ].map(([feature, description]) => (
-              <li key={feature} className="flex items-start bg-purple-700 rounded-lg p-4">
+              <li key={feature} className="flex items-start bg-gtahidiDarkBlueTwo rounded-lg p-4">
                 <span className="font-bold w-1/3 text-3xl text-pink-300">{feature}:</span>
                 <span className="ml-4 text-white text-2xl">{description}</span>
               </li>
