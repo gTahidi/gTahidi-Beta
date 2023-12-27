@@ -9,3 +9,4 @@ const DashboardPageButton = ({ text }: { text: string }) => {
 };
 
 export default DashboardPageButton;
+
