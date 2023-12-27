@@ -3,7 +3,7 @@ import React from "react";
 
 const WhyComponent = () => {
   return (
-    <div className="bg-blue-200 py-14 px-8 lg:px-20">
+    <div className="bg-blue-200 py-14 px-8  lg:px-20">
       <h2 className="text-4xl text-center font-bold mb-10 text-gray-800">
         Why gTahidi?
       </h2>
