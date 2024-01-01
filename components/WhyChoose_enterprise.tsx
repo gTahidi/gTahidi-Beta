@@ -1,6 +1,6 @@
 // FeaturesAndBenefits.js
 import Image from 'next/image';
-import backgroundImage from '@/public/bg.png'; // Adjust the import path to your image's location
+import backgroundImage from '@/public/bg.png'; 
 
 export default function FeaturesAndBenefits() {
   return (
