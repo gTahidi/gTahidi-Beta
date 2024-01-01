@@ -18,7 +18,7 @@ const HomePage = () => {
       <Microsoft />
       <WhyEducators />
       <Benefits/>
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <Support />
       <Testimonials/>
     </div>

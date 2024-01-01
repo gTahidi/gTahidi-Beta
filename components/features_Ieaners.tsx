@@ -7,7 +7,7 @@ import Pace from '@/public/pace.svg'
 
 export default function LearningExperience() {
   return (
-    <div className="bg-gtahidiDarkBlue py-12 px-20 min-h-screen flex flex-col items-center justify-center">
+    <div className="bg-gtahidiDarkBlue p-6 md:px-20 md:py-12 min-h-screen flex flex-col items-center justify-center">
       <h2 className="text-4xl font-bold text-white p-12 mb-8">Transform Your <span className=' text-gtahidiPink'>Learning Experience</span> </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

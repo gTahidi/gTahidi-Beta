@@ -27,7 +27,7 @@ const page = () => {
       {/* <Why /> */}
       {/* <HDIW /> */}
       <Privacy />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQ />
       <Contact />
       <Footer />

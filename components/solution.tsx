@@ -25,8 +25,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, imageUrl 
 export default function WhyChoose() {
   return (
     <div className="py-12 bg-gtahidiDarkBlue p-4">
-      <h2 className="text-3xl font-bold text-center text-white mb-12 p-4">Accelerating Edtech with <span className=' text-gtahidiPink'>gTahidi AI</span></h2>
-      <div className="flex flex-wrap justify-center ">
+    <h2 className="text-3xl font-bold text-center text-white mb-12">Accelerating Edtech with <span className='text-gtahidiPink'>gTahidi AI</span></h2>
+    <div className="flex flex-wrap justify-center gap-4 md:gap-8 ">
         
         <FeatureCard 
           title="Instant Help at Your Fingertips"

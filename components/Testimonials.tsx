@@ -25,11 +25,9 @@ export const Testimonials = () => {
 
             <div>
                 <p className="flex items-center text-center text-gray-500 lg:mx-8">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, quam. Odio voluptatem officiis
-                    eos illo! Pariatur, totam alias. Beatae accusamus earum quos obcaecati minima molestias. Possimus
-                    minima dolores itaque! Esse! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptates
-                    fugiat corrupti laudantium dolores reiciendis pariatur esse quod nihil quia cupiditate debitis
-                    quisquam nemo, accusamus animi explicabo? Architecto, unde laboriosam?
+                    Being a Kenyan CBC teacher involves a lot of paperwork and planning.
+                    GTahidi AI has lightened workload considerably and freed up more 
+                    time for teachers to focus more on actual teaching.
                 </p>
 
                 <div className="flex flex-col items-center justify-center mt-8">
@@ -42,8 +40,8 @@ export const Testimonials = () => {
                     />
 
                     <div className="mt-4 text-center">
-                        <h1 className="font-semibold text-gray-800 dark:text-white">Mia Brown</h1>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">Marketer</span>
+                        <h1 className="font-semibold text-gray-800 dark:text-white">Brian Okechi</h1>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">Senior teacher</span>
                     </div>
                 </div>
             </div>

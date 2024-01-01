@@ -5,10 +5,9 @@ import backgroundImage from '@/public/bg.png';
 export default function FeaturesAndBenefits() {
   return (
     <div className="relative flex justify-center items-center min-h-screen bg-white">
-
-      <div className="relative z-10 px-20   ">
-        <h2 className="text-4xl text-center font-extrabold mb-12 ">Why Choose ? <span className=" text-gtahidiPink">gTahidi AI </span>for Your Enterprise</h2>
-          <ul className="space-y-8 ">
+      <div className="relative z-10 px-4 md:px-20">
+        <h2 className="text-2xl md:text-4xl text-center font-extrabold mb-12">Why Choose <span className="text-gtahidiPink">gTahidi AI</span> for Your Enterprise</h2>
+        <ul className="space-y-8">
             {[
               ['State-of', 'Harness the power of the latest AI models to improve your learning solutions.'],
               ['Data-Driven Insights', 'Utilize analytics to understand user engagement and optimize your educational offers.'],
