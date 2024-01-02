@@ -40,7 +40,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className="flex-grow dashboard-container flex flex-col overflow-y-auto z-10">
+    <div className="flex-grow dashboard-container h-full flex flex-col overflow-y-auto z-10">
       <div className="bg-white shadow-lg p-[2%] rounded-md">
         <p className="text-gtahidiDarkBlue font-semibold">
           Welcome to gTahidi AI

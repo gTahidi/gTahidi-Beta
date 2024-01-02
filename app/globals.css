@@ -123,3 +123,21 @@ html {
 .dashboard-container {
   @apply px-[5%] py-5 flex flex-col gap-y-5;
 }
+
+
+/* styles/global.css */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}

@@ -22,6 +22,7 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -70,6 +71,7 @@ module.exports = {
         linearGradientPurple: "#D8DFF1",
         linearGradientPink: "#F8EFE4",
         gtahidiDarkBlue: "#494080",
+        gtahidiDarkBlueTwo: "#251C7680",
         dashboardPurple: "#494080",
         dashboardBackground: "#F5F8FF",
       },

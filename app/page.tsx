@@ -1,14 +1,17 @@
-import { HDIW } from "@/components/HDIW";
+import  HDIW  from "@/components/HDIW";
 import { Nav } from "@/components/Nav";
-import { Welcome } from "@/components/Welcome";
+import {Welcome}  from "@/components/Welcome";
 import Why from "@/components/Why";
 import React from "react";
 import { Testimonials } from "@/components/Testimonials";
+import Privacy from "@/components/privacy";
 import { Pricing } from "@/components/Pricing";
-import { Footer } from "@/components/Footer";
+import Footer  from "@/components/Footer";
 import { Contact } from "@/components/Contact";
 import { SocialsSection } from "@/components/SocialsSection";
-import { Faqs } from "@/components/Faqs";
+import FAQ  from "@/components/Faqs"
+import Trusted from "@/components/Trusted";
+import BackedByMicrosoft from "@/components/microsoft";
 
 const page = () => {
   return (
@@ -19,13 +22,15 @@ const page = () => {
         <Welcome />
       </section>
       {/* <SocialsSection /> */}
-      <Why />
-      <HDIW />
-      <Testimonials />
-      <Pricing />
-      <Faqs />
+      <BackedByMicrosoft />
+      <Trusted/>
+      {/* <Why /> */}
+      {/* <HDIW /> */}
+      <Privacy />
+      {/* <Testimonials /> */}
+      <FAQ />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 };

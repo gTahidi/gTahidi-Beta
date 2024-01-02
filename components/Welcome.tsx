@@ -1,104 +1,82 @@
+/* eslint-disable react/no-unescaped-entities */
+
 'use client'
-
-import { useGlobalData } from "@/hooks/useGlobalData";
-import React, { useState } from "react";
-import Typewriter from "typewriter-effect";
-import Modal from 'react-modal';
 import Image from "next/image";
+import EducatorsIconSVG from '@/public/educators.svg'; // Update the path to your SVG files
+import LearnersIconSVG from '@/public/earners.svg'; // Update the path to your SVG files
+import EnterprisesIconSVG from '@/public/enterprise-hero.svg'; // Update the path to your SVG files
 
-
-const modalStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Transparent background
-  },
-  content: {
-    top: '50%', // Center vertically
-    left: '50%', // Center horizontally
-    transform: 'translate(-50%, -80%)',
-    border: 'none', // Remove border
-    background: 'transparent', // Transparent background
-  },
-};
 
 export const Welcome = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const { handleStart } = useGlobalData();
-
-  // Function to open the modal
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  // Function to close the modal
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
   return (
-    <header className="p-4 sm:p-[5%] flex flex-col sm:justify-between sm:flex-row">
-      <div className="mb-4 sm:mb-0 sm:w-3/5">
-        <h1 className="text-4xl sm:text-7xl text-gtahidiDarkBlue">
-          Karibu gTahidi
-          <br />
-          <Typewriter
-            options={{
-              strings: [
-                "Mwalimu",
-                "Create Lesson Plans",
-                "Create Short Notes",
-                "Organize schemes of work",
-              ],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-        </h1>
-        <h2 className="text-gtahidiDarkBlue text-2xl sm:text-3xl my-3">
-          Revolutionize your <span className="text-gtahidiPink">Teaching</span> with gTahidi AI.
-        </h2>
-        <p className="my-2">
-          Create Curriculum-Compliant Lesson Plans, Schemes of Work, and Assessment Questions in Minutes.
-        </p>
-        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-5">
-          <button
-            className="py-2 bg-gtahidiPurple rounded-lg text-white w-full sm:w-1/4"
-            onClick={handleStart}
-          >
-            Get started
-          </button>
-          <button
-            className="py-2 border-2 border-gtahidiPurple rounded-lg text-gtahidiPurple w-full sm:w-1/4"
-            onClick={openModal}
-          >
-            Demo
-          </button>
+    <section className="bg-white p-4 md:p-12 dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
+            <a href="#" className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-gtahidiPink bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                <span className="text-xs bg-gtahidiPink rounded-full text-white px-4 py-1.5 me-3">New</span> <span className="text-sm font-medium">Uploading a lessonPlan was launched! See what's new</span> 
+                <svg className="w-2.5 h-2.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+            </a>
+            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Empowering Future <p>Generations </p> </h1>
+            <p className="mb-8 text-sm font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">Discover gTahidi AI's innovative learning solutions, all conveniently delivered<br/> through WhatsApp. We bring education to your fingertips ensuring an engaging and specialized learning experience.</p>
+            <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 items-center justify-center">
+            <div className="w-full md:w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">
+            <div className="flex justify-center pb-5">
+                    <Image 
+                        src={EducatorsIconSVG}
+                        alt="Educators"
+                        width={46}
+                        height={46}
+                    />
+                </div>
+                <a href="/educators">
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Educators</h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-500 dark:text-gray-400"> This innovative AI service is designed to empower educators and teachers by providing them with cutting-edge AI solutions to streamline the process of creating lesson plans, notes, and quizzes.</p>
+                <a href="/educators" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Get Started    
+                </a>
+            </div>
+
+            <div className="w-full md:w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">
+            <div className="flex justify-center pb-5">
+                    <Image 
+                        src={LearnersIconSVG}
+                        alt="Educators"
+                        width={46}
+                        height={46}
+                    />
+                </div>
+                <a href="/learners">
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Learners</h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Discover gTahidi AI's innovative learning solutions, all conveniently delivered through WhatsApp. We bring education to your fingertips ensuring an engaging and specialized learning experience.</p>
+                <a href="/learners" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Get Started    
+                </a>
+            </div>
+            <div className="w-full md:w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">
+            <div className="flex justify-center pb-5">
+                    <Image 
+                        src={EnterprisesIconSVG}
+                        alt="Educators"
+                        width={46}
+                        height={46}
+                    />
+                </div>
+                <a href="/enterprises">
+                    <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gtahidiPink dark:text-white">Enterprises</h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Unlock the potential of your edtech company with gTahidi AI. Our solutions can empower your platform, enhance the learning experience, and stay ahead of the competition.</p>
+                <a href="/enterprises" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gtahidiDarkBlue rounded-lg hover:bg-gtahidiPink focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Get Started    
+                </a>
+            </div>
+            </div>
+
         </div>
-      </div>
-      <Image 
-        src="/teacher-with-board.png" 
-        alt="teacher with board" 
-        width={500} 
-        height={500} 
-        className="mx-auto sm:mx-0 w-full sm:w-1/3" 
-      />
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        contentLabel="YouTube Video"
-        style={modalStyles} // Apply custom styles
-        ariaHideApp={false}
-      >
-        <iframe
-          title="Demo Video"
-          width="560"
-          height="400"
-          src="https://www.youtube.com/embed/glOdPxxRD2M?autoplay=1" // Autoplay the video
-          // https://youtu.be/glOdPxxRD2M?si=tNzpO6VdGbeVyz4A
-          frameBorder="0"
-          allowFullScreen
-        />
-      </Modal>
-    </header>
+        
+    </section>
+
   );
 };
