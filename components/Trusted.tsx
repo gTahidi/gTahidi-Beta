@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import React from 'react';
 import Bars from '@/public/Woman-working.svg';
 import Progress from '@/public/checkout-window.svg';

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import Image from 'next/image';
 import ImpactImage from '@/public/emmanuel.svg'; // Replace with your actual image path
 

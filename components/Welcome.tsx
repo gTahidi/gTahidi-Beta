@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 'use client'
 import Image from "next/image";
 import EducatorsIconSVG from '@/public/educators.svg'; // Update the path to your SVG files
