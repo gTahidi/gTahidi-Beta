@@ -5,16 +5,16 @@ import Prof from '@/public/prof.png';
 
 const Welcome = () => {
   return (
-    <div className="bg-blue-100">
+    <div className="bg-blue-100 mt-16 md:mt-0">
       <section className="container mx-auto py-10 px-4 md:py-20 md:px-20 flex flex-col lg:flex-row items-center justify-between">
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-3xl md:text-6xl font-extrabold text-purple-900 capitalize">
+          <h1 className="text-3xl md:font-extrabold font-extrabold text-purple-900 capitalize " >
             karibu <br/> gTahidi
           </h1>
           <p className="mt-4 text-lg md:text-xl font-bold text-black">
             Revolutionize your Teaching with gTahidi
           </p>
-          <p className="mt-4 text-lg md:text-xl font-thin text-black">
+          <p className="mt-4 text-lg md:text-xl font-thin text-text-black">
             Create Curriculum-Compliant lesson plans, schemes of work, <br/>
             and assessment questions in minutes.
           </p>

@@ -6,7 +6,7 @@ import YourIllustration from '@/public/enterprisehero.png';
 
 const LandingPage = () => {
   return (
-    <div className="flex justify-center items-center bg-blue-100 h-screen">
+    <div className="flex justify-center items-center bg-blue-100 h-screen mt-16 md:mt-0">
     <div className="container mx-auto px-4 mt-8 sm:mt-0 md:px-12 xl:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
           <div className="text-center md:text-left">
