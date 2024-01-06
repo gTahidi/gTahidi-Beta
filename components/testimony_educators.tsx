@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Prof from "@/public/prof.png"
 
 function testimony_educators() {
   return (
@@ -27,7 +28,7 @@ function testimony_educators() {
               <div className="flex items-center mt-6">
                 <Image
                   className="object-cover rounded-full w-14 h-14"
-                  src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                  src={Prof}
                   alt=""
                   width={14}
                   height={14}
@@ -51,8 +52,7 @@ function testimony_educators() {
               <div className="flex items-center mt-6">
                 <Image
                   className="object-cover rounded-full w-14 h-14"
-                  src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  alt=""
+                  src={Prof}                  alt=""
                   width={14}
                   height={14}
                 />
