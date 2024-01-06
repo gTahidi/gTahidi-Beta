@@ -26,28 +26,28 @@ function page() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label  className="sr-only">First Name</label>
-                    <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none " placeholder="First Name"/>
+                    <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none " placeholder="First Name"/>
                 </div>
 
                 <div>
                     <label  className="sr-only">Last Name</label>
-                    <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none" placeholder="Last Name"/>
+                    <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none" placeholder="Last Name"/>
                 </div>
                 </div>
 
                 <div>
                 <label  className="sr-only">Email</label>
-                <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1"  className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Email"/>
+                <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1"  className="py-3 px-4 block w-full border rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Email"/>
                 </div>
 
                 <div>
                 <label  className="sr-only">Phone Number</label>
-                <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Phone Number"/>
+                <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Phone Number"/>
                 </div>
 
                 <div>
                 <label  className="sr-only">Details</label>
-                <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Details"></textarea>
+                <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" className="py-3 px-4 block w-full border rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Details"></textarea>
                 </div>
             </div>
 
