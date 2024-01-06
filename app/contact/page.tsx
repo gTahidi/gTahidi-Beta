@@ -102,8 +102,7 @@ function page() {
                 <h3 className="font-semibold text-gray-800 ">Contact us by email</h3>
                 <p className="mt-1 text-sm text-gray-500">If you wish to write us an email instead please use</p>
                 <a className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 " href="#">
-                gtahidi@co.com
-                </a>
+                  Info@ujaotech.com                </a>
             </div>
             </div>
         </div>
