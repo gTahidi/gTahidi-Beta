@@ -17,7 +17,7 @@ export const Welcome = () => {
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
             </a>
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Empowering Future <p>Generations </p> </h1>
+            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gtahidiDarkBlue md:text-5xl lg:text-6xl ">Empowering Future <p>Generations </p> </h1>
             <p className="mb-8 text-sm font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 ">Discover gTahidi AI's innovative learning solutions, all conveniently delivered<br/> through WhatsApp. We bring education to your fingertips ensuring an engaging and specialized learning experience.</p>
             <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 items-center justify-center">
             <div className="w-full md:w-1/5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-blue-900 transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-1">
