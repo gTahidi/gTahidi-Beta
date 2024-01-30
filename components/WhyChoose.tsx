@@ -30,17 +30,27 @@ export default function WhyChoose() {
       <div className="flex flex-wrap justify-center gap-4">
         <FeatureCard 
           title="Your Personalized Educational Journey"
-          description="gTahidi AI stands out by offering tailor-made learning paths..."
+          description="gTahidi AI stands out by offering tailor-made learning paths. 
+          No two learners are alike, and gTahidi AI understands that. 
+          The platform adapts to your unique learning style, ensuring 
+          that each step you take is in sync with your individual pace and preferences"
           image={journeyImage}
         />
         <FeatureCard 
           title="Instant Help at Your Fingertips"
-          description="Stuck on a problem? Simply reach out on WhatsApp..."
+          description="Stuck on a problem? Simply reach out on WhatsApp, and receive instant, 
+          step-by-step assistance whenever you need it. The convenience of on-demand support 
+          transforms learning into an interactive and dynamic experience, 
+          making sure you're never alone on your educational journey."
           image={helpImage}
         />
         <FeatureCard 
           title="Unlock a Universe of Knowledge"
-          description="gTahidi AI doesn't just focus on one aspect of STEM..."
+          description="gTahidi AI doesn't just focus on one aspect of STEM – it opens the doors 
+          to a comprehensive spectrum. From Algebra to Zoology, and Python to Physics, 
+          gTahidi AI covers a diverse range of STEM subjects. This breadth of content 
+          ensures that learners have access to a wealth of knowledge, fostering a 
+          holistic understanding of science, technology, engineering, and mathematics."
           image={universeImage}
         />
       </div>
