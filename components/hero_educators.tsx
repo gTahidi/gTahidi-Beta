@@ -5,7 +5,7 @@ import Prof from '@/public/prof.png';
 
 const Welcome = () => {
   return (
-    <div className="bg-blue-100 mt-16 md:mt-0">
+    <div className="bg-white mt-16 md:mt-0">
       <section className="container mx-auto py-10 px-4 md:py-20 md:px-20 flex flex-col lg:flex-row items-center justify-between">
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-8xl md:font-extrabold font-extrabold text-purple-900  " >
@@ -19,7 +19,7 @@ const Welcome = () => {
             and assessment questions in minutes.
           </p>
 
-          <div className="flex items-center space-x-2 mt-8 justify-center lg:justify-start">
+          <div className="flex items-center space-x-2 mt-12 justify-center lg:justify-start">
             {[Prof, Prof, Prof, Prof].map((src, index) => (
               <Image
                 key={index}
@@ -44,7 +44,7 @@ const Welcome = () => {
           </a>
         </div>
         
-        <div className="mt-12 lg:mt-0 w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+        <div className="mt-[200px] lg:mt-0 w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
           <Image
             src={Educators}
             alt="Educators"
