@@ -16,6 +16,7 @@ function page() {
         </div>
 
         <div className="mt-12 grid items-center lg:grid-cols-2 gap-6 lg:gap-16">
+
           <div className="flex flex-col border rounded-xl p-4 sm:p-6 lg:p-8">
             <h2 className="mb-8 text-xl font-semibold text-gray-800">
               Fill in the form
@@ -234,6 +235,8 @@ function page() {
                   Info@ujaotech.com                </a>
 
             </div>
+            </div>
+
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Educators from "@/public/teacher.png";
+import Educators from "@/public/teams.png";
 import Prof from '@/public/prof.png';
 
 const Welcome = () => {
@@ -8,7 +8,7 @@ const Welcome = () => {
     <div className="bg-blue-100 mt-16 md:mt-0">
       <section className="container mx-auto py-10 px-4 md:py-20 md:px-20 flex flex-col lg:flex-row items-center justify-between">
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-3xl md:font-extrabold font-extrabold text-purple-900 capitalize " >
+          <h1 className="text-8xl md:font-extrabold font-extrabold text-purple-900  " >
             karibu <br/> gTahidi
           </h1>
           <p className="mt-4 text-lg md:text-xl font-bold text-black">
