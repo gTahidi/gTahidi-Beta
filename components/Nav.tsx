@@ -22,7 +22,7 @@ export const Nav = () => {
             width={32}
             height={32}
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-gtahidiDarkBlue">
             gTahidi
           </span>
         </a>
@@ -71,7 +71,7 @@ export const Nav = () => {
             <li>
               <a
                 href="/"
-                className="block py-2 px-3  text-black bg-gt rounded md:bg-transparent "
+                className="block py-2 px-3 text-gtahidiDarkBlue bg-gt rounded hover:bg-gtahidiPink"
                 aria-current="page"
               >
                 Home
@@ -82,7 +82,7 @@ export const Nav = () => {
             <li>
               <a
                 href="/pricing"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink "
               >
                 Pricing
               </a>
@@ -90,7 +90,7 @@ export const Nav = () => {
             <li>
               <a
                 href="/contact"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink  "
               >
                 Contact
               </a>
