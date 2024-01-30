@@ -24,6 +24,7 @@ function page() {
             <form>
               <div className="grid gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<<<<<<< HEAD
                   <div>
                     <label className="sr-only">First Name</label>
                     <input
@@ -77,9 +78,31 @@ function page() {
                     className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none border"
                     placeholder="Details"
                   ></textarea>
+=======
+                <div>
+                    <label  className="sr-only">First Name</label>
+                    <input type="text" name="hs-firstname-contacts-1" id="hs-firstname-contacts-1" className="py-3 px-4 block w-full border rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none " placeholder="First Name"/>
+                </div>
+
+                <div>
+                    <label  className="sr-only">Last Name</label>
+                    <input type="text" name="hs-lastname-contacts-1" id="hs-lastname-contacts-1" className="py-3 px-4 block w-full border rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none" placeholder="Last Name"/>
+                </div>
+                </div>
+
+                <div>
+                <label  className="sr-only">Email</label>
+                <input type="email" name="hs-email-contacts-1" id="hs-email-contacts-1"  className="py-3 px-4 block w-full border rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Email"/>
+                </div>
+
+                <div>
+                <label  className="sr-only">Phone Number</label>
+                <input type="text" name="hs-phone-number-1" id="hs-phone-number-1" className="py-3 px-4 block w-full border rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Phone Number"/>
+>>>>>>> origin/main
                 </div>
               </div>
 
+<<<<<<< HEAD
               <div className="mt-4 grid">
                 <button
                   type="submit"
@@ -88,6 +111,13 @@ function page() {
                   Send inquiry
                 </button>
               </div>
+=======
+                <div>
+                <label  className="sr-only">Details</label>
+                <textarea id="hs-about-contacts-1" name="hs-about-contacts-1" className="py-3 px-4 block w-full border rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder="Details"></textarea>
+                </div>
+            </div>
+>>>>>>> origin/main
 
               <div className="mt-3 text-center">
                 <p className="text-sm text-gray-500">
@@ -194,6 +224,7 @@ function page() {
             </div>
 
             <div className=" flex gap-x-7 py-6">
+<<<<<<< HEAD
               <svg
                 className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 "
                 xmlns="http://www.w3.org/2000/svg"
@@ -223,6 +254,14 @@ function page() {
                   gtahidi@co.com
                 </a>
               </div>
+=======
+            <svg className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/></svg>
+            <div className="grow">
+                <h3 className="font-semibold text-gray-800 ">Contact us by email</h3>
+                <p className="mt-1 text-sm text-gray-500">If you wish to write us an email instead please use</p>
+                <a className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 " href="#">
+                  Info@ujaotech.com                </a>
+>>>>>>> origin/main
             </div>
           </div>
         </div>
