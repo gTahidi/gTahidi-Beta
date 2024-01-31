@@ -44,7 +44,7 @@ export default function WhyChoose() {
           gTahidi AI covers a diverse range of STEM subjects. This breadth of content 
           ensures that learners have access to a wealth of knowledge, fostering a 
           holistic understanding of science, technology, engineering, and mathematics."
-          image={Subject}
+          image={Experience}
         />
       </div>
     </div>
