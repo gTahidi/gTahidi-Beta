@@ -8,13 +8,10 @@
 # testing
 /coverage
 
-<<<<<<< HEAD
 # next.js
 /.next/
 /out/
 
-=======
->>>>>>> master
 # production
 /build
 
@@ -41,5 +38,7 @@ next-env.d.ts
 # /.vscode
 
 .env
+/env/
+/.env/
 
 /.vs
