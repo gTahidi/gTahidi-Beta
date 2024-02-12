@@ -37,8 +37,7 @@ const Page = () => {
     formattedContent = formattedContent.replace(/<h3>/g, '<h3 class="text-lg font-medium my-2">');
     formattedContent = formattedContent.replace(/<ul>/g, '<ul class="list-disc pl-5">');
     formattedContent = formattedContent.replace(/<ol>/g, '<ol class="list-decimal pl-5">');
-    formattedContent = formattedContent.replace(/<li>/g, '<li class="my-1">');
-  
+    formattedContent = formattedContent.replace(/<li>/g, '<li class="my-1">')
     formattedContent = formattedContent.replace(/<p>/g, '<p class="my-2">');
   
     
