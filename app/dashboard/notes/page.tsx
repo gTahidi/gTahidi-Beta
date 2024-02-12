@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";  
 import { marked } from "marked";
 import { useSession } from 'next-auth/react';
-import Link from "next/link";
+// import Link from "next/link";
 
 
 interface NoteWrapper {
@@ -29,8 +29,11 @@ const Page = () => {
   const [loading, setLoading] = useState(true);  // added loading state
   const { data: session } = useSession() as { data: CustomSession | null };
   const router = useRouter();
+  const formUrl = process.env.NEXT_PUBLIC_FORM_URL;
+
 
   function formatContent(content: string): string {
+
     let formattedContent = marked(content); 
     formattedContent = formattedContent.replace(/<h1>/g, '<h1 class="text-2xl font-bold my-4">');
     formattedContent = formattedContent.replace(/<h2>/g, '<h2 class="text-xl font-semibold my-3">');
@@ -52,7 +55,7 @@ const Page = () => {
         if(!oid) {
           throw new Error("User ID is not found");
         }
-          const url = `https://serverlogic.azurewebsites.net/api/fetchNotes/?oid=${oid}`; 
+        const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/?oid=${oid}`;
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
@@ -78,11 +81,10 @@ const Page = () => {
     <div className="dashboard-container">
       <DashboardPageTitle>Notes</DashboardPageTitle>
       <button className="bg-white py-3 w-1/2 sm:w-1/6 rounded-full text-gtahidiDarkBlue font-semibold text-sm ml-auto">
-        <Link
-          href="https://forms.office.com/pages/responsepage.aspx?id=7qH76bbTlUW3HBSB25ZKWAVfIcbcZZJLjemdITQ6iQNUNkpGOUJRTENYSlkwNVdRVEcwNDBURE0zMyQlQCN0PWcu"
-        >
+        <a 
+        href={formUrl}>
           Give us feedback
-        </Link>
+        </a>
       </button>
       
       <button 
