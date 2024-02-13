@@ -18,8 +18,8 @@ const PrivacySection: React.FC = () => {
             />
           </div>
           <div className="text-center md:text-left px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl text-gtahidiPink font-bold mb-4">Your Privacy is Our Priority</h2>
-            <p>
+            <h2 className="text-3xl md:text-3xl text-gtahidiPink font-bold mb-4">Your Privacy is Our Priority</h2>
+            <p className="text-xl" >
               At gTahidi, we take your privacy seriously. We adhere to the highest standards of data security
               <br/>Your personal information is never used without your permission
               <br/>We collect only the data necessary to provide our services, 
@@ -31,8 +31,8 @@ const PrivacySection: React.FC = () => {
         {/* Second Section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left px-4 md:px-6 mb-4 md:mb-0">
-            <h2 className="text-2xl md:text-3xl text-gtahidiPink font-bold mb-4">Our foundation in the field of education</h2>
-            <p>
+            <h2 className="text-3xl md:text-3xl text-gtahidiPink font-bold mb-4">Our foundation in the field of education</h2>
+            <p className="text-xl" >
               gTahidi was co-founded by an accomplished educator, making it specifically
               <br/> crafted to address the complex challenges faced by teachers. 
               <br/>Our robust suite of tools elevates the way you deliver education,
