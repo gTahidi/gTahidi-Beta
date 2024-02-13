@@ -17,7 +17,7 @@ function support_teachers() {
         </div>
         <div className="flex-1 px-6">
           <h2 className="text-3xl font-bold text-gtahidiPink mb-4">Why We Support Teachers </h2>
-          <p>
+          <p  className="text-xl text-gTahidiMain">
             gTahidi was co-founded by an accomplished educator, making it specifically 
             crafted to address the complex challenges faced by teachers. Our robust suite 
             of tools elevates the way you deliver education, whether you find yourself in 

@@ -13,7 +13,7 @@ import WhyChoose from '@/components/WhyChoose_enterprise'
 function page() {
   return (
     <>
-    <div className='py-10 h-full bg-blue-100'>
+    <div className='py-10 h-full bg-white'>
         <Hero/>
     </div>
     <Microsoft/>

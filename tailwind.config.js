@@ -74,6 +74,8 @@ module.exports = {
         gtahidiDarkBlueTwo: "#251C7680",
         dashboardPurple: "#494080",
         dashboardBackground: "#F5F8FF",
+        gTahidiMain: "#494080",
+        gTahidiSecond: "#FF66C4",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -94,6 +96,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      
     },
   },
   plugins: [require("tailwindcss-animate")],

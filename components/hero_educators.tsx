@@ -8,8 +8,8 @@ const Welcome = () => {
     <div className="bg-white mt-16 md:mt-0">
       <section className="container mx-auto py-10 px-4 md:py-20 md:px-20 flex flex-col lg:flex-row items-center justify-between">
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-8xl md:font-extrabold font-extrabold text-purple-900  " >
-            karibu <br/> gTahidi
+          <h1 className="text-8xl md:font-extrabold font-extrabold text-gTahidiMain  " >
+          Karibu <br/> gTahidi
           </h1>
           <p className="mt-4 text-lg md:text-xl font-bold text-black">
             Revolutionize your Teaching with gTahidi

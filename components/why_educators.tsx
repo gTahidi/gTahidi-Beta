@@ -21,7 +21,7 @@ const WhyComponent = () => {
       <div className="max-w-8xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {imageArray.map((item, index) => (
           <div key={index} className="flex flex-col items-center  rounded-lg p-4">
-            <div className="relative mb-4 floating">
+            <div className="relative mb-4 floating ">
               <Image
                 src={item.src}
                 alt={item.alt}
@@ -29,7 +29,7 @@ const WhyComponent = () => {
                 width={750}
               />
             </div>
-            <p className="text-center text-sm lg:text-base">{item.text}</p>
+            <p className="text-center text-xl font-bold ">{item.text}</p>
           </div>
         ))}
       </div>
