@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 import YourIllustration from '@/public/MicrosoftTeams-image (1).png'; 
 
 const LandingPage = () => {
   return (
-    <div className="flex justify-center items-center bLorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati adipisici sunt in, provident facere ipsam?g-white h-screen mt-16 md:mt-0">
+    <div className="flex justify-center items-center bg-white h-screen mt-16 md:mt-0">
     <div className="container mx-auto px-4 mt-8 sm:mt-0 md:px-12 xl:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
           <div className="text-center md:text-left">
@@ -18,9 +19,11 @@ const LandingPage = () => {
               With gTahidi AI, dive into Math, Sciences, Coding, 
               and more – all through the convenience of WhatsApp.
             </p>
-            <button className="bg-gTahidiSecond  text-white px-6 py-2 rounded-lg hover:bg-pink-600">
-              Start Learning
-            </button>
+            <Link href="https://wa.link/ishz1o"> {/* Replace with your actual route */}
+              <button className="bg-gTahidiSecond text-white px-6 py-2 rounded-lg hover:bg-pink-600">
+                Start Learning
+              </button>
+            </Link>
           </div>
           <div className="flex justify-center mt-[30px] md:justify-end">
             <Image 
