@@ -188,44 +188,16 @@ function page() {
                 <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
               </svg>
               <div className="grow">
+                <a href="https://gtahidiapi.developer.azure-api.net">
                 <h3 className="font-semibold text-gray-800 ">Developer APIs</h3>
+                </a>
                 <p className="mt-1 text-sm text-gray-500">
                   Check out our development quickstart guide.
                 </p>
               </div>
             </div>
 
-            <div className=" flex gap-x-7 py-6">
-
-              <svg
-                className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 "
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
-                <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
-              </svg>
-              <div className="grow">
-                <h3 className="font-semibold text-gray-800 ">
-                  Contact us by email
-                </h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  If you wish to write us an email instead please use
-                </p>
-                <a
-                  className="mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 hover:text-gray-800 "
-                  href="#"
-                >
-                  gtahidi@co.com
-                </a>
-              </div>
+            <div className=" flex gap-x-7 py-6">       
 
             <svg className="flex-shrink-0 w-6 h-6 mt-1.5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/></svg>
             <div className="grow">
