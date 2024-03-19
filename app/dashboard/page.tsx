@@ -9,35 +9,14 @@ import {
   faSpa,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ElementType, useState } from "react";
-import { InteractionType } from "@azure/msal-browser";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
-import { ResourceDistributionChart } from "@/components/ResourceDistributionChart";
-import TopTutors from "@/components/TopTutors";
+import BarChart from "@/components/dashboard/barchart"
+import PieChart from "@/components/dashboard/piechart"
+
 
 
 
 const Dashboard = () => {
-  const router = useRouter();
-
-  
-  const plans = 20;
-  const notes = 12;
-  const Schemes= 10;
-  const quizzes = 30;
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleCardClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
 
   return (
     <div className="flex-grow dashboard-container bg-[#E8EFF6] w-3/4 h-full flex flex-col overflow-y-auto z-10">
@@ -61,8 +40,11 @@ const Dashboard = () => {
           </div>
         </div>
         {/* charts */}
-        <div>
-          <h1>charts</h1>
+        <div className="flex space-x-16">
+          <BarChart/>
+          <div className=" mr-1">
+          <PieChart/>
+          </div>
         </div>
     </div>
   );
