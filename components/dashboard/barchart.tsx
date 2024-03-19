@@ -59,7 +59,7 @@ const BarChartComponent = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-xl h-full">
+    <div className="bg-white p-8 rounded-2xl   shadow-xl h-full">
       {/* <div style={{ height: '300px', width: '500px'}}> */}
         <Bar data={data} options={options} />
       </div>
