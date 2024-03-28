@@ -56,6 +56,7 @@ const Dashboard = () => {
         <UploadsComponent/>
         <ProgressCard/>
         </div>
+        
     </div>
   );
 };
