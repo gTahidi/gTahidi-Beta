@@ -12,10 +12,12 @@ import { SocialsSection } from "@/components/SocialsSection";
 import FAQ  from "@/components/Faqs"
 import Trusted from "@/components/Trusted";
 import BackedByMicrosoft from "@/components/microsoft";
+import Popup from "@/components/Popup";
 
 const page = () => {
   return (
     <main>
+      <Popup/>
       {/* <section className="bg-gradient-to-b from-linearGradientPurple to-linearGradientPink"> */}
       <section >
         <Nav />
