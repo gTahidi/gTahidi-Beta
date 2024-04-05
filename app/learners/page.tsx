@@ -8,8 +8,10 @@ import Stats from '@/components/StatsBanner'
 import Top_Features from '@/components/features_Ieaners'
 import Experience from '@/components/experience'
 import Learn from '@/components/learn'
+import useMetaPixel from '@/hooks/useMetaPixel'
 
 function page() {
+  useMetaPixel('YOUR_PIXEL_ID')
   return (
     <div>
       <Hero/>

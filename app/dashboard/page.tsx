@@ -15,11 +15,13 @@ import PieChart from "@/components/dashboard/piechart"
 import UploadsComponent from "@/components/dashboard/Uploads"
 import ProgressCard from "@/components/dashboard/progress"
 import Sidebar from "@/components/dashboard/sidebar";
+import useMetaPixel from '@/hooks/useMetaPixel';
 
 
 
 
 const Dashboard = () => {
+  useMetaPixel('YOUR_PIXEL_ID');
 
   return (
     <div className="flex-grow dashboard-container bg-[#E8EFF6] w-4/5 h-full flex flex-col overflow-y-auto z-10">
@@ -54,6 +56,7 @@ const Dashboard = () => {
         <UploadsComponent/>
         <ProgressCard/>
         </div>
+        
     </div>
   );
 };

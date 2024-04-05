@@ -8,9 +8,11 @@ import Impact from '@/components/impact'
 import Stats from '@/components/StatsBanner'
 import Solutions from '@/components/solution'
 import WhyChoose from '@/components/WhyChoose_enterprise'
+import useMetaPixel from '@/hooks/useMetaPixel'
 
 
 function page() {
+  useMetaPixel('YOUR_PIXEL_ID')
   return (
     <>
     <div className='py-10 h-full bg-white'>
