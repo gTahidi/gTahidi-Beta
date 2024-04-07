@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-function page() {
+function Page() {
   return (
     <section className="bg-white dark:bg-gray-900">
-    <div className="container px-20 mt-28 mx-auto">
-        <div className="sm:flex sm:items-center sm:justify-between">
-            <div>
-                <h2 className="text-2xl font-bold text-gtahidiDarkBlue lg:text-3xl dark:text-gray-100">Simple, transparent pricing</h2>
-                <p className="mt-4 text-gray-500 dark:text-gray-400">No Contracts. No surorise fees.</p>
-            </div>
+      <div className="container px-4 sm:px-6 lg:px-20 mx-auto">
+        <div className="flex flex-col items-center text-center sm:flex-row sm:text-left sm:justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-gtahidiDarkBlue sm:text-3xl dark:text-gray-100">Simple, transparent pricing</h2>
+            <p className="mt-4 text-gray-500 dark:text-gray-400">No Contracts. No surprise fees.</p>
+          </div>
+
 
             <div className="overflow-hidden p-0.5 mt-6 border rounded-lg dark:border-gray-700">
                 <div className="sm:-mx-0.5 flex">
