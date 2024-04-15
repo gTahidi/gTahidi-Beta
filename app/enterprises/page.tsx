@@ -12,7 +12,7 @@ import useMetaPixel from '@/hooks/useMetaPixel'
 
 
 function page() {
-  useMetaPixel('YOUR_PIXEL_ID')
+  useMetaPixel('879225596866623')
   return (
     <>
     <div className='py-10 h-full bg-white'>
