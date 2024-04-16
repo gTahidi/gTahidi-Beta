@@ -1,3 +1,12 @@
+# Purpose
+
+This document provides guidelines for code and project contributions on GitHub. It aims to ensure that all contributions align with our company's goals and maintain a high standard of quality and collaboration.
+
+## Scope of Contributions
+
+We welcome all contributions that align with our company's goals. This includes, but is not limited to, code enhancements, bug fixes, documentation improvements, and feature additions.
+
+
 # Contribution Guidelines
 
 This document contains rules that govern the Ujao's contribution process and operations. It serves as a standard guiding point for every contributor.
@@ -18,6 +27,19 @@ Feel free to make inquiries and explore the suggestions put forward as our polic
 
 6. **Submit a Pull Request**: Once your changes are complete, submit a pull request to the main repository. Provide a clear description of your changes and the purpose of your contribution.
 
+## Version Control Best Practices
+
+Use branches effectively to isolate changes and facilitate collaboration.
+
+## Testing Guidelines
+
+All code contributions must include appropriate unit tests to verify functionality and prevent regressions.
+Run tests locally before submitting a pull request to ensure that your changes don't introduce failures.
+
 ## Review Process
 
 Pull requests are reviewed on a weekly basis by Daniel Omusula and Brian Kechy. Feedback and suggestions will be provided during the review process to help improve the quality of contributions.
+
+## Recognition and Rewards
+
+Contributors who make significant contributions to the project may be recognized in our release notes, contributor lists, and other forms of appreciation.
