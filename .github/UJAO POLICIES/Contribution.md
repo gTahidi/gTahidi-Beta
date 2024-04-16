@@ -6,6 +6,9 @@ This document provides guidelines for code and project contributions on GitHub. 
 
 We welcome all contributions that align with our company's goals. This includes, but is not limited to, code enhancements, bug fixes, documentation improvements, and feature additions.
 
+## Getting Started
+
+New contributors are encouraged to start by reviewing open issues in the repository, participating in discussions, and familiarizing themselves with the existing codebase and documentation.
 
 # Contribution Guidelines
 
@@ -27,6 +30,10 @@ Feel free to make inquiries and explore the suggestions put forward as our polic
 
 6. **Submit a Pull Request**: Once your changes are complete, submit a pull request to the main repository. Provide a clear description of your changes and the purpose of your contribution.
 
+### Preferred Code Formatting: Markdown
+
+We prefer the use of Markdown for formatting code. Markdown provides a simple and easy-to-read syntax for formatting text, making it well-suited for documenting code snippets, README files, and other project documentation. Additionally, using Markdown ensures consistency and readability across our repositories.
+
 ## Version Control Best Practices
 
 Use branches effectively to isolate changes and facilitate collaboration.
@@ -39,6 +46,12 @@ Run tests locally before submitting a pull request to ensure that your changes d
 ## Review Process
 
 Pull requests are reviewed on a weekly basis by Daniel Omusula and Brian Kechy. Feedback and suggestions will be provided during the review process to help improve the quality of contributions.
+
+## Communication
+
+For questions, discussions, or collaboration, please use our designated communication channels, such as Slack channels, email lists, or GitHub discussions.
+
+If you have feedback or concerns about the project or the contribution process, please [contact us](mailto:info@ujaotech.com) or [open an issue](link-to-issue-tracker) on GitHub.
 
 ## Recognition and Rewards
 
