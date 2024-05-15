@@ -12,7 +12,7 @@ const LandingPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-poppins text-gtahidiDarkBlue mb-4">
-              Explore STEM Learning<br/> with Fun & Ease:<br/> gTahidi AI is at Your<br/> Service!"
+              Explore Learning<br/> with Fun & Ease:<br/> gTahidi AI is at Your<br/> Service!"
             </h1>
             <p className="text-md md:text-lg text-gtahidiDarkBlue mb-6">
               Step into a world where STEM learning is a thrilling adventure! 
