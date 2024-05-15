@@ -37,7 +37,7 @@ const Welcome = () => {
           </div>
 
           <a
-            href="/dashboard"
+            href="https://api.whatsapp.com/send?phone=254769132469&text=Hello+gTahidi%F0%9F%A4%97"
             className="mt-6 inline-block bg-gtahidiPink rounded-lg border-2 px-6 py-3 uppercase text-sm font-bold tracking-widest text-white"
           >
             Start Now
