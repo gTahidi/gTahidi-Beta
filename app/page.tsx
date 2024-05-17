@@ -1,3 +1,5 @@
+"use client";
+
 import  HDIW  from "@/components/HDIW";
 import { Nav } from "@/components/Nav";
 import {Welcome}  from "@/components/Welcome";
@@ -13,8 +15,11 @@ import FAQ  from "@/components/Faqs"
 import Trusted from "@/components/Trusted";
 import BackedByMicrosoft from "@/components/microsoft";
 import Popup from "@/components/Popup";
+import useMetaPixel from '@/hooks/useMetaPixel'
+
 
 const page = () => {
+  useMetaPixel('879225596866623')
   return (
     <main>
       <Popup/>

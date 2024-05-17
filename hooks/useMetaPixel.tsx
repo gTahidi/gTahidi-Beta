@@ -1,3 +1,4 @@
+"use client"
 // hooks/useMetaPixel.tsx
 import { useEffect } from 'react';
 
