@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import Hero from '@/components/hero_learners'
 import Microsoft from '@/components/microsoft'

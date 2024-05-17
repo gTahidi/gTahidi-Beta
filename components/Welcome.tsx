@@ -5,9 +5,13 @@ import Image from "next/image";
 import EducatorsIconSVG from '@/public/educators.svg'; // Update the path to your SVG files
 import LearnersIconSVG from '@/public/earners.svg'; // Update the path to your SVG files
 import EnterprisesIconSVG from '@/public/enterprise-hero.svg'; // Update the path to your SVG files
+import useMetaPixel from '@/hooks/useMetaPixel'
+
 
 
 export const Welcome = () => {
+// useMetaPixel('879225596866623')
+
   return (
     <section className="bg-white p-4 md:p-12 mt-16 md:mt-0 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">

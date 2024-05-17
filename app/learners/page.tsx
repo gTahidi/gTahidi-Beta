@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import Hero from '@/components/enterprise_hero'
 import Microsoft from '@/components/microsoft'
@@ -11,7 +13,7 @@ import Learn from '@/components/learn'
 import useMetaPixel from '@/hooks/useMetaPixel'
 
 function page() {
-  useMetaPixel('YOUR_PIXEL_ID')
+  useMetaPixel('879225596866623')
   return (
     <div>
       <Hero/>

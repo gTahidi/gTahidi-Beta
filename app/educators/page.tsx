@@ -1,3 +1,5 @@
+"use client";
+
 // Import React and Next.js components
 import React from 'react';
 import Head from 'next/head';
@@ -13,7 +15,7 @@ import useMetaPixel from '@/hooks/useMetaPixel';
 // Import Tailwind CSS components
 
 const HomePage = () => {
-  useMetaPixel('YOUR_PIXEL_ID');
+  useMetaPixel('879225596866623')
   return (
     <div>
       <Hero />
