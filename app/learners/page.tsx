@@ -12,7 +12,7 @@ import Experience from '@/components/experience'
 import Learn from '@/components/learn'
 import useMetaPixel from '@/hooks/useMetaPixel'
 
-function page() {
+function Page() {
   useMetaPixel('879225596866623')
   return (
     <div>
@@ -29,4 +29,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

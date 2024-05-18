@@ -21,8 +21,8 @@ import useMetaPixel from '@/hooks/useMetaPixel';
 
 
 const Dashboard = () => {
-  useMetaPixel('879225596866623');
-
+  // const Pixel = 879225596866623
+  useMetaPixel('879225596866623')
   return (
     <div className="flex-grow dashboard-container bg-[#E8EFF6] w-4/5 h-full flex flex-col overflow-y-auto z-10">
 

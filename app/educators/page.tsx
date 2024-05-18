@@ -15,6 +15,7 @@ import useMetaPixel from '@/hooks/useMetaPixel';
 // Import Tailwind CSS components
 
 const HomePage = () => {
+  // const Pixel = 879225596866623
   useMetaPixel('879225596866623')
   return (
     <div>
