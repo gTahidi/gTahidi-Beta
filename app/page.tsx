@@ -18,7 +18,7 @@ import Popup from "@/components/Popup";
 import useMetaPixel from '@/hooks/useMetaPixel'
 
 
-const page = () => {
+const Page = () => {
   useMetaPixel('879225596866623')
   return (
     <main>
@@ -42,4 +42,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

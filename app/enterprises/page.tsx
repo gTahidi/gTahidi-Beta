@@ -13,7 +13,8 @@ import WhyChoose from '@/components/WhyChoose_enterprise'
 import useMetaPixel from '@/hooks/useMetaPixel'
 
 
-function page() {
+function Page() {
+  // const Pixel = 
   useMetaPixel('879225596866623')
   return (
     <>
@@ -33,4 +34,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
