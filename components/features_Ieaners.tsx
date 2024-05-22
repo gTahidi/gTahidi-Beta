@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+
+
 import Image from 'next/image';
 import Assistance from '@/public/assistance.svg'
 import Subject from '@/public/subject.svg'
@@ -19,8 +22,8 @@ export default function LearningExperience() {
             width={150}
             height={150}
           />
-          <h3 className="text-xl font-bold text-gtahidiPink mb-2">Diverse STEM Subjects</h3>
-          <p className=' text-center mb-2'>From Algebra to Zoology, and Python to Physics, unlock a universe of knowledge.</p>
+          <h3 className="text-xl font-bold text-gtahidiPink mb-2">Wide Range of Subjects</h3>
+          <p className=' text-center mb-2'>From Literature to Calculus, explore subjects that pique your interest. </p>
         </div>
 
         {/* Card 2 */}
@@ -31,8 +34,8 @@ export default function LearningExperience() {
               width={150}
               height={150}
           />
-          <h3 className="text-xl font-bold text-gtahidiPink mb-2">Adaptive Learning Experience</h3>
-          <p className=' text-center mb-2'>gTahidi AI adapts to your learning style, providing a truly personalized educational journey.</p>
+          <h3 className="text-xl font-bold text-gtahidiPink mb-2">Adaptive Learning </h3>
+          <p className=' text-center mb-2'>Tailored to fit your learning style for an incredibly personalized experience. </p>
         </div>
 
         {/* Card 3 */}
@@ -44,7 +47,7 @@ export default function LearningExperience() {
               height={150}
           />
           <h3 className="text-xl font-bold text-gtahidiPink mb-2">On-Demand Assistance</h3>
-          <p className=' text-center mb-2'>Stuck on a problem? Get instant, step-by-step help anytime, right on your phone.</p>
+          <p className=' text-center mb-2'>Immediate help is just a message away on WhatsApp whenever you encounter hurdles.</p>
         </div>
 
         {/* Card 4 */}
@@ -55,8 +58,8 @@ export default function LearningExperience() {
               width={150}
               height={150}
           />
-          <h3 className="text-xl font-bold text-gtahidiPink mb-2">Learn at Your Pace</h3>
-          <p className=' text-center mb-2'>Rushed or relaxed? Your learning journey matches your individual pace and style.</p>
+          <h3 className="text-xl font-bold text-gtahidiPink mb-2">Flexible Learning Pace:</h3>
+          <p className=' text-center mb-2'>Whether you're a quick learner or need more time, gTahidi AI adjusts to your needs. </p>
         </div>
       </div>
     </div>

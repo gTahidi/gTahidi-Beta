@@ -1,3 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
+
+
+
 import Image, { StaticImageData } from 'next/image';
 
 // Import the images
@@ -46,11 +50,14 @@ export default function WhyChoose() {
         />
         <FeatureCard 
           title="Unlock a Universe of Knowledge"
-          description="gTahidi AI doesn't just focus on one aspect of STEM – it opens the doors 
-          to a comprehensive spectrum. From Algebra to Zoology, and Python to Physics, 
-          gTahidi AI covers a diverse range of STEM subjects. This breadth of content 
-          ensures that learners have access to a wealth of knowledge, fostering a 
-          holistic understanding of science, technology, engineering, and mathematics."
+          description="gTahidi AI goes beyond just a single field—it opens 
+          the door to a vast universe of academic disciplines. From literature
+           and history to advanced sciences and mathematics, gTahidi AI offers 
+           resources across all subjects. This extensive range ensures that 
+           learners gain a well-rounded education, fostering a deep and holistic 
+           understanding across varied areas of study. Embrace the diversity of 
+           knowledge that gTahidi AI brings to your learning journey, making every
+            study session rich and comprehensive. "
           image={universeImage}
         />
       </div>
