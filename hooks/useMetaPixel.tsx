@@ -1,5 +1,4 @@
 "use client"
-// hooks/useMetaPixel.tsx
 import { useEffect } from 'react';
 
 const useMetaPixel = (pixelId: string): void => {
@@ -18,7 +17,13 @@ const useMetaPixel = (pixelId: string): void => {
 
     // Initialize Pixel with the given ID
     script.onload = () => {
-      if (!window.fbq) return;
+      if (!window.fbq) {
+        window.fbq = function () {
+          (window.fbq as any).queue = (window.fbq as any).queue || [];
+          (window.fbq as any).queue.push(arguments);
+        };
+        (window.fbq as any).loaded = true;
+      }
       window.fbq('init', pixelId);
       window.fbq('track', 'PageView');
     };
