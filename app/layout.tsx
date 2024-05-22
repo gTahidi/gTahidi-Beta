@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "AI in education",
 };
 
-export const DM_SANS = DM_Sans({
+const DM_SANS = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
