@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-import YourIllustration from '@/public/MicrosoftTeams-image (1).png'; 
+import YourIllustration from '@/public/teams.png'; 
 
 const LandingPage = () => {
   return (
@@ -12,12 +12,12 @@ const LandingPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
           <div className="text-center md:text-left">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-poppins text-gtahidiDarkBlue mb-4">
-              Explore STEM Learning<br/> with Fun & Ease:<br/> gTahidi AI is at Your<br/> Service!"
+              Explore Learning<br/> with Fun & Ease:<br/> gTahidi AI is at Your<br/> Service!"
             </h1>
             <p className="text-md md:text-lg text-gtahidiDarkBlue mb-6">
-              Step into a world where STEM learning is a thrilling adventure! 
-              With gTahidi AI, dive into Math, Sciences, Coding, 
-              and more – all through the convenience of WhatsApp.
+              Step into a world where learning is limitless. gTahidi AI brings
+              comprehensive educational support directly through WhatsApp,
+              covering every subject imaginable—from arts to sciences, and everything in between. 
             </p>
             <Link href="https://wa.link/ishz1o"> {/* Replace with your actual route */}
               <button className="bg-gTahidiSecond text-white px-6 py-2 rounded-lg hover:bg-pink-600">

@@ -1,6 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
+
+
 import React from "react";
 import Image from "next/image";
-import Educators from "@/public/teams.png";
+import Educators from "@/public/MicrosoftTeams-image (1).png";
 import Prof from '@/public/prof.png';
 
 const Welcome = () => {
@@ -19,7 +22,7 @@ const Welcome = () => {
             and assessment questions in minutes.
           </p>
 
-          <div className="flex items-center space-x-2 mt-12 justify-center lg:justify-start">
+          {/* <div className="flex items-center space-x-2 mt-12 justify-center lg:justify-start">
             {[Prof, Prof, Prof, Prof].map((src, index) => (
               <Image
                 key={index}
@@ -34,7 +37,7 @@ const Welcome = () => {
             <span className="text-lg font-medium text-gtahidiPink">
               Join 300+ Educators
             </span>
-          </div>
+          </div> */}
 
           <a
             href="/dashboard"

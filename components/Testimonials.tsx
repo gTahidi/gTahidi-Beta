@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+
+
 "use client";
 import Image from "next/image";
 import Profile from "@/public/prof.png";
@@ -7,8 +10,8 @@ export const Testimonials = () => {
     <section className="bg-white dark:bg-gray-900">
     <div className="container px-6 py-10 mx-auto">
         <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-            What clients saying
-        </h1>
+        What Our learners Are Saying: 
+                </h1>
 
         <div className="flex justify-center mx-auto mt-6">
             <span className="inline-block w-40 h-1 bg-gtahidiPink rounded-full"></span>
@@ -25,23 +28,24 @@ export const Testimonials = () => {
 
             <div>
                 <p className="flex items-center text-center text-gray-500 lg:mx-8">
-                    Being a Kenyan CBC teacher involves a lot of paperwork and planning.
-                    GTahidi AI has lightened workload considerably and freed up more 
-                    time for teachers to focus more on actual teaching.
+                gTahidi has truly been a lifesaver for me. It's incredibly reliable 
+                for my research and revisions. I'm so grateful to the team for creating 
+                such a detailed and accurate learning tool. If you're a learner and haven't
+                 tried gTahidi yet, you're definitely missing out on your best learning buddy!
                 </p>
 
                 <div className="flex flex-col items-center justify-center mt-8">
-                    <Image 
+                    {/* <Image 
                       className="object-cover rounded-full w-14 h-14" 
                       src={Profile}
                       alt=""
                       width={56}
                       height={56}
-                    />
+                    /> */}
 
                     <div className="mt-4 text-center">
-                        <h1 className="font-semibold text-gray-800 dark:text-white">Brian Okechi</h1>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">Senior teacher</span>
+                        <h1 className="font-semibold text-gray-800 dark:text-white">Merab Chebet</h1>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">High School Student</span>
                     </div>
                 </div>
             </div>
