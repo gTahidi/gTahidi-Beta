@@ -16,7 +16,7 @@ import useMetaPixel from '@/hooks/useMetaPixel';
 
 const HomePage = () => {
   // const Pixel = 879225596866623
-  useMetaPixel('879225596866623')
+  useMetaPixel('412855071166949')
   return (
     <div>
       <Hero />
