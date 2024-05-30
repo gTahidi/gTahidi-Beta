@@ -13,7 +13,7 @@ import Learn from '@/components/learn'
 import useMetaPixel from '@/hooks/useMetaPixel'
 
 function Page() {
-  useMetaPixel('879225596866623')
+  useMetaPixel('412855071166949')
   return (
     <div>
       <Hero/>
