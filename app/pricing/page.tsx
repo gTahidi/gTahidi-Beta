@@ -1,6 +1,11 @@
+"use client";
 import React from 'react';
+import useMetaPixel from '@/hooks/useMetaPixel'
+
 
 function Page() {
+    useMetaPixel('412855071166949')
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="container px-4 sm:px-6 lg:px-20 mx-auto">
