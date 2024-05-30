@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-
+"use client";
+import useMetaPixel from '@/hooks/useMetaPixel'
 import React from "react";
 
 function page() {
+    useMetaPixel('412855071166949')
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
       <div className="max-w-2xl lg:max-w-5xl mx-auto py-8">
