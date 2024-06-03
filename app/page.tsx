@@ -19,7 +19,7 @@ import useMetaPixel from '@/hooks/useMetaPixel'
 
 
 const Page = () => {
-  useMetaPixel('879225596866623')
+  useMetaPixel('412855071166949')
   return (
     <main>
       <Popup/>
