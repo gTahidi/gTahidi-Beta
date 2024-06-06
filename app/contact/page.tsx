@@ -3,7 +3,7 @@
 import useMetaPixel from '@/hooks/useMetaPixel'
 import React from "react";
 
-function page() {
+function Page() {
     useMetaPixel('412855071166949')
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
@@ -218,4 +218,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
