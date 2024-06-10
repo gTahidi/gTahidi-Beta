@@ -79,14 +79,14 @@ export const Nav = () => {
             </li>
 
             
-            <li>
+{/*             <li>
               <a
                 href="/pricing"
                 className="block py-2 px-3 text-gtahidiDarkBlue rounded hover:bg-gtahidiPink "
               >
                 Pricing
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="/contact"
