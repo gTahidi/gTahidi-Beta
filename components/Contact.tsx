@@ -11,7 +11,7 @@ export const Contact = () => {
         <div className="flex flex-col lg:flex-row items-start">
           <div className="lg:w-1/3 mb-10 lg:mb-0">
             <h3 className="text-gtahidiDarkBlue font-semibold text-lg mb-8">
-              For any Queries and Support yyyyyyyyyyyyy
+              For any Queries and Support 
             </h3>
             <div className="flex items-center mb-6">
               {/* <FontAwesomeIcon icon={faLocationArrow} className="text-gtahidiPink mr-3" size="lg" /> */}
