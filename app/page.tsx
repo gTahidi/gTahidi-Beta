@@ -14,6 +14,7 @@ import { SocialsSection } from "@/components/SocialsSection";
 import FAQ  from "@/components/Faqs"
 import Trusted from "@/components/Trusted";
 import BackedByMicrosoft from "@/components/microsoft";
+import Team from "@/components/Team";
 import Popup from "@/components/Popup";
 import useMetaPixel from '@/hooks/useMetaPixel'
 
@@ -36,6 +37,7 @@ const Page = () => {
       <Privacy />
       {/* <Testimonials /> */}
       <FAQ />
+      {/* <Team/> */}
       <Contact />
       <Footer />
     </main>
