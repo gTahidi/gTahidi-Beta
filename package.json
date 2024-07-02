@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@azure/msal-node": "^2.0.1",
+    "@azure/msal-node": "^2.9.2",
     "@azure/msal-react": "^2.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
