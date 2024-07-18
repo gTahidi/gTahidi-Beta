@@ -31,13 +31,15 @@ export default function RootLayout({
         <NextAuthSessionProviderWrapper>
           <GlobalDataProvider>{children}</GlobalDataProvider>
         </NextAuthSessionProviderWrapper>
-        <script type="text/javascript">
+        <Script id="clarity-script" strategy="afterInteractive">
+          {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "n4fmj413ma");
-        </script>
+            })(window, document, "clarity", "script", "n8czxqyk7g");
+          `}
+        </Script>
       </body>
     </html>
   );
