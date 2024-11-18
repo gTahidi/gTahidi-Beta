@@ -32,7 +32,7 @@
     "dotenv": "^16.2.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "^13.4.0",
-    "firebase": "^10.3.0",
+    "firebase": "^10.9.0",
     "flowise-embed": "^1.2.1",
     "flowise-embed-react": "^1.0.2",
     "font-awesome": "^4.7.0",
